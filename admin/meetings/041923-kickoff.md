@@ -26,6 +26,7 @@ Poster Final Touches | • Adding color<br>• Final design touches<br>• Bring
 Group Contract | • Final drafting<br>• Printing copies <br>•  Gather signatures<br>
 Team Page | • Drafting<br>• Writing Markdown<br>
 Notes Template | • Idea<br>• Conversion to Markdown<br>
+Mystical 8-Ball Project | • Form initial ideas<br>• Delegation of tasks<br> • Tool discussion<br>
 
 
 ## Business
@@ -36,7 +37,8 @@ Notes Template | • Idea<br>• Conversion to Markdown<br>
 |Unfinished | Video Editing | James | Friday | yes
 |Unfinished | Poster Design | Group | Friday | yes
 |Done | Group Contract | Group | Friday | n/a
-|Done | Team Page | Group | Friday | yes\
+|Done | Team Page | Group | Friday | yes
+|Unfinished | 8-ball project | Group | Tuesday | yes
 
 ## Adjourned at 1:00pm
 
