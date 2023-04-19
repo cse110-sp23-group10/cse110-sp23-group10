@@ -6,3 +6,4 @@ directories
 - source  : all project files
 - specs   : fine details
 
+[Team page file](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
