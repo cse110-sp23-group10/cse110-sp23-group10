@@ -8,6 +8,3 @@
 2. Stern talking to by team leads
 3. If worst comes to worst, go to TA.
 
-
-Definition of what is expected to be on the team
-Definition of how to address situations where group "rules" are not being followed
