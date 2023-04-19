@@ -32,13 +32,13 @@ Mystical 8-Ball Project | • Form initial ideas<br>• Delegation of tasks<br> 
 ## Business
 | Done? | Task | Who? | Due Date | Submittable?
 | ---- | ---- | ---- | ---- | ---- |
-|New | Project Ideas | Group | soon | no
+|New | Main Project Ideas | Group | soon | no
 |Next Time | Project Delegation | Group | soon | no
 |Unfinished | Video Editing | James | Friday | yes
 |Unfinished | Poster Design | Group | Friday | yes
 |Done | Group Contract | Group | Friday | n/a
 |Done | Team Page | Group | Friday | yes
-|Unfinished | 8-ball project | Group | Tuesday | yes
+|Unfinished | 8-Ball Project | Group | Tuesday | yes
 
 ## Adjourned @ 1:00pm
 
