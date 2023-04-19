@@ -1,10 +1,10 @@
 
 # Group 10 - Jelly Beans - Meeting Minutes #1
 ## General Info
-**Meeting Date/Time:** 4/9/2023, 9:30am <br>
-**Meeting Purpose:** Kickoff meeting <br>
-**Meeting Location:** Geisel Floor 1 West <br>
-**Recorder:** Dennis Lang <br>
+**Date/Time:** 4/9/2023, 9:30am <br>
+**Purpose:** Kickoff Meeting <br>
+**Location:** Geisel Floor 1 West <br>
+**Recorder:** Dennis <br>
 
 ## Attendance
 - Neil
