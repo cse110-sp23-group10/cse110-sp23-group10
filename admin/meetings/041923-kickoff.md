@@ -28,14 +28,14 @@ Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>•
 
 
 ## Business
-| Done? | Item | Responsible | Due Date |
-| ---- | ---- | ---- | ---- |
-|New | Project Ideas | Group | soon|
-|Next Time | Project Delegation | Group | soon|
-|Unfinished | Video Editing | James | Friday |
-|Unfinished | Poster Design | X | Friday |
-|Done | Group Contract | Group | Friday |
-|Done | Team Page | Group | Friday |
+| Done? | Task | Who? | Due Date | Submittable?
+| ---- | ---- | ---- | ---- | ---- |
+|New | Project Ideas | Group | soon | no
+|Next Time | Project Delegation | Group | soon | no
+|Unfinished | Video Editing | James | Friday | yes
+|Unfinished | Poster Design | X | Friday | yes
+|Done | Group Contract | Group | Friday | n/a
+|Done | Team Page | Group | Friday | yes
 
 
 ## Notes
