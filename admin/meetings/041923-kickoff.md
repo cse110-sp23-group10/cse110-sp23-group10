@@ -22,7 +22,7 @@
 Item | Description
 ---- | ----
 Video Intro |• Filming B-Roll<br>• Filming Team Member Intros <br>• Planning editing <br>• Suggesting video format<br>• 
-Poster Final Touches | • Coloring<br>• Final Design<br>• <br>• <br>• 
+Poster Final Touches | • Color<br>• Final Design<br>• Storage<br>• <br>• 
 Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>• 
 Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>• 
 
@@ -39,5 +39,5 @@ Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>•
 
 
 ## Notes
-Find permanent group meeting spot
-Research similar group projects
+Find permanent group meeting spot <br>
+Research similar projects <br>
