@@ -18,4 +18,6 @@
 - Joshua Chen
 - Kian Chou
 - Matthew Zheng
+ - <https://github.com/matty-zee>
+ - I am a third year UCSD CE student :) 
 - Mohak Vaswani
