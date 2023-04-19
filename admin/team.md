@@ -9,6 +9,8 @@
   - I am a second year UCSD student
 - Dennis Lang
 - Neil Bajaj
+  - <https://github.com/nb110240>
+  - I am a third year UCSD student.
 - Yunze Xie
   - <https://github.com/XieYoungZ> (Personal)
   - <https://github.com/yunzexie> (School)
