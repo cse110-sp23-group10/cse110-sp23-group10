@@ -40,7 +40,7 @@ Mystical 8-Ball Project | • Form initial ideas<br>• Delegation of tasks<br> 
 |Done | Team Page | Group | Friday | yes
 |Unfinished | 8-ball project | Group | Tuesday | yes
 
-## Adjourned at 1:00pm
+## Adjourned @ 1:00pm
 
 ## Notes
 Find permanent group meeting spot <br>
