@@ -1,6 +1,6 @@
 # Team 10 - Jellybeans
 
-> perchance add a logo here and/or values
+![logo](https://raw.githubusercontent.com/cse110-sp23-group10/cse110-sp23-group10/main/admin/branding/logo.jpg)
 
 ## Team Members
 
@@ -18,6 +18,9 @@
 - Hamza Dehaini
 - James Han
 - Joshua Chen
+  - <https://github.com/joooshua-chen> (School)
+  - <https://github.com/jchen257> (Personal)
+  - I am a second year UCSD student.
 - Kian Chou
   - https://github.com/kianchou (Personal)
   - <https://github.com/kjchou324> (School)
