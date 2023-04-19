@@ -18,6 +18,9 @@
 - Hamza Dehaini
 - James Han
 - Joshua Chen
+  - <https://github.com/joooshua-chen> (School)
+  - <https://github.com/jchen257> (Personal)
+  - I am a second year UCSD student
 - Kian Chou
   - https://github.com/kianchou (Personal)
   - <https://github.com/kjchou324> (School)
