@@ -1,7 +1,7 @@
 
 # Group 10 - Jelly Beans - Meeting Minutes #1
 ## General Info
-**Date/Time:** 4/9/2023, 9:30am <br>
+**Date/Time:** 4/19/2023 @ 9:30am <br>
 **Purpose:** Kickoff Meeting <br>
 **Location:** Geisel Floor 1 West <br>
 **Recorder:** Dennis <br>
@@ -21,10 +21,10 @@
 ## Agenda
 Item | Description
 ---- | ----
-Video Intro |• Filming B-Roll<br>• Filming Team Member Intros <br>• Planning editing <br>• Suggesting video format<br>• 
-Poster Final Touches | • Color<br>• Final Design<br>• Storage<br>• <br>• 
-Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>• 
-Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>• 
+Video Intro |• Filming B-Roll<br>• Filming Team Member Intros <br>• Planning editing <br>• Suggesting video format <br>
+Poster Final Touches | • Color<br>• Final Design<br>• Storage<br>
+Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>
+Team Page | • Drafting<br>• Writing<br>
 
 
 ## Business
