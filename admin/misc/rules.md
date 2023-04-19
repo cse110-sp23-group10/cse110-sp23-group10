@@ -10,5 +10,3 @@
 1. Banned from Discord server
 2. Stern talking to by team leads
 3. If worst comes to worst, go to TA.
-
-                                                                        Signature:_________
