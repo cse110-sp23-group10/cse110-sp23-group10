@@ -24,7 +24,8 @@ Item | Description
 Video Intro |• Filming B-Roll<br>• Filming Team Member intros <br>• Planning editing <br>• Suggesting video format <br>
 Poster Final Touches | • Color<br>• Final Design<br>• Storage<br>
 Group Contract | • Drafting<br>• Printing <br>•  Signatures<br>
-Team Page | • Drafting<br>• Writing<br>
+Team Page | • Drafting<br>• Writing Markdown<br>
+Notes Template | • Idea<br>• Conversion to Markdown<br>
 
 
 ## Business
