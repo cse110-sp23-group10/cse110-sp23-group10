@@ -10,6 +10,8 @@
 - Dennis Lang
 - Neil Bajaj
 - Yunze Xie
+  - <https://github.com/XieYoungZ>
+  - I am a fourth year UCSD student 
 - Hamza Dehaini
 - James Han
 - Joshua Chen
