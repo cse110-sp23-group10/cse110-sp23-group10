@@ -19,6 +19,9 @@
 - James Han
 - Joshua Chen
 - Kian Chou
+  - https://github.com/kianchou (Personal)
+  - <https://github.com/kjchou324> (School)
+  - I am a second year UCSD student.
 - Matthew Zheng
   - <https://github.com/matty-zee>
   - I am a third year UCSD CE student :) 
