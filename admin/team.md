@@ -1,6 +1,6 @@
 # Team 10 - Jellybeans
 
-> perchance add a logo here and/or values
+![logo](https://raw.githubusercontent.com/cse110-sp23-group10/cse110-sp23-group10/main/admin/branding/logo.jpg)
 
 ## Team Members
 
