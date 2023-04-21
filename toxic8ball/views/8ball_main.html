@@ -5,12 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>8 Ball Program</title>
-    <link ref="stylesheet" href = "./../public/8ball_main.css">
+    <link rel="stylesheet" href = "./../public/8ball_main.css">
 </head>
 <body>
-	<h1>Ask the Magic 8 Ball a Question</h1>
-	<input id="question" type="text" placeholder="Ask a question...">
-	<button onclick="shakeBall()">Shake the 8 Ball</button>
+    <section class="eight-ball">
+        8
+    </section>
+
+    <form>
+        <section class="question-form">
+            <input id="question" type="text" placeholder="Ask a question..." required>
+        </section>
+      
+        <section class="submit-button">
+            <button type="button" onclick="shakeBall()">Shake the 8 Ball</button>
+        </section>
+    </form>
+
+	
 	<p id="answer"></p>
 </body>
 <script src="./../public/8ball_main.js">

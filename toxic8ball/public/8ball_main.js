@@ -1,25 +1,22 @@
 function shakeBall() {
+    var question = document.getElementById("question").value;
+    if (question.trim() === "") {
+        alert("Don't be lazy and type something, I refuse to answer unless you said something");
+        return;
+    }
+
 	var answers = [
-		"It is certain.",
-		"It is decidedly so.",
-		"Without a doubt.",
-		"Yes - definitely.",
-		"You may rely on it.",
-		"As I see it, yes.",
-		"Most likely.",
-		"Outlook good.",
-		"Yes.",
-		"Signs point to yes.",
-		"Reply hazy, try again.",
-		"Ask again later.",
-		"Better not tell you now.",
-		"Cannot predict now.",
-		"Concentrate and ask again.",
-		"Don't count on it.",
-		"My reply is no.",
-		"My sources say no.",
-		"Outlook not so good.",
-		"Very doubtful."
+		"Just Don't",
+        "Definitely not",
+        "Signs point to nope",
+        "Sorry, try again",
+        "Not looking good",
+        "Outlook not so good",
+        "Don't even try",
+        "Come on I just told you don't even try, believe me",
+        "My sources say no",
+        "Don't count on it",
+        "Very doubtful"
 	];
 	var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 	document.getElementById("answer").innerHTML = randomAnswer;
