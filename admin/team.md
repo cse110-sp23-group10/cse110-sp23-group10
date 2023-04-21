@@ -16,6 +16,8 @@
   - <https://github.com/yunzexie> (School)
   - I am a fourth year UCSD student 
 - Hamza Dehaini
+  - Hello, I’m Hamza Dehaini. I am a junior transfer computer Science major in Muir college. I like reading, playing video games, swimming, surfing, and fishing. I have experience in cloud computing and software development, but am interested in exploring other areas of computer science, with ai/ml first in queue :)
+  - <https://github.com/hdehaini>
 - James Han
 - Joshua Chen
   - <https://github.com/joooshua-chen> (School)
@@ -29,3 +31,5 @@
   - <https://github.com/matty-zee>
   - I am a third year UCSD CE student :) 
 - Mohak Vaswani
+  - I’m Mohak Vaswani and i’m a second year Comp Sci major in Warren. Non academically, I love reading fantasy books, watching rom-coms and exploring new places. Furthermore, I play table tennis semi-competitively. I have a heavy interest in web development and systems engineering.
+  - <https://github.com/mohakvni>
