@@ -1,5 +1,5 @@
 
-# Group 10 - Jelly Beans - Meeting Minutes #1
+# Group 10 - Jelly Beans - Meeting Minutes #2
 ## General Info
 **Date/Time:** 4/19/2023 @ 9:30am <br>
 **Purpose:** Kickoff Meeting <br>
