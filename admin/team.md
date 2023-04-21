@@ -19,6 +19,8 @@
   - Hello, I’m Hamza Dehaini. I am a junior transfer computer Science major in Muir college. I like reading, playing video games, swimming, surfing, and fishing. I have experience in cloud computing and software development, but am interested in exploring other areas of computer science, with ai/ml first in queue :)
   - <https://github.com/hdehaini>
 - James Han
+  - I'm a second year and I love to play the electric guitar and go outside and hang out under the sun. My main interests lie in computer vision and hardware and I'm thinking of switching to computer engineering for my major.
+  - <https://github.com/hamesjan>
 - Joshua Chen
   - <https://github.com/joooshua-chen> (School)
   - <https://github.com/jchen257> (Personal)
