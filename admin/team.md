@@ -8,6 +8,8 @@
   - <https://github.com/austin-li>
   - I am a second year UCSD student
 - Dennis Lang
+  - Hi, my name is Dennis Lang and I am a Junior studying Computer Engineering as a part of Warren College. I enjoy walking my dogs, watching sports, and reading. I have Python experience as well as OOP languages but I am also interested in the electrical engineering portion of my degree. 
+  - <https://github.com/dlang5>   
 - Neil Bajaj
   - <https://github.com/nb110240>
   - I am a third year UCSD student.
