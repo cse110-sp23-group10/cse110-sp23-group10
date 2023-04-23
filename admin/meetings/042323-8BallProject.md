@@ -26,7 +26,7 @@ Mystical 8-Ball Project | • Mohak explains app<br>• Delegation of tasks<br> 
 |Next Time | Powerpoint | Group | soon | no
 |Unfinished | Video | Group | Tuesday | yes
 
-## Adjourned @ 1:00pm
+## Adjourned @ 6:00pm
 
 ## Notes
 Finish presentation <br>
