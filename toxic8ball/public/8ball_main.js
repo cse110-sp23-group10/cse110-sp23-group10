@@ -16,7 +16,9 @@ function shakeBall() {
         "Come on I just told you don't even try, believe me",
         "My sources say no",
         "Don't count on it",
-        "Very doubtful"
+        "Very doubtful",
+        "It is decidedly so, unless you're asking if you can borrow my car.",
+        "Don't count on it, unless you're counting on me to make a sarcastic comment."
 	];
 	var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
 	document.getElementById("answer").innerHTML = randomAnswer;
