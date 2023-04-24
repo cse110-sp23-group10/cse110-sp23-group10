@@ -31,5 +31,5 @@ Mystical 8-Ball Project | • Mohak explains app<br>• Delegation of tasks<br> 
 
 ## Notes
 -Finished 8-Ball Website (added animation, Title, and Text Animation) <br>
--Need Bill to confirm what he found out when making the website for the presentation
+-Need Bill to confirm what he found out when making the website for the presentation <br>
 -Need to finish the presentation and write down what we found out when making the website
