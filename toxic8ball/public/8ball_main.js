@@ -1,3 +1,5 @@
+let intervalId = null;
+
 /**
  * Checks whether or not the "question" box contains anything. If it doesn't send the alert.
  * @returns 
@@ -8,6 +10,8 @@ function shakeBall() {
         alert("Don't be lazy and type something, I refuse to answer unless you said something");
         return;
     }
+
+    const answerEl = document.getElementById("answer");
 
 	var answers = [
 		"Just Don't",
@@ -24,6 +28,22 @@ function shakeBall() {
         "It is decidedly so, unless you're asking if you can borrow my car.",
         "Don't count on it, unless you're counting on me to make a sarcastic comment."
 	];
+
+    if (intervalId !== null) {
+        clearInterval(intervalId);
+    }
+
+    answerEl.textContent = "";
+
 	var randomAnswer = answers[Math.floor(Math.random() * answers.length)];
-	document.getElementById("answer").innerHTML = randomAnswer;
+
+    let i = 0;
+    intervalId = setInterval(function() {
+        answerEl.textContent += randomAnswer.charAt(i);
+        i++;
+        if (i === randomAnswer.length) {
+            clearInterval(intervalId);
+            intervalId = null; // Reset interval ID
+        }
+    }, 50); // Change the delay time (in milliseconds) as needed
 }
