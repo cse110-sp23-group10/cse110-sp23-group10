@@ -1,3 +1,7 @@
+/**
+ * Checks whether or not the "question" box contains anything. If it doesn't send the alert.
+ * @returns 
+ */
 function shakeBall() {
     var question = document.getElementById("question").value;
     if (question.trim() === "") {
