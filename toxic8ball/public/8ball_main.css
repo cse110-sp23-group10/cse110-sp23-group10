@@ -2,7 +2,13 @@
 body {
     background-color: #f1f1f1;
 }
-
+.intro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  font-size: xx-large;
+}
 .eight-ball,
 .question-form {
     display: block;
