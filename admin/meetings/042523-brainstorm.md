@@ -14,6 +14,9 @@
 - James
 - Matthew
 - Mohak
+- Kian
+- Neil
+- Dennis
 
 ## Agenda
 Item | Description
