@@ -47,3 +47,5 @@ function shakeBall() {
         }
     }, 50); // Change the delay time (in milliseconds) as needed
 }
+
+module.exports = shakeBall
