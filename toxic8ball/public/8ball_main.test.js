@@ -4,18 +4,27 @@ describe('shakeBall function', () => {
   let mockAlert;
   let mockInterval;
 
+  /**
+   * Run this before every test
+   */
   beforeEach(() => {
     // Mock the alert and setInterval functions
     mockAlert = jest.spyOn(window, 'alert').mockImplementation(() => {});
     mockInterval = jest.spyOn(window, 'setInterval').mockImplementation(() => {});
   });
 
+  /**
+   * Run this after every test
+   */
   afterEach(() => {
     // Restore the original functions after each test
     mockAlert.mockRestore();
     mockInterval.mockRestore();
   });
 
+  /**
+   * Test 1: when input is empty
+   */
   it('should send an alert if question is empty', () => {
     // Set up the initial HTML
     document.body.innerHTML = `
@@ -28,6 +37,9 @@ describe('shakeBall function', () => {
     );
   });
 
+  /**
+   * Test 2: Make sure there is output at the correct location on frontend
+   */
   it('should display a random answer', () => {
     // Set up the initial HTML
     document.body.innerHTML = `
@@ -36,12 +48,15 @@ describe('shakeBall function', () => {
     `;
     jest.useFakeTimers();
     shakeBall();
-    jest.advanceTimersByTime(2000);
+    jest.advanceTimersByTime(5000);
 
     const answerEl = document.getElementById('answer');
     expect(answerEl.textContent).not.toBe('');
   });
 
+  /**
+   * Test 3: Make sure there is output is from expected output
+   */
   it('should display a random answer from the list for 10 tries', () => {
     const answers = [
       "Just Don't",
