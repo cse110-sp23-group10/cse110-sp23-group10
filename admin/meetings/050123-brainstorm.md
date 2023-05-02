@@ -7,12 +7,24 @@
 
 ## Attendance
 
+- Yunze
+- Hamza
+- Matthew
+- Austin
+- Dennis
+- Joshua
+- Kian
+- Mohak
+- Neil
+
 
 ## Agenda
 Item | Description
 ---- | ----
 Agenda |• Project Brainstorm
 Agenda |• Starting Pitch
+Agenda |• Group assignment for lab 5
+
 
 
 ## Business
@@ -20,8 +32,16 @@ Agenda |• Starting Pitch
 | ---- | Pitch Draft | Group | May 5 | Yes |
 | ---- | Pitch | Group | May 7 | Yes |
 | ---- | Brainstorm | Group | May 7 | Yes |
+| Done | Group Assignment | Group | May 7 | No |
 
 ## Notes
+- Organize and plan what to submit
+- Making brainstorm on miro
+  - Different colored jelly bean have different type of outcomes
+  - Pick a bean or some amount of bean everyday
+  - Make the theme to something resembles candy land
+  - Have the online version connect to chatgpt api
+  - Have a max number of follow up question for the api model
 
 
-## Adjourned @ 10:00pm
+## Adjourned @ 11:00pm
