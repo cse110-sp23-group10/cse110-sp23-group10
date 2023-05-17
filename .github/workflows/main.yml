@@ -19,7 +19,7 @@ jobs:
         run: npm install
 
       - name: Run tests
-        run: cd toxic8ball; npm test
+        run: cd toxic8ball; npm i; npm test
 
       - name: Lint code
         run: npm run lint
