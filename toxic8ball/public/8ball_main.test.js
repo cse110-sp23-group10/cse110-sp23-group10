@@ -1,4 +1,4 @@
-const shakeBall = require('./../public/8ball_main');
+const shakeBall = require('./8ball_main');
 
 describe('shakeBall function', () => {
   let mockAlert;
@@ -33,7 +33,7 @@ describe('shakeBall function', () => {
     `;
     shakeBall();
     expect(mockAlert).toHaveBeenCalledWith(
-      "Don't be lazy and type something, I refuse to answer unless you said something"
+      "Don't be lazy and type something, I refuse to answer unless you said something",
     );
   });
 
@@ -60,18 +60,18 @@ describe('shakeBall function', () => {
   it('should display a random answer from the list for 10 tries', () => {
     const answers = [
       "Just Don't",
-      "Definitely not",
-      "Signs point to nope",
-      "Sorry, try again",
-      "Not looking good",
-      "Outlook not so good",
+      'Definitely not',
+      'Signs point to nope',
+      'Sorry, try again',
+      'Not looking good',
+      'Outlook not so good',
       "Don't even try",
       "Come on I just told you don't even try, believe me",
-      "My sources say no",
+      'My sources say no',
       "Don't count on it",
-      "Very doubtful",
+      'Very doubtful',
       "It is decidedly so, unless you're asking if you can borrow my car.",
-      "Don't count on it, unless you're counting on me to make a sarcastic comment."
+      "Don't count on it, unless you're counting on me to make a sarcastic comment.",
     ];
 
     document.body.innerHTML = `
@@ -86,6 +86,4 @@ describe('shakeBall function', () => {
     const answerEl = document.getElementById('answer');
     expect(answers).toContain(answerEl.textContent);
   });
-  
-  
 });
