@@ -22,7 +22,7 @@ jobs:
         run: cd toxic8ball; npm i; npm test
 
       - name: Lint code
-        run: npm run lint
+        run: cd toxic8ball; npm i; npm run lint
 
       - name: Generate documentation
-        run: npm run docs
+        run: cd toxic8ball; npm i; npm run docs
