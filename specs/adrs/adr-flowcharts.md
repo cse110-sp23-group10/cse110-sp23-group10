@@ -3,7 +3,9 @@
 ## Context and Problem Statement
 
 How to edit a document with multiple team members at once?
+
 How to visually display workflow?
+
 How to write our project's decision tree and flow charts collaboratively?
 
 ## Considered Options
