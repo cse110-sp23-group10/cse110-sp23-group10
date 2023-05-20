@@ -17,4 +17,4 @@ How to write our project's decision tree and flow charts collaboratively?
 
 ## Decision Outcome
 
-Chosen option: Miro was the suggest option and works well for the tasks we need it to do. The app has collaborative tools such as comments and is intuitive to use.
+Chosen option: Miro was the suggested option and works well for the tasks we need it to do. The app has collaborative tools such as comments and is intuitive to use.
