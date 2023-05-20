@@ -1,0 +1,19 @@
+# Use Prettier.io for Linting
+
+## Context and Problem Statement
+
+How to lint our code?
+
+How to avoid needing to style our code in review?
+
+How can we make debugging easier?
+
+## Considered Options
+
+* JSLint
+* ESLint
+* Prettier.io
+
+## Decision Outcome
+
+Chosen option: Prettier.io is a strong linter that enforces a consistent style by parsing code and re-printing as formatted, and is used in many modern projects.
