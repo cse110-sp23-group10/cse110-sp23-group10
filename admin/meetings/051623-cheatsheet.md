@@ -27,5 +27,8 @@ ADR | * Start ADR assignment
 - CI/CD
 - We will do one sprint for four weeks.
 - We got the base for some actions in the main.yml file
-- 
-## Adjourned @ 11:50am
+- Neil, Josh, Dennis doing ADRs
+- James, Matthew, Dennis doing CI/CD
+- Came up with Quiz question
+  
+## Adjourned @ 10:30pm
