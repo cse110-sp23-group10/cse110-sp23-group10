@@ -13,7 +13,7 @@ As of 05/21/23, our CI/CD pipeline is integrated into GitHub actions. With the s
 
 ##  Currently Functional:
 
-Our pipeline is established and set up in GitHub actions. The template code in each step currently gives us a baseline to operate from as we integrate our desired features into our project. The pipeline will focus on ensuring that we have properly styled code, enough documentation (for someone reading the code for the first time) and whether the newly added features pass all common unit tests. If any of these fail, the linter will raise error causing the assigned developer to change their code. 
+Our pipeline is established and set up in GitHub actions. The template code in each step currently gives us a baseline to operate from as we integrate our desired features into our project. The pipeline will focus on ensuring that we have properly styled code, enough documentation (for someone reading the code for the first time) and whether the newly added features pass all common unit tests. If any of these fail, the linter will raise error causing the assigned developer to change their code. We also added a rule to ensure that every pull-request requires a minimum of two reviews before merging.
 
 ## Next Phase Plans
 
