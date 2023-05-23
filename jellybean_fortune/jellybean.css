@@ -5,19 +5,20 @@ body {
   background-size: cover;
 }
 .navbar {
-    margin: 0;
-    background-color: white;
-    height: 100px;
+  margin: 0;
+  padding: 20px;
+  background-color: white;
+  height: 100px;
 }
 .jar {
-    position: relative;
+  position: relative;
 }
 .jar{
-    height: 600px;
-    width: 500px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, 25%);
+  height: 600px;
+  width: 500px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 25%);
 }
 
 .jellybean{
