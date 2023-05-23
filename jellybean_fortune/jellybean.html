@@ -7,14 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JellyBean Program</title>
     <link rel="stylesheet" href = "/jellybean_fortune/jellybean.css">
+    <script src="./scripts/jellybean.js"></script>
 </head>
 <body>
     <!-- Top bar has the logo, sounds button, and home button? -->
     <div class="navbar">
         <!-- Logo, left -->
-        <img src="./assets/text-logo.png"/>
+        <img src="../admin/branding/text-logo.png">
         <!-- mute when clicked,  -->
-        <img id="sound-icon" src="./assets/sound.svg"/>
+        <img id="sound-icon" src="./assets/sound.svg">
         <!-- Home Button, right (landing page?)-->
         <a href="" style="float:right">Home</a>
     </div>
@@ -27,24 +28,13 @@
 
     <div>
         <section class="jar-beans" id="jar-beans">
-            <img src="/jellybean_fortune/assets/jar.png" alt="Jar with Jellybeans" class = "jar">  <!-- the jar --> 
-            <!--adding jellybeancluster to the bar-->
-            <img class="jellybean" src="/jellybean_fortune/assets/jellybeancluster.png" alt="jellybeancluster">
-        </section>
-        
-        <section class="submit-button">
-            <button onclick="shakeJar()">Shake Jar</button>
+            <img src="/jellybean_fortune/assets/jarandjelly.png" alt="Jar with Jellybeans" class = "jar">  <!-- the jar --> 
+            
         </section>
     </div>
-
-
-    <form>
-    </form>
-
-	
-	<p id="answer"></p>
+    <section class="submit-button">
+        <button onclick="shakeJar()">Shake Jar</button>  <!-- button should shake the jar-->
+    </section>
 </body>
-<script src="jellybean_fortune/jellybean.js">
 
-</script>
 </html>
