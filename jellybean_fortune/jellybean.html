@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Landing Page-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JellyBean Program</title>
+    <link rel="stylesheet" href = "/jellybean_fortune/jellybean.css">
+</head>
+<body>
+    <!-- Top bar has the logo, sounds button, and home button? -->
+    <div class="navbar">
+        <!-- Logo, left -->
+        <img src="./assets/text-logo.png"/>
+        <!-- mute when clicked,  -->
+        <img id="sound-icon" src="./assets/sound.svg"/>
+        <!-- Home Button, right (landing page?)-->
+        <a href="" style="float:right">Home</a>
+    </div>
+    
+    <div>
+        <section class = "intro">
+            Shake the jar!  <!--  -->
+         </section>
+    </div>
+
+    <div>
+        <section class="jar-beans" id="jar-beans">
+            <img src="/jellybean_fortune/assets/jar.png" alt="Jar with Jellybeans" class = "jar">  <!-- the jar --> 
+            <!--adding jellybeancluster to the bar-->
+            <img class="jellybean" src="/jellybean_fortune/assets/jellybeancluster.png" alt="jellybeancluster">
+        </section>
+        
+        <section class="submit-button">
+            <button onclick="shakeJar()">Shake Jar</button>
+        </section>
+    </div>
+
+
+    <form>
+    </form>
+
+	
+	<p id="answer"></p>
+</body>
+<script src="jellybean_fortune/jellybean.js">
+
+</script>
+</html>
