@@ -5,5 +5,7 @@ We will host all our project files in this repository. Get familiar with it!
 directories
 - source  : all project files
 - specs   : fine details
+- toxic 8 ball: exploratory programming
+- admin: team logistics 
 
 [Team page file](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
