@@ -1,0 +1,42 @@
+/* change to local image later */
+body {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/003/474/230/original/christmas-candy-land-landscape-design-free-vector.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.navbar {
+    margin: 0;
+    background-color: white;
+    height: 100px;
+}
+.jar {
+    position: relative;
+}
+.jar{
+    height: 600px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 25%);
+}
+
+.jellybean{
+  height: 400px;
+  width: 400px;
+  top: 50px; 
+  left: 100px;
+  transform: translate(100%, 55%);
+}
+
+.shake {
+  animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-5px, 0) rotate(-5deg); }
+  40% { transform: translate(5px, 0) rotate(5deg); }
+  60% { transform: translate(-5px, 0) rotate(-5deg); }
+  80% { transform: translate(5px, 0) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
