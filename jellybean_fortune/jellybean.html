@@ -8,6 +8,7 @@
     <title>JellyBean Program</title>
     <link rel="stylesheet" href = "/jellybean_fortune/jellybean.css">
     <script src="./scripts/jellybean.js"></script>
+    <script src="./scripts/audio.js"></script>
 </head>
 <body>
     <!-- Top bar has the logo, sounds button, and home button? -->
@@ -15,11 +16,11 @@
         <!-- Logo, left -->
         <img src="../admin/branding/text-logo.png">
         <!-- mute when clicked,  -->
-        <img id="sound-icon" src="./assets/sound.svg">
+        <img id="sound-icon" src="./assets/sound.svg" draggable="false">
         <!-- Home Button, right (landing page?)-->
-        <img src="./assets/blue_jellybean.png" style="float:right">Home |</a>
-        <img src="./assets/orange_jellybean.png" style="float:right">Back |</a>
-        <img src="./assets/red_jellybean.png" style="float:right">Account |</a>
+        <img src="./assets/blue_jellybean.png" style="float:right">Home </a> |
+        <img src="./assets/orange_jellybean.png" style="float:right">Back </a> |
+        <img src="./assets/red_jellybean.png" style="float:right"> Account</a>
     </div>
     
 
@@ -37,7 +38,7 @@
         </section>
     </div>
 
-    <audio hidden autoplay loop class="background-music">
+    <audio hidden loop id="background-music">
         <source src="./assets/goofy.mp3">
     </audio>
 </body>

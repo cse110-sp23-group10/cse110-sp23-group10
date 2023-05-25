@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./scripts/fortune.js"></script>
+    <script src="./scripts/audio.js"></script>
+    <link rel="stylesheet" href = "/jellybean_fortune/fortune.css">
+</head>
+<body>
+    <div class="navbar">
+        <!-- Logo, left -->
+        <img src="../admin/branding/text-logo.png">
+        <!-- mute when clicked,  -->
+        <img id="sound-icon" src="./assets/sound.svg" draggable="false">
+        <!-- Home Button, right (landing page?)-->
+        <img src="./assets/blue_jellybean.png" style="float:right">Home </a> |
+        <img src="./assets/orange_jellybean.png" style="float:right">Back </a> |
+        <img src="./assets/red_jellybean.png" style="float:right"> Account</a>
+    </div>
+
+    <div class="fortune-beans">
+        <img src="./assets/green_jellybean.png" id="green-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
+        <img src="./assets/blue_jellybean.png" id="blue-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
+        <img src="./assets/red_jellybean.png" id="red-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
+        <img src="./assets/yellow_jellybean.png" id="yellow-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
+        <img src="./assets/pink_jellybean.png" id="pink-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
+    </div>
+
+    <div class="fortune">
+        <p class="text">This text will be displayed when the image is clicked.</p>
+    </div>
+
+    <div class = "button">
+        <section class="back-button">
+            <button onclick="GoBack()">Return</button>  <!-- button should shake the jar-->
+        </section>
+    </div>
+    
+    <audio hidden loop id="background-music">
+        <source src="./assets/goofy.mp3">
+    </audio>
+</body>
+
+</html>

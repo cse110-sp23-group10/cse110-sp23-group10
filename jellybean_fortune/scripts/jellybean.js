@@ -5,4 +5,8 @@ function shakeJar() {
     setTimeout(function() {
       jar.classList.remove("shake");
     }, 500);
-  }
+
+    setTimeout(function() {
+      window.location.href = './fortune.html';
+    }, 1000)
+}
