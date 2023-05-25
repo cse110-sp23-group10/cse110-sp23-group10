@@ -17,14 +17,11 @@
         <!-- mute when clicked,  -->
         <img id="sound-icon" src="./assets/sound.svg">
         <!-- Home Button, right (landing page?)-->
-        <img src="./assets/blue_jellybean.png" style="float:right">Home</a>
+        <img src="./assets/blue_jellybean.png" style="float:right">Home |</a>
+        <img src="./assets/orange_jellybean.png" style="float:right">Back |</a>
+        <img src="./assets/red_jellybean.png" style="float:right">Account |</a>
     </div>
     
-    <div>
-        <section class = "intro">
-            Shake the jar!  <!--  -->
-         </section>
-    </div>
 
     <div>
         <section class="jar-beans" id="jar-beans">
@@ -36,9 +33,13 @@
     <!-- Button placed in div for centering -->
     <div>
         <section class="submit-button">
-            <button onclick="shakeJar()">Shake Jar</button>  <!-- button should shake the jar-->
+            <button onclick="shakeJar()">Shake Jar?</button>  <!-- button should shake the jar-->
         </section>
     </div>
+
+    <audio hidden autoplay loop class="background-music">
+        <source src="./assets/goofy.mp3">
+    </audio>
 </body>
 
 </html>
