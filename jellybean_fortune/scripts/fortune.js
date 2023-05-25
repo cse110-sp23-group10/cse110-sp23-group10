@@ -1,9 +1,17 @@
 function GoBack() {
-    window.location.href = './jellybean.html';
-  }
+  window.location.href = './jellybean.html';
+}
 
 
-function toggleText() {
+function toggleText(color) {
   var textElement = document.querySelector('.text');
-  textElement.style.display = (textElement.style.display === 'none') ? 'block' : 'none';
+  let state = textElement.state;
+  if (state === color) {
+    textElement.style.display = 'none';
+    textElement.state = 'none';
+  } else {
+    textElement.innerHTML = `You chose the ${color} jellybean`;
+    textElement.style.display = 'block';
+    textElement.state = color;
+  }
 }

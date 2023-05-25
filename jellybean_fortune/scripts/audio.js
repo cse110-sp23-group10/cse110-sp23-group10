@@ -4,6 +4,7 @@ function init() {
   // toggle mute/unmute audio
   let audio = document.getElementById("background-music");
   let sound = document.getElementById("sound-icon");
+  audio.volume = 0.4;
   let volume = true;
 
   console.log('init');
@@ -15,7 +16,7 @@ function init() {
       audio.volume = 0;
       this.src = "./assets/mute.svg";
     } else {
-      audio.volume = 1;
+      audio.volume = 0.4;
       this.src = "./assets/sound.svg";
     }
     volume = !volume;

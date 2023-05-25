@@ -6,39 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./scripts/fortune.js"></script>
     <script src="./scripts/audio.js"></script>
-    <link rel="stylesheet" href = "/jellybean_fortune/fortune.css">
+    <link rel="stylesheet" href="/jellybean_fortune/fortune.css">
+    <link rel="stylesheet" href="/jellybean_fortune/navbar.css">
 </head>
 <body>
-    <div class="navbar">
-        <!-- Logo, left -->
-        <img src="../admin/branding/text-logo.png">
-        <!-- mute when clicked,  -->
-        <img id="sound-icon" src="./assets/sound.svg" draggable="false">
+    <div class="navbar" >
+        <div class="navbar-left">
+            <img src="../admin/branding/text-logo.png">
+            <!-- mute when clicked,  -->
+            <img id="sound-icon" src="./assets/sound.svg" draggable="false">
+        </div>
         <!-- Home Button, right (landing page?)-->
-        <img src="./assets/blue_jellybean.png" style="float:right">Home </a> |
-        <img src="./assets/orange_jellybean.png" style="float:right">Back </a> |
-        <img src="./assets/red_jellybean.png" style="float:right"> Account</a>
+        <div class="navbar-right">
+            <div class="nav-img">
+                <img src="./assets/blue_jellybean.png" style="float:right" class="zoom-image" alt="Hover over me"> 
+                <span style="float:right"> Home: </span>
+            </div>
+            <div class="nav-img">
+                <img src="./assets/orange_jellybean.png"  style="float:right" onclick="GoBack()" class="zoom-image" alt="Hover over me">
+                <span style="float:right"> Back: </span>
+            </div>
+            <div class="nav-img">
+                <img src="./assets/red_jellybean.png" style="float:right" class="zoom-image" alt="Hover over me"> 
+                <span style="float:right"> Account: </span>
+            </div>      
+        </div>
+
+        </div>
     </div>
 
     <div class="fortune-beans">
-        <img src="./assets/green_jellybean.png" id="green-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
-        <img src="./assets/blue_jellybean.png" id="blue-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
-        <img src="./assets/red_jellybean.png" id="red-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
-        <img src="./assets/yellow_jellybean.png" id="yellow-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
-        <img src="./assets/pink_jellybean.png" id="pink-jellybean" onclick="toggleText()" class="zoom-image" alt="Hover over me">
+        <img src="./assets/green_jellybean.png" id="green-jellybean" onclick="toggleText('green')" class="zoom-image" alt="Hover over me">
+        <img src="./assets/blue_jellybean.png" id="blue-jellybean" onclick="toggleText('blue')" class="zoom-image" alt="Hover over me">
+        <img src="./assets/red_jellybean.png" id="red-jellybean" onclick="toggleText('red')" class="zoom-image" alt="Hover over me">
+        <img src="./assets/yellow_jellybean.png" id="yellow-jellybean" onclick="toggleText('yellow')" class="zoom-image" alt="Hover over me">
+        <img src="./assets/pink_jellybean.png" id="pink-jellybean" onclick="toggleText('pink')" class="zoom-image" alt="Hover over me">
     </div>
 
     <div class="fortune">
-        <p class="text">This text will be displayed when the image is clicked.</p>
+        <p class="text" state="none">Hello World :)</p>
     </div>
 
-    <div class = "button">
-        <section class="back-button">
-            <button onclick="GoBack()">Return</button>  <!-- button should shake the jar-->
-        </section>
-    </div>
     
-    <audio hidden loop id="background-music">
+    <audio hidden autoplay loop id="background-music">
         <source src="./assets/goofy.mp3">
     </audio>
 </body>

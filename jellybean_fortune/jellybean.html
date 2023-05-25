@@ -7,20 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JellyBean Program</title>
     <link rel="stylesheet" href = "/jellybean_fortune/jellybean.css">
+    <link rel="stylesheet" href="/jellybean_fortune/navbar.css">
     <script src="./scripts/jellybean.js"></script>
     <script src="./scripts/audio.js"></script>
 </head>
 <body>
     <!-- Top bar has the logo, sounds button, and home button? -->
-    <div class="navbar">
-        <!-- Logo, left -->
-        <img src="../admin/branding/text-logo.png">
-        <!-- mute when clicked,  -->
-        <img id="sound-icon" src="./assets/sound.svg" draggable="false">
+    <div class="navbar" >
+        <div class="navbar-left">
+            <img src="../admin/branding/text-logo.png">
+            <!-- mute when clicked,  -->
+            <img id="sound-icon" src="./assets/sound.svg" draggable="false">
+        </div>
         <!-- Home Button, right (landing page?)-->
-        <img src="./assets/blue_jellybean.png" style="float:right">Home </a> |
-        <img src="./assets/orange_jellybean.png" style="float:right">Back </a> |
-        <img src="./assets/red_jellybean.png" style="float:right"> Account</a>
+        <div class="navbar-right">
+            <div class="nav-img">
+                <img src="./assets/blue_jellybean.png" style="float:right" class="zoom-image" alt="Hover over me"> 
+                <span style="float:right"> Home </span>
+            </div>
+            <div class="nav-img">
+                <img src="./assets/orange_jellybean.png"  style="float:right" class="zoom-image" alt="Hover over me">
+                <span style="float:right"> Back </span>
+            </div>
+            <div class="nav-img">
+                <img src="./assets/red_jellybean.png" style="float:right" class="zoom-image" alt="Hover over me"> 
+                <span style="float:right"> Account </span>
+            </div>      
+        </div>
     </div>
     
 
@@ -38,7 +51,7 @@
         </section>
     </div>
 
-    <audio hidden loop id="background-music">
+    <audio hidden autoplay loop id="background-music">
         <source src="./assets/goofy.mp3">
     </audio>
 </body>
