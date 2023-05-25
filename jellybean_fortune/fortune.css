@@ -19,19 +19,6 @@
     padding-bottom: 5px;
   
   }
-  .navbar {
-    margin: 0;
-    padding: 20px;
-    background-color: white;
-    height: 100px;
-    font-family: "Brush Script MT", cursive;
-  }
-  
-  .navbar > img {
-    margin-left: 20px;
-    margin-right: 20px;
-    height: 80px;
-  }
 
 .fortune-beans {
   display: flex;
@@ -46,6 +33,11 @@
 .fortune {
   display: flex;
   justify-content: center;
+}
+
+.fortune > p {
+  font-size: 50px;
+  font-family: "Brush Script MT", cursive;
 }
 
 .button{
