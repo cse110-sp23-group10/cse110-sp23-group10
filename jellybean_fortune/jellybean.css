@@ -1,0 +1,57 @@
+/* change to local image later */
+body {
+  margin: 0;
+  background-image: url("./assets/candy-land-landscape.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* CSS centers and styles "Shake Jar" button bottom of screen */
+button {
+  padding: 20px;
+  font-size: 35px;
+  border-radius: 14px;
+  border-width: 5px;
+  border-color: lightblue;
+  cursor: pointer;
+  margin: 5px;
+  color: blueviolet;
+  background-color: yellow;
+  font-family: "Brush Script MT", cursive;
+  font-weight: bold;
+  position: relative;
+  /*top: 50%;*/
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+
+.jar {
+  position: relative;
+}
+.jar{
+  height: 600px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shake {
+  animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-5px, 0) rotate(-5deg); }
+  40% { transform: translate(5px, 0) rotate(5deg); }
+  60% { transform: translate(-5px, 0) rotate(-5deg); }
+  80% { transform: translate(5px, 0) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+
