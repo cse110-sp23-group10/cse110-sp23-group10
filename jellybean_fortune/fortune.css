@@ -1,62 +1,65 @@
   button {
-    padding: 20px;
-    font-size: 35px;
-    border-radius: 14px;
-    border-width: 5px;
-    border-color: lightblue;
-    cursor: pointer;
-    margin: 5px;
-    color: blueviolet;
-    background-color: yellow;
-    font-family: "Brush Script MT", cursive;
-    font-weight: bold;
-    position: relative;
-    /*top: 50%; */
-    left: 50%;
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
-    padding-top: 5px;
-    padding-bottom: 5px;
-  
+      padding: 20px;
+      font-size: 35px;
+      border-radius: 14px;
+      border-width: 5px;
+      border-color: lightblue;
+      cursor: pointer;
+      margin: 5px;
+      color: blueviolet;
+      background-color: yellow;
+      font-family: "Brush Script MT", cursive;
+      font-weight: bold;
+      position: relative;
+      /*top: 50%; */
+      left: 50%;
+      -ms-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      padding-top: 5px;
+      padding-bottom: 5px;
   }
-
-.fortune-beans {
-  display: flex;
-  justify-content: center;
-}
   
-.fortune-beans > img {
-  width: 15%;
-  margin: 2.4%;
-}
-
-.fortune {
-  display: flex;
-  justify-content: center;
-}
-
-.fortune > p {
-  font-size: 50px;
-  font-family: "Brush Script MT", cursive;
-}
-
-.button{
-  transform: translate(0, 300px);
-}
-
-body {
-  margin: 0;
-  background-image: url("./assets/beans.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;  
-  background-color: rgba(255,255,255,0.4);
-  background-blend-mode: lighten;
-}
-
-.zoom-image {
-    transition: transform 0.3s ease;
+  .fortune-beans {
+      display: flex;
+      justify-content: center;
   }
-
-.zoom-image:hover {
-    transform: scale(1.1);
-}
+  
+  .fortune-beans>img {
+      width: 15%;
+      margin: 2.4%;
+  }
+  
+  .fortune {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .fortune>p {
+      font-size: 50px;
+      font-family: "Brush Script MT", cursive;
+  }
+  
+  .button {
+      transform: translate(0, 300px);
+  }
+  
+  body {
+      margin: 0;
+      background-image: url("./assets/beans.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: rgba(255, 255, 255, 0.4);
+      background-blend-mode: lighten;
+  }
+  
+  .zoom-image {
+      transition: transform 0.3s ease;
+  }
+  
+  .zoom-image:hover {
+      transform: scale(1.1);
+  }
+  
+  .text {
+      text-align: center;
+  }
