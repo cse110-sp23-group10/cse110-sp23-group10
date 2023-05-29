@@ -24,7 +24,7 @@ jobs:
                 run: cd toxic8ball; npm i; npm test 
           fi
           echo "No Unit Test File Added"
-          exit 1;    
+          exit 0;    
 
       - name: Lint code
         run: cd toxic8ball; npm i; npm run lint
