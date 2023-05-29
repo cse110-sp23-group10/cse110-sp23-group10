@@ -20,14 +20,12 @@ button {
   font-family: "Brush Script MT", cursive;
   font-weight: bold;
   position: relative;
-  /*top: 50%;*/
   left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
+  /* -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); */
   padding-top: 5px;
   padding-bottom: 5px;
 }
-
 
 
 .jar {
