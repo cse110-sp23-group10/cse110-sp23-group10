@@ -2,9 +2,6 @@ name: CI/CD Pipeline
 
 on: [push]
 
-uses: jitterbit/get-changed-files@v1
-
-
 jobs:
   build:
     runs-on: ubuntu-latest
