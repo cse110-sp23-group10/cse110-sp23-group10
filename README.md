@@ -10,3 +10,5 @@ directories
 - jellbyean_fortune: Team project
 
 [Team page file](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
+
+[https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html)
