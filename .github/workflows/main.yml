@@ -20,17 +20,11 @@ jobs:
 
       - name: Check Pull Request Title
         run: |
-          echo The Title of your PR is ${{ github.event.pull_request.title }}
-          if [[ "${{ github.event_name }}" == "push" ]]; then
-            if [[ "${{ github.event.push.title }}" =~ "New Feature" ]]; then
-              echo "Hello"
-              if ! git diff --name-only HEAD | grep -qE '\.test\.js$'; then
-                echo "Unit test file not found"
-                exit 0
-              fi
-              run: cd toxic8ball; npm i; npm test   
-            fi
-          fi     
+          if git diff --name-only HEAD | grep -qE '\.test\.js$'; then
+                run: cd toxic8ball; npm i; npm test 
+          fi
+          echo "No Unit Test File Added"
+          exit 1;    
 
       - name: Lint code
         run: cd toxic8ball; npm i; npm run lint
