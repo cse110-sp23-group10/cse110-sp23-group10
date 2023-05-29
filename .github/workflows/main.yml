@@ -2,8 +2,7 @@ name: CI/CD Pipeline
 
 on: [push]
 
-- name: Get All Changed Files
-  uses: jitterbit/get-changed-files@v1
+uses: jitterbit/get-changed-files@v1
 
 
 jobs:
