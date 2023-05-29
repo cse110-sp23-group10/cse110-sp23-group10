@@ -1,5 +1,5 @@
 name: CI/CD Pipeline
-
+uses: jitterbit/get-changed-files@v1
 on: [push]
 
 jobs:
