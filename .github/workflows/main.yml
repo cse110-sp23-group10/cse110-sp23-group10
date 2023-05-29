@@ -21,17 +21,13 @@ jobs:
       - name: Check Pull Request Title
         run: |
           if [[ "${{ github.event_name }}" == "pull_request" ]]; then
-            if [[ ! "${{ github.event.pull_request.title }}" =~ "New Feature" ]]; then
-              echo "Pull request title does not contain 'New Feature'"
-              exit 0
+            if [[ "${{ github.event_name.title }}" =~ "New Feature" ]]; then
+              if ! git diff --name-only HEAD | grep -qE '\.test\.js$'; then
+                echo "Unit test file not found"
+                exit 0
+              fi
+              run: cd toxic8ball; npm i; npm test   
             fi
-
-            if ! git diff --name-only HEAD | grep -qE '\.test\.js$'; then
-              echo "Unit test file not found"
-              exit 0
-            fi
-
-            run: cd toxic8ball; npm i; npm test   
           fi     
 
       - name: Lint code
