@@ -25,14 +25,14 @@ jobs:
               echo "Pull request title does not contain 'New Feature'"
               exit 0
             fi
-          fi
 
-          if ! git diff --name-only HEAD | grep -qE '\.test\.js$'; then
-            echo "Unit test file not found"
-            exit 0
-          fi
+            if ! git diff --name-only HEAD | grep -qE '\.test\.js$'; then
+              echo "Unit test file not found"
+              exit 0
+            fi
 
-          run: cd toxic8ball; npm i; npm test        
+            run: cd toxic8ball; npm i; npm test   
+          fi     
 
       - name: Lint code
         run: cd toxic8ball; npm i; npm run lint
