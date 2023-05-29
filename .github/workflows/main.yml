@@ -20,6 +20,7 @@ jobs:
 
       - name: Check Pull Request Title
         run: |
+          echo The Title of your PR is ${{ github.event.pull_request.title }}
           if [[ "${{ github.event_name }}" == "push" ]]; then
             if [[ "${{ github.event.push.title }}" =~ "New Feature" ]]; then
               echo "Hello"
