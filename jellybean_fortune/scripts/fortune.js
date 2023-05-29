@@ -19,9 +19,9 @@ function GoBack() {
 // }
 
 // Load the randomly selected images
-randomIndices.forEach(index => {
-    images[index].style.display = 'block';
-});
+// randomIndices.forEach(index => {
+//     images[index].style.display = 'block';
+// });
 
 
 function toggleText(color) {
@@ -43,7 +43,6 @@ function getRandomQuote(imageId) {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     return quotes[randomIndex];
 }
-
 
 const quotePools = {
     green: [
