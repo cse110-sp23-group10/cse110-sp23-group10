@@ -20,7 +20,7 @@ jobs:
 
       - name: Check Pull Request Title
         run: |
-          if [[ "${{ github.event_name }}" == "pull_request" ]]; then
+          if [[ "${{ github.event_name }}" == "push" ]]; then
             echo "Hello"
             if [[ "${{ github.event_name }}" =~ "New Feature" ]]; then
               if ! git diff --name-only HEAD | grep -qE '\.test\.js$'; then
