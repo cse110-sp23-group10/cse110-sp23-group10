@@ -25,7 +25,7 @@ jobs:
         run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             if echo "${changed_file}" | grep -q "\.test\.js$"; then
-                run: cd toxic8ball; npm i; npm test 
+                cd toxic8ball; npm i; npm test 
             fi
           done
           echo "No Unit Test File Added"
