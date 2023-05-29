@@ -4,6 +4,7 @@ body {
   background-image: url("./assets/candy-land-landscape.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: hidden
 }
 
 /* CSS centers and styles "Shake Jar" button bottom of screen */
@@ -20,9 +21,9 @@ button {
   font-family: "Brush Script MT", cursive;
   font-weight: bold;
   position: relative;
-  left: 50%;
-  /* -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%); */
+  left: 50%; 
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); 
   padding-top: 5px;
   padding-bottom: 5px;
 }
