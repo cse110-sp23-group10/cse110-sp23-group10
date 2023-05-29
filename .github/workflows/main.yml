@@ -1,5 +1,4 @@
 name: CI/CD Pipeline
-uses: jitterbit/get-changed-files@v1
 on: [push]
 
 jobs:
@@ -14,6 +13,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: "14"
+
+      - name: Get changed files
+        id: files
+        uses: jitterbit/get-changed-files@v1
 
       - name: Install dependencies
         run: npm install
