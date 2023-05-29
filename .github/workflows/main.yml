@@ -2,6 +2,10 @@ name: CI/CD Pipeline
 
 on: [push]
 
+- name: Get All Changed Files
+  uses: jitterbit/get-changed-files@v1
+
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,10 +24,11 @@ jobs:
 
       - name: Check Pull Request Title
         run: |
-          changedFiles=$(git diff --name-only HEAD^ HEAD)
-          if echo "$changedFiles" | grep -q "\.test\.js$"; then
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            if echo "${changed_file}" | grep -q "\.test\.js$"; then
                 run: cd toxic8ball; npm i; npm test 
-          fi
+            fi
+          done
           echo "No Unit Test File Added"
           exit 0;    
 
