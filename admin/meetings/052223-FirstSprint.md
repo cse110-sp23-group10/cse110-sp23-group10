@@ -2,7 +2,7 @@
 ## General Info
 **Date/Time:** 05/22/2023 @ 9:00pm <br>
 **Purpose:** Work distribution and architecture <br>
-**Location:** Zoom<br>
+**Location:** Zoom, PC<br>
 **Recorder:** Yunze <br>
 
 ## Attendance

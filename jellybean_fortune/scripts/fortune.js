@@ -45,6 +45,7 @@ function getRandomQuote(imageId) {
 }
 
 const quotePools = {
+
     green: [
         "Green Quote 1",
         "Green Quote 2",
