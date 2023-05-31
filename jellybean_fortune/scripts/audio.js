@@ -11,10 +11,10 @@ function init() {
     console.log("mute");
     if (volume) {
       audio.volume = 0;
-      this.src = "./assets/mute.svg";
+      this.src = "./assets/mute-white.svg";
     } else {
       audio.volume = 0.4;
-      this.src = "./assets/sound.svg";
+      this.src = "./assets/sound-white.svg";
     }
     volume = !volume;
   });
