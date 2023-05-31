@@ -1,13 +1,14 @@
 .navbar {
   margin: 0;
   padding: 20px;
-  background: linear-gradient(90deg, #FAFD0F, #FF43A4);;
+  background: transparent;
   height: 100px;
   font-family: "Brush Script MT", cursive;
   display: flex;
   color: white;
-  border-radius: 10px;
-  /*justify-content: ;*/
+  border-radius: 2px;
+  justify-content: center;
+  border-bottom: 5px solid white;
 }
 .navbar-left {
     width: 50%;
@@ -49,4 +50,26 @@
 
 .zoom-image:hover {
     transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+  
+  .navbar-left, .navbar-right {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .nav-img > img,
+  .navbar-left > img,
+  .navbar-right > img {
+    height: 60px;
+    margin: 5px;
+  }
 }
