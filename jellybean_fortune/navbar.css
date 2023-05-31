@@ -1,13 +1,15 @@
 .navbar {
   margin: 0;
   padding: 20px;
-  background: linear-gradient(90deg, #FAFD0F, #FF43A4);;
+  /*background: linear-gradient(90deg, #FAFD0F, #FF43A4);*/
+  background: transparent;
   height: 100px;
   font-family: "Brush Script MT", cursive;
   display: flex;
   color: white;
-  border-radius: 10px;
+  border-radius: 2px;
   justify-content: center;
+  border-bottom: 5px solid white;
 }
 .navbar-left {
     width: 50%;
