@@ -1,14 +1,17 @@
 .navbar {
   margin: 0;
   padding: 20px;
-  background-color: white;
+  background: linear-gradient(90deg, #FAFD0F, #FF43A4);;
   height: 100px;
   font-family: "Brush Script MT", cursive;
   display: flex;
+  color: white;
+  border-radius: 10px;
   /*justify-content: ;*/
 }
 .navbar-left {
     width: 50%;
+    margin-top: 10px;
     display: flex;
     justify-content: left;
     align-items: left;
@@ -22,6 +25,7 @@
 .nav-img > img {
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 10px;
   height: 80px;
 }
 .navbar-left > img {
