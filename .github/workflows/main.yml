@@ -18,8 +18,6 @@ jobs:
         run: |
           pwd
           ls -la
-          ls -la ../../
-          ls -la ../../toxic8ball
 
       - name: Get changed files
         id: files
