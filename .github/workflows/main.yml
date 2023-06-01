@@ -23,17 +23,23 @@ jobs:
 
       - name: Run Unit test if any added
         run: |
+          found = F
           for changed_file in ${{ steps.files.outputs.all }}; do
             if echo "${changed_file}" | grep -q "\.test\.js$"; then
-                cd toxic8ball; npm i; npm test 
+                found = T
             fi
           done
-          echo "No Unit Test File Added"
-          exit 0;    
+          if [ "$found" = T ]; then
+            echo "Unit Test File Added, running integration testing"
+          else
+            echo "No Unit Test file added, yet running integration testing"
+          fi
+          cd toxic8ball; npm i; npm test
 
       - name: Prettier linting
         uses: creyD/prettier_action@v4.3
         with: 
+          working_directory: toxic8ball
           prettier_options: --write **/*.{js,md,html,css}
           only_changed: True
 
