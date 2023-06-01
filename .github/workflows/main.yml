@@ -39,7 +39,7 @@ jobs:
       - name: Prettier linting
         uses: creyD/prettier_action@v4.3
         with: 
-          working_directory: toxic8ball
+          working_directory: /cse110-sp23-group10/toxic8ball
           prettier_options: --write **/*.{js,md,html,css}
           only_changed: True
 
