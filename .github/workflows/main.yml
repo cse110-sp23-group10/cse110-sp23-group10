@@ -1,5 +1,7 @@
 name: CI/CD Pipeline
-on: [push]
+on: 
+  pull-request:
+  push:
 
 jobs:
   build:
@@ -21,7 +23,7 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Check Pull Request Title
+      - name: Run Unit test if any added
         run: |
           for changed_file in ${{ steps.files.outputs.all }}; do
             if echo "${changed_file}" | grep -q "\.test\.js$"; then
@@ -31,11 +33,19 @@ jobs:
           echo "No Unit Test File Added"
           exit 0;    
 
-      - name: Lint code
-        run: cd toxic8ball; npm i; npm run lint
+      - name: Prettier linting
+        uses: creyD/prettier_action@v4.3
+        with: 
+          prettier_options: --write **/*.{js,md}
+          only_changed: True
 
-      - name: Generate documentation
-        run: cd toxic8ball; npm i; npm run docs
+      - name: Build
+        uses: andstor/jsdoc-action@v1
+        with:
+          output_dir: ./out
+          config_file: conf.json
+          template: minami
+          front_page: README.md
       
       
 
