@@ -1,7 +1,5 @@
 name: CI/CD Pipeline
-on: 
-  pull-request:
-  push:
+on: [push]
 
 jobs:
   build:
@@ -36,7 +34,7 @@ jobs:
       - name: Prettier linting
         uses: creyD/prettier_action@v4.3
         with: 
-          prettier_options: --write **/*.{js,md}
+          prettier_options: --write **/*.{js,md,html,css}
           only_changed: True
 
       - name: Build
