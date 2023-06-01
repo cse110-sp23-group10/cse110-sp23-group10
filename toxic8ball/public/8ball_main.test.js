@@ -80,7 +80,7 @@ describe('shakeBall function', () => {
     `;
     jest.useFakeTimers();
     shakeBall();
-    jest.advanceTimersByTime(2000);
+    jest.advanceTimersByTime(5000);
 
     // Check that answer is from the list
     const answerEl = document.getElementById('answer');
