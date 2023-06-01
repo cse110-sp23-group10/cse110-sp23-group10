@@ -23,13 +23,13 @@ jobs:
 
       - name: Run Unit test if any added
         run: |
-          found = F
+          found="F"
           for changed_file in ${{ steps.files.outputs.all }}; do
             if echo "${changed_file}" | grep -q "\.test\.js$"; then
-                found = T
+                found="T"
             fi
           done
-          if [ "$found" = T ]; then
+          if [ "$found" = "T" ]; then
             echo "Unit Test File Added, running integration testing"
           else
             echo "No Unit Test file added, yet running integration testing"
