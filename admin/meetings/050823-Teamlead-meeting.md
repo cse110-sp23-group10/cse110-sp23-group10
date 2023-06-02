@@ -1,4 +1,4 @@
-# Group 10 - Jelly Beans - Meeting Minutes #78
+# Group 10 - Jelly Beans - Meeting Minutes #7
 ## General Info
 **Date/Time:** 05/08/2023 @ 11:30am <br>
 **Purpose:** Weekly Update <br>

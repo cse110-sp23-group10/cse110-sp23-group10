@@ -21,5 +21,5 @@ We plan to integrate user tests from each team member, and include the linter Pr
 
 ## CI/CD Diagram
 
-<img src="./phase1.png" alt="MarineGEO circle logo" style="width:200px;"/>
+<img src="./phase1fixed.png" alt="MarineGEO circle logo" style="width:200px;"/>
 

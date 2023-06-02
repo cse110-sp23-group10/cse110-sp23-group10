@@ -1,0 +1,135 @@
+.bg {
+  margin: 0;
+  background: linear-gradient(45deg, #FF43A4, #FAFD0F);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bg-emojis li {
+  position: absolute;
+  display: block;
+  list-style: none;
+  bottom: -150px;
+  left: 5%;
+  font-size: 5rem;
+  animation: spin 20s linear infinite;
+}
+
+.bg-emojis li:nth-child(2) {
+  left: 15%;
+  animation-delay: 2s;
+  animation-duration: 15s;
+}
+
+.bg-emojis li:nth-child(3) {
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.bg-emojis li:nth-child(4) {
+  left: 35%;
+  animation-delay: 6s;
+  animation-duration: 18s;
+}
+
+.bg-emojis li:nth-child(5) {
+  left: 70%;
+  animation-delay: 3s;
+}
+
+.bg-emojis li:nth-child(6) {
+  left: 65%;
+  animation-delay: 6s;
+  animation-duration: 12s;
+}
+
+.bg-emojis li:nth-child(7) {
+  left: 90%;
+  animation-delay: 8s;
+}
+
+.bg-emojis li:nth-child(8) {
+  left: 85%;
+  animation-delay: 14s;
+  animation-duration: 7s;
+}
+
+.bg-emojis li:nth-child(9) {
+  left: 15%;
+  animation-delay: 7s;
+}
+
+.bg-emojis li:nth-child(10) {
+  left: 30%;
+  animation-delay: 18s;
+  animation-duration: 15s;
+}
+
+.bg-emojis li:nth-child(11) {
+  left: 100%;
+  animation-delay: 20s;
+}
+
+@keyframes spin {
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* CSS centers and styles "Shake Jar" button bottom of screen */
+button {
+  padding: 20px;
+  font-size: 35px;
+  border-radius: 14px;
+  border-width: 5px;
+  border-color: lightblue;
+  cursor: pointer;
+  margin: 5px;
+  color: blueviolet;
+  background-color: yellow;
+  font-family: "Brush Script MT", cursive;
+  font-weight: bold;
+  position: relative;
+  left: 50%; 
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+
+.jar {
+  position: relative;
+}
+.jar{
+  height: 600px;
+  width: 500px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.shake {
+  animation: shake 0.5s linear;
+}
+
+@keyframes shake {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  20% { transform: translate(-5px, 0) rotate(-5deg); }
+  40% { transform: translate(5px, 0) rotate(5deg); }
+  60% { transform: translate(-5px, 0) rotate(-5deg); }
+  80% { transform: translate(5px, 0) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@media (max-width: 510px) {
+  .jar {
+    width: 80%;
+    height: 80%;
+  }
+}
