@@ -39,21 +39,11 @@ jobs:
           else
             echo "No Unit Test file added, yet running integration testing"
           fi
-          cd toxic8ball; npm i; npm test
+          cd jellybean_fortune; npm i; npm test
 
-      - name: Prettier linting
-        uses: creyD/prettier_action@v4.3
-        with: 
-          prettier_options: --write **/*.{js,md,html,css}
-          only_changed: True
+      - name: Lint code
+        run: cd jellybean_fortune; npm i; npm run lint
 
-      - name: Build
-        uses: andstor/jsdoc-action@v1
-        with:
-          output_dir: ./out
-          config_file: conf.json
-          template: minami
-          front_page: README.md
+      - name: Generate documentation
+        run: cd jellybean_fortune; npm i; npm run docs
       
-      
-
