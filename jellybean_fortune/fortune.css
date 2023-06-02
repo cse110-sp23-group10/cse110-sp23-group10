@@ -27,6 +27,11 @@
   .fortune-beans>img {
       width: 15%;
       margin: 2.4%;
+      cursor: pointer;
+      animation-name: floatAnimation;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
   }
   
   .fortune {
@@ -124,6 +129,18 @@
     100% {
       transform: translateY(-800px) rotate(360deg);
       opacity: 0;
+    }
+  }
+
+  @keyframes floatAnimation {
+    0% {
+      transform: translate(0, 0);
+    }
+    50% {
+      transform: translate(30px, 20px);
+    }
+    100% {
+      transform: translate(0, 0);
     }
   }
   

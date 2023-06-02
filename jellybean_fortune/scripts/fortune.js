@@ -22,6 +22,43 @@ function GoBack() {
 // randomIndices.forEach(index => {
 //     images[index].style.display = 'block';
 // });
+const jellybeans = document.querySelectorAll('.fortune-beans img');
+
+function getRandomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
+function setRandomPosition(jellybean) {
+  const screenWidth = window.innerWidth;
+  const screenHeight = window.innerHeight;
+  const randomX = getRandomNumber(0, screenWidth - jellybean.offsetWidth);
+  const randomY = getRandomNumber(0, screenHeight - jellybean.offsetHeight);
+
+  jellybean.style.left = randomX + 'px';
+  jellybean.style.top = randomY + 'px';
+}
+
+jellybeans.forEach(jellybean => {
+    jellybean.addEventListener('click', () => {
+      alert(`Jellybean clicked! Color: ${jellybean.id}`);
+    });
+});
+  
+
+jellybeans.forEach(setRandomPosition);
+  
+function animateJellybeans() {
+    setInterval(() => {
+      jellybeans.forEach(jellybean => {
+        setRandomPosition(jellybean);
+      });
+    }, 2000); 
+  }
+
+animateJellybeans();
+
+  
+
 
 
 function toggleText(color) {
