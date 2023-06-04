@@ -1,7 +1,8 @@
 //import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
 
 function GoBack() {
-    window.location.href = './jellybean.html';
+    (window.location.href = './jellybean.html' ) || window.history.back();
+    //'./jellybean.html'
 }
 
 // // Get all the images
@@ -52,7 +53,7 @@ function animateJellybeans() {
       jellybeans.forEach(jellybean => {
         setRandomPosition(jellybean);
       });
-    }, 2000); 
+    }, 5000); 
   }
 
 animateJellybeans();

@@ -22,6 +22,7 @@
   .fortune-beans {
       display: flex;
       justify-content: center;
+      
   }
   
   .fortune-beans>img {
@@ -32,6 +33,7 @@
       animation-duration: 2s;
       animation-timing-function: ease-in-out;
       animation-iteration-count: infinite;
+      animation: floatAnimation 15s infinite ease-in-out;
   }
   
   .fortune {
@@ -136,8 +138,17 @@
     0% {
       transform: translate(0, 0);
     }
-    50% {
-      transform: translate(30px, 20px);
+    20% {
+      transform: translate(85px, 100px);
+    }
+    40% {
+      transform: translate(-80px, 125px);
+    }
+    60% {
+      transform: translate(100px, -125px);
+    }
+    80% {
+      transform: translate(-85px, 80px);
     }
     100% {
       transform: translate(0, 0);
