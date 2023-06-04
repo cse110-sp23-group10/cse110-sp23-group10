@@ -139,16 +139,16 @@
       transform: translate(0, 0);
     }
     20% {
-      transform: translate(85px, 100px);
+      transform: translate(45px, 50px);
     }
     40% {
-      transform: translate(-80px, 125px);
+      transform: translate(-40px, 63px);
     }
     60% {
-      transform: translate(100px, -125px);
+      transform: translate(50px, -10px);
     }
     80% {
-      transform: translate(-85px, 80px);
+      transform: translate(-45px, 40px);
     }
     100% {
       transform: translate(0, 0);
