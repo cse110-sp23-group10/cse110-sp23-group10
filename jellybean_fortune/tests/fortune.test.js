@@ -37,13 +37,13 @@ test("Clicking on a jellybean should make the others smaller and lower their opa
     beans[i].click();
     delay(500);
     // check current beans properties
-    styling &&= beans[i].style.opacity == '1';
-    styling &&= beans[i].style.transform == 'scale(1)';
+    styling &= beans[i].style.opacity == '1';
+    styling &= beans[i].style.transform == 'scale(1)';
     // check the other beans properties
     for (let j = 0; j < beans.length; j++) {
         if (i === j) continue;
-        styling &&= beans[j].style.opacity == '0.5';
-        styling &&= beans[j].style.transform == 'scale(0.8)';
+        styling &= beans[j].style.opacity == '0.5';
+        styling &= beans[j].style.transform == 'scale(0.8)';
     }
   }
 
