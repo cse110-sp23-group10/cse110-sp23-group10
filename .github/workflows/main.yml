@@ -48,3 +48,12 @@ jobs:
 
       - name: Generate documentation
         run: cd jellybean_fortune; npm i; npm run docs
+
+        - name: Git status
+         run: git status
+
+       - name: Publish to GitHub
+         uses: mikeal/publish-to-github-action@master
+         env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+           BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
