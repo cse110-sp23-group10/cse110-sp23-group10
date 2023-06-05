@@ -20,6 +20,11 @@ jobs:
         id: files
         uses: jitterbit/get-changed-files@v1
 
+      - name: Extract branch name
+      shell: bash
+      run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+      id: extract_branch
+
       - name: Install dependencies
         run: npm install
 
@@ -40,6 +45,11 @@ jobs:
 
       - name: Lint code
         run: cd jellybean_fortune; npm i; npm run lint
+        run: git status
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
 
       - name: Generate documentation
         run: cd jellybean_fortune; npm i; npm run docs
