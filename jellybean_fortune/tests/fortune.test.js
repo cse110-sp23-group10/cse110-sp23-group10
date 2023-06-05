@@ -1,3 +1,4 @@
+/*
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
 
@@ -14,6 +15,7 @@ global.document = window.document;
 const fortuneTest = require("../scripts/fortune.js");
 
 const delay = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
+*/
 
 // Write your tests
 
