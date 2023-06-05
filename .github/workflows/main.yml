@@ -21,7 +21,7 @@ jobs:
         uses: jitterbit/get-changed-files@v1
 
       - name: Install dependencies
-        run: npm install
+        run: cd jellybean_fortune; npm install
 
       - name: Run Unit test if any added
         run: |
