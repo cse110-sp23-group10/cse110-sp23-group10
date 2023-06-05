@@ -17,7 +17,7 @@ const registerServiceWorker = async () => {
 };
 
 function shakeJar() {
-    var jar = document.getElementById("jar");
+    var jar = document.getElementById("jar-beans");
     console.log("shake");
     jar.classList.add("shake");
     setTimeout(function() {

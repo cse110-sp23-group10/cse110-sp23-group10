@@ -1,4 +1,3 @@
 module.exports = {
-    testEnvironment: 'jest-environment-jsdom'
-  };
-  
+  preset: "jest-puppeteer",
+};

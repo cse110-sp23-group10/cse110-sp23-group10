@@ -1,14 +1,19 @@
 window.addEventListener("DOMContentLoaded", init);
 
+// initialize audio element, sound icon, and add mute functionality when DOM loads
 function init() {
   // toggle mute/unmute audio
   // let audio = document.getElementById("background-music");
   let sound = document.getElementById("sound-icon");
-  let audio = new Audio('./assets/goofy.mp3');
+  let audio = new Audio("./assets/goofy.mp3");
   let volume = true;
 
   audio.volume = 0.2;
-  audio.play();
+  // many browsers disable autoplay
+  let playResult = audio.play();
+  playResult.catch((e) => {
+    console.log("cannot play audio");
+  });
   audio.loop = true;
 
   sound.addEventListener("click", function (event) {

@@ -1,34 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>8 Ball Program</title>
-    <link rel="stylesheet" href = "./../public/8ball_main.css">
-</head>
-<body>
-    <section class = "intro">
-        Ask a yes/no question 🙂
-    </section>
-    <section class="eight-ball">
-        8
-    </section>
+    <link rel="stylesheet" href="./../public/8ball_main.css" />
+  </head>
+  <body>
+    <section class="intro">Ask a yes/no question 🙂</section>
+    <section class="eight-ball">8</section>
 
     <form>
-        <section class="question-form">
-            <input id="question" type="text" placeholder="Ask a question..." required>
-        </section>
-      
-        <section class="submit-button">
-            <button type="button" onclick="shakeBall()">Shake the 8 Ball</button>
-        </section>
+      <section class="question-form">
+        <input
+          id="question"
+          type="text"
+          placeholder="Ask a question..."
+          required
+        />
+      </section>
+
+      <section class="submit-button">
+        <button type="button" onclick="shakeBall()">Shake the 8 Ball</button>
+      </section>
     </form>
 
-	
-	<p id="answer"></p>
-</body>
-<script src="./../public/8ball_main.js">
-
-</script>
+    <p id="answer"></p>
+  </body>
+  <script src="./../public/8ball_main.js"></script>
 </html>
