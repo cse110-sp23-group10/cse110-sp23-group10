@@ -6,9 +6,9 @@ const addResourcesToCache = async (resources) => {
   try {
     const cache = await caches.open(CACHE_NAME);
     await cache.addAll(resources);
-    console.log('Resources added to cache successfully.');
+    console.log("Resources added to cache successfully.");
   } catch (error) {
-    console.error('Failed to add resources to cache:', error);
+    console.error("Failed to add resources to cache:", error);
   }
 };
 
@@ -33,12 +33,12 @@ self.addEventListener("install", (event) => {
 });
 
 // Activates the service worker
-self.addEventListener('activate', function (event) {
+self.addEventListener("activate", function (event) {
   event.waitUntil(self.clients.claim());
 });
 
 // Intercept fetch requests and cache them
-self.addEventListener('fetch', function (event) {
+self.addEventListener("fetch", function (event) {
   // We added some known URLs to the cache above, but tracking down every
   // subsequent network request URL and adding it manually would be very taxing.
   // We will be adding all of the resources not specified in the intiial cache
