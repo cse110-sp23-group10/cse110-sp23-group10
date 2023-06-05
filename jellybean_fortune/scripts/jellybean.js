@@ -1,5 +1,5 @@
 function shakeJar() {
-    var jar = document.getElementById("jar-beans");
+    var jar = document.getElementById("jar");
     console.log("shake");
     jar.classList.add("shake");
     setTimeout(function() {
