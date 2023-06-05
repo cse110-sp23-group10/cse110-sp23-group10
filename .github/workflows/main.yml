@@ -81,12 +81,11 @@ jobs:
       - name: JS DOCS generation
         run: cd jellybean_fortune; npm i; npm run docs
 
-      - name: Commit JSDocs
-        uses: EndBug/add-and-commit@v9
-        with:
-          author_name: github-actions[bot]
-          author_email: github-actions[bot]@users.noreply.github.com
-          message: 'Generated JS docs after linting and prettier'
-          fetch: true
-          push: origin HEAD:refs/heads/${{ steps.extract_branch.outputs.branch }}
-          add: 'jellybean_fortune/docs/*'
+      - name: Git status
+        run: git status; echo "${{ steps.extract_branch.outputs.branch }}"
+
+      - name: Publish to GitHub
+        uses: mikeal/publish-to-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH_NAME: ${{ steps.extract_branch.outputs.branch }}
