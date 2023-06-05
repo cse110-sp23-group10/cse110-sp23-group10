@@ -25,6 +25,11 @@ function GoBack() {
 //     images[index].style.display = 'block';
 // });
 
+/**
+ * Function to register the service workers
+ */
+
+
 
 // Upon clicking the Jellybeans, the displayed fortune text will switch to the corresponding color
 // All other beans will be greyed out and shrunk
@@ -160,3 +165,4 @@ const quotePools = {
         "Your heart will be mended after a period of heartache, leading you to a love that is even greater than you imagined."
     ]
 };
+
