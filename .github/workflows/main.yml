@@ -80,6 +80,3 @@ jobs:
 
       - name: JS DOCS generation
         run: cd jellybean_fortune; npm i; npm run docs
-
-      - name: Git status
-        run: git status; echo "${{ steps.extract_branch.outputs.branch }}"
