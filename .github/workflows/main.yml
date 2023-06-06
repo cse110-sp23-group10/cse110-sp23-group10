@@ -48,22 +48,6 @@ jobs:
           fi
           cd jellybean_fortune; npm i; npm test
 
-  Linter:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Super-Linter
-        uses: super-linter/super-linter@v5.0.0
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: true
-          VALIDATE_CSS: true
-          VALIDATE_HTML: true
-          VALIDATE_JAVASCRIPT_ES: true
-
   Prettier:
     runs-on: ubuntu-latest
 
@@ -81,3 +65,21 @@ jobs:
           prettier_options: --write **/*.{js,md}
           only_changed: True
           github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  Linter:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Super-Linter
+        uses: super-linter/super-linter@v5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_CSS: true
+          VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_ES: true
+
+  
