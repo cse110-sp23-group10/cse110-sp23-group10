@@ -83,13 +83,3 @@ jobs:
 
       - name: Git status
         run: git status; echo "${{ steps.extract_branch.outputs.branch }}"
-
-      - name: Commit files
-        run: |
-          git commit -m "Add styling and documentation" -a
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.extract_branch.outputs.branch }}
