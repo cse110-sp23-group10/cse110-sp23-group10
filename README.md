@@ -1,4 +1,3 @@
-
 # Jelly Bean Fortune Teller Documentation
 
 Welcome to the Jelly Beans Jellybean Fortune Teller GitHub page! Our team, Jelly Beans, has developed an interactive program that allows you to see daily fortunes by selecting delicious jellybeans.
@@ -9,11 +8,11 @@ After viewing the home page, users are prompted to make an account or shake the 
 
 ## Directory Structure
 
--   `source`: Contains all project files.
--   `specs`: Contains fine details about the project.
--   `toxic-8-ball`: Contains exploratory programming related to the project.
--   `admin`: Contains team logistics information.
--   `jellybean_fortune`: Contains the main files and code for the Jellybean Fortune Teller project.
+- `source`: Contains all project files.
+- `specs`: Contains fine details about the project.
+- `toxic-8-ball`: Contains exploratory programming related to the project.
+- `admin`: Contains team logistics information.
+- `jellybean_fortune`: Contains the main files and code for the Jellybean Fortune Teller project.
 
 ## How to Run
 
@@ -23,21 +22,21 @@ To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our
 
 If you have any questions, suggestions, or feedback, please don't hesitate to contact us. You can reach our team, Jelly Beans, at:
 
--   Email: [jellybeans@eng.ucsd.edu](mailto:csepeeradviser@eng.ucsd.edu)
--   Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html)
+- Email: [jellybeans@eng.ucsd.edu](mailto:csepeeradviser@eng.ucsd.edu)
+- Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html)
 
 ## [Team Members](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
 
--   Neil Bajaj
--   Joshua Chen
--   Kian Chou
--   Hamza Dehaini
+- Neil Bajaj
+- Joshua Chen
+- Kian Chou
+- Hamza Dehaini
 - **James Han**
--   Dennis Lang
--   Austin Li
+- Dennis Lang
+- Austin Li
 - **Yunze Xie**
--   Mohak Vaswani
--   Matthew Zheng
+- Mohak Vaswani
+- Matthew Zheng
 
 ## Acknowledgments
 
