@@ -53,16 +53,10 @@ jobs:
       - name: Generate documentation
         run: cd jellybean_fortune; npm i; npm run docs
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git config pull.rebase false
-          git pull origin main --allow-unrelated-histories
-          git commit -m "Add URL" -a
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Commit Prettified Code and docs
+        uses: EndBug/add-and-commit@v9
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.extract_branch.outputs.branch }}
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: 'Prettified Code and docs and generated docs'
+          add: 'jellybean_fortune/docs/*'
