@@ -60,3 +60,4 @@ jobs:
           author_email: github-actions[bot]@users.noreply.github.com
           message: 'Prettified Code and docs and generated docs'
           add: 'jellybean_fortune/docs/*'
+          push: ${{ steps.extract_branch.outputs.branch }} 
