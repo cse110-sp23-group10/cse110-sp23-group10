@@ -16,12 +16,14 @@ self.addEventListener("install", (event) => {
   event.waitUntil(
     addResourcesToCache([
       "/jellybean_fortune",
+      "/jellybean_fortune/scripts",
       "/jellybean_fortune/fortune.html",
       "/jellybean_fortune/jellybean.html",
       "/jellybean_fortune/assets",
       "/jellybean_fortune/assets/goofy.mp3",
-      "jellybean_fortune/mute-white.svg",
-      "jellybean_fortune/mute.svg"
+      "jellybean_fortune/assets/mute-white.svg",
+      "jellybean_fortune/assets/mute.svg",
+      "/jellybean_fortune/scripts/audio.js",
     ])
   );
 });
