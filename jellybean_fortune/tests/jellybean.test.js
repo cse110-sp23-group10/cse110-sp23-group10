@@ -2,7 +2,7 @@ const fs = require("fs");
 // const { JSDOM } = require("jsdom");
 
 // // Load the HTML file
-const html = fs.readFileSync("../jellybean.html", "utf-8");
+const html = fs.readFileSync("./jellybean.html", "utf-8");
 // const dom = new JSDOM(html);
 // const { window } = dom;
 
