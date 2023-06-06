@@ -1,7 +1,11 @@
 name: CI/CD Pipeline
-on: 
+on:
   pull_request:
     branches: main
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   build:
@@ -14,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "16"
 
       - name: Get changed files
         id: files
@@ -26,7 +30,7 @@ jobs:
         id: extract_branch
 
       - name: Install dependencies
-        run: npm install
+        run: cd jellybean_fortune; npm install
 
       - name: Run Unit test if any added
         run: |
