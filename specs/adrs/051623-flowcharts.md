@@ -10,10 +10,10 @@ How to write our project's decision tree and flow charts collaboratively?
 
 ## Considered Options
 
-* Draw.io
-* Paint
-* MS Word
-* LucidChart
+- Draw.io
+- Paint
+- MS Word
+- LucidChart
 
 ## Decision Outcome
 

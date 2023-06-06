@@ -10,9 +10,9 @@ Which users to build for (everyone)?
 
 ## Considered Options
 
-* Comic sans
-* Brushscript
-* Times New Roman
+- Comic sans
+- Brushscript
+- Times New Roman
 
 ## Decision Outcome
 
