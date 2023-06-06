@@ -57,7 +57,8 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git commit -m "Add URL" -a    
+          git commit -m "Add URL" -a
+          git pull origin ${{ steps.extract_branch.outputs.branch }}    
 
       - name: Push changes
         uses: ad-m/github-push-action@master
