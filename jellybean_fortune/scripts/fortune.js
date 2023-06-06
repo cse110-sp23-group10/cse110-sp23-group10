@@ -1,5 +1,7 @@
 //import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
 
+let intervalId = null;
+
 function GoBack() {
     (window.location.href = './jellybean.html' ) || window.history.back();
     //'./jellybean.html'
@@ -113,7 +115,7 @@ animateJellybeans();
 // }
 
 const quotePools = {
-
+    //wealth and prosperity quotes 
     green: [
         "Green brings luck! Today, you will discover something wonderful that will make you smile.",
         "Embrace the color green and watch your dreams grow! Today, your efforts will lead to a great achievement.",

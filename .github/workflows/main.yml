@@ -1,6 +1,11 @@
 name: CI/CD Pipeline
+on:
+  pull_request:
+    branches: main
 
-on: [push]
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   build:
@@ -13,16 +18,32 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "14"
+          node-version: "16"
+
+      - name: Get changed files
+        id: files
+        uses: jitterbit/get-changed-files@v1
 
       - name: Install dependencies
-        run: npm install
+        run: cd jellybean_fortune; npm install
 
-      - name: Run tests
-        run: cd toxic8ball; npm i; npm test
+      - name: Run Unit test if any added
+        run: |
+          found="F"
+          for changed_file in ${{ steps.files.outputs.all }}; do
+            if echo "${changed_file}" | grep -q "\.test\.js$"; then
+                found="T"
+            fi
+          done
+          if [ "$found" = "T" ]; then
+            echo "Unit Test File Added, running integration testing"
+          else
+            echo "No Unit Test file added, yet running integration testing"
+          fi
+          cd jellybean_fortune; npm i; npm test
 
       - name: Lint code
-        run: cd toxic8ball; npm i; npm run lint
+        run: cd jellybean_fortune; npm i; npm run lint
 
       - name: Generate documentation
-        run: cd toxic8ball; npm i; npm run docs
+        run: cd jellybean_fortune; npm i; npm run docs
