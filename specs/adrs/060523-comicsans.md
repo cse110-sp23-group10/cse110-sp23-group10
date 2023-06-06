@@ -1,4 +1,4 @@
-# Use Miro for Collaborative Diagramming
+# Use Comic Sans as our Main Font
 
 ## Context and Problem Statement
 
