@@ -1,7 +1,7 @@
 //import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
 
 function GoBack() {
-    window.location.href = './jellybean.html';
+  window.location.href = "./jellybean.html";
 }
 
 /**
@@ -47,23 +47,23 @@ const registerServiceWorker = async () => {
 // Upon clicking the Jellybeans, the displayed fortune text will switch to the corresponding color
 // All other beans will be greyed out and shrunk
 function toggleText(color) {
-    var textElement = document.querySelector('.text');
-    let state = textElement.state;
-    textElement.innerHTML = `You chose the ${color} jellybean <br> <br>`;
-    textElement.innerHTML += `Your fortune is: <br> <br>`;
-    randomQuote = getRandomQuote(color);
-    textElement.innerHTML += randomQuote;
-    textElement.style.display = 'block';
-    textElement.state = color;
+  var textElement = document.querySelector(".text");
+  let state = textElement.state;
+  textElement.innerHTML = `You chose the ${color} jellybean <br> <br>`;
+  textElement.innerHTML += `Your fortune is: <br> <br>`;
+  randomQuote = getRandomQuote(color);
+  textElement.innerHTML += randomQuote;
+  textElement.style.display = "block";
+  textElement.state = color;
 }
 
 function getRandomQuote(imageId) {
-    const quotes = quotePools[imageId];
-    if (!quotes || quotes.length === 0) {
-        return null;
-    }
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    return quotes[randomIndex];
+  const quotes = quotePools[imageId];
+  if (!quotes || quotes.length === 0) {
+    return null;
+  }
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
 }
 
 const quotePools = {
