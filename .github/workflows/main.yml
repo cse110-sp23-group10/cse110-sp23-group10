@@ -1,7 +1,9 @@
 name: CI/CD Pipeline
-on: 
+on:
   pull_request:
     branches: main
+
+permissions: read-all|write-all
 
 jobs:
   build:
@@ -43,4 +45,3 @@ jobs:
 
       - name: Generate documentation
         run: cd jellybean_fortune; npm i; npm run docs
-      

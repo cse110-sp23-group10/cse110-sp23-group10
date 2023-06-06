@@ -16,6 +16,7 @@
 - Mohak
 - Dennis
 - Austin
+- James
 
 ## Agenda
 Item | Description
