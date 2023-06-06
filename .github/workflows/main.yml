@@ -48,3 +48,9 @@ jobs:
 
       - name: Generate documentation
         run: cd jellybean_fortune; npm i; npm run docs
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "Add URL" -a    
