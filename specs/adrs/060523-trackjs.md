@@ -8,9 +8,9 @@ How to automate and improve error tracking, handling, and warning?
 
 ## Considered Options
 
-* Sentry
-* LogRocket
-* TrackJS
+- Sentry
+- LogRocket
+- TrackJS
 
 ## Decision Outcome
 

@@ -143,7 +143,6 @@ function generateRules(usingReact, usingNode) {
  * Generate the ESLint configuration.
  */
 function generateConfig() {
-
   const eslintrcJson = loadEslintrcJson();
   const usingReact = eslintrcJson.plugins !== undefined && eslintrcJson.plugins.includes("react");
   const usingNode = eslintrcJson.env.node;

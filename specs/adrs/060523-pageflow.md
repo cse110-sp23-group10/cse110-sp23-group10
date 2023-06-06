@@ -10,9 +10,9 @@ How can we make debugging easier?
 
 ## Considered Options
 
-* One page
-* Two page
-* External aids
+- One page
+- Two page
+- External aids
 
 ## Decision Outcome
 

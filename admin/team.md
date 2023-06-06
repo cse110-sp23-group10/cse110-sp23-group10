@@ -8,15 +8,15 @@
   - <https://github.com/austin-li>
   - I am a second year UCSD student
 - Dennis Lang
-  - Hi, my name is Dennis Lang and I am a Junior studying Computer Engineering as a part of Warren College. I enjoy walking my dogs, watching sports, and reading. I have Python experience as well as OOP languages but I am also interested in the electrical engineering portion of my degree. 
-  - <https://github.com/dlang5>   
+  - Hi, my name is Dennis Lang and I am a Junior studying Computer Engineering as a part of Warren College. I enjoy walking my dogs, watching sports, and reading. I have Python experience as well as OOP languages but I am also interested in the electrical engineering portion of my degree.
+  - <https://github.com/dlang5>
 - Neil Bajaj
   - <https://github.com/nb110240>
   - I am a third year UCSD student.
 - Yunze Xie
   - <https://github.com/XieYoungZ> (Personal)
   - <https://github.com/yunzexie> (School)
-  - I am a fourth year UCSD student 
+  - I am a fourth year UCSD student
 - Hamza Dehaini
   - Hello, I’m Hamza Dehaini. I am a junior transfer computer Science major in Muir college. I like reading, playing video games, swimming, surfing, and fishing. I have experience in cloud computing and software development, but am interested in exploring other areas of computer science, with ai/ml first in queue :)
   - <https://github.com/hdehaini>
@@ -33,7 +33,7 @@
   - I am a second year UCSD student.
 - Matthew Zheng
   - <https://github.com/matty-zee>
-  - I am a third year UCSD CE student :) 
+  - I am a third year UCSD CE student :)
 - Mohak Vaswani
   - I’m Mohak Vaswani and i’m a second year Comp Sci major in Warren. Non academically, I love reading fantasy books, watching rom-coms and exploring new places. Furthermore, I play table tennis semi-competitively. I have a heavy interest in web development and systems engineering.
   - <https://github.com/mohakvni>
