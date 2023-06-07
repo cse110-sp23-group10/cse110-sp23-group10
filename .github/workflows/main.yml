@@ -79,7 +79,7 @@ jobs:
   #         VALIDATE_JAVASCRIPT_ES: true
 
   docs:
-    needs: [Test, Prettier]
+    # needs: [Test, Prettier]
     name: Documentation Generation
     runs-on: ubuntu-latest
     steps:
