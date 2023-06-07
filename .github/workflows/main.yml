@@ -8,42 +8,85 @@ permissions:
   pull-requests: write
 
 jobs:
-  build:
+
+  Test:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
           node-version: "16"
 
-      - name: Get changed files
-        id: files
-        uses: jitterbit/get-changed-files@v1
-
       - name: Install dependencies
         run: cd jellybean_fortune; npm install
 
       - name: Run Unit test if any added
         run: |
-          found="F"
-          for changed_file in ${{ steps.files.outputs.all }}; do
-            if echo "${changed_file}" | grep -q "\.test\.js$"; then
-                found="T"
-            fi
-          done
-          if [ "$found" = "T" ]; then
-            echo "Unit Test File Added, running integration testing"
-          else
-            echo "No Unit Test file added, yet running integration testing"
-          fi
           cd jellybean_fortune; npm i; npm test
 
-      - name: Lint code
-        run: cd jellybean_fortune; npm i; npm run lint
+  Prettier:
+    runs-on: ubuntu-latest
 
-      - name: Generate documentation
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          ref: ${{ github.head_ref }}
+          persist-credentials: false
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.3
+        with:
+          prettier_options: --write **/*.{js,md,html,css}
+          same_commit: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  Linter:
+    needs: [Test, Prettier]
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Super-Linter
+        uses: super-linter/super-linter@v5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_CSS: true
+          VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_ES: true
+
+  docs:
+    needs: [Test, Prettier, Linter]
+    name: Documentation Generation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ steps.extract_branch.outputs.branch }}
+
+      - name: JS DOCS generation
         run: cd jellybean_fortune; npm i; npm run docs
+
+      - name: Commit JSDocs
+        uses: EndBug/add-and-commit@v9
+        with:
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: 'Generated JS docs after linting and prettier'
+          fetch: true
+          push: origin HEAD:refs/heads/${{ steps.extract_branch.outputs.branch }}
+          add: 'jellybean_fortune/docs/*'

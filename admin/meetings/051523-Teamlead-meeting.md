@@ -1,5 +1,7 @@
 # Group 10 - Jelly Beans - Meeting Minutes #8
+
 ## General Info
+
 **Date/Time:** 05/15/2023 @ 11:30am <br>
 **Purpose:** Weekly Update <br>
 **Location:** Zoom<br>
@@ -12,14 +14,18 @@
 - Gagan
 
 ## Agenda
-Item | Description
----- | ----
-Agenda |• Weekly meeting/Update
+
+| Item   | Description             |
+| ------ | ----------------------- |
+| Agenda | • Weekly meeting/Update |
+
 ## Business
+
 | Done? | Task | Who? | Due Date | Submittable?
-| Yes | Update  | Group Leader | May 15 | No |
+| Yes | Update | Group Leader | May 15 | No |
 
 ## Notes
+
 - Updated with Gagan
 - Recap on what sprint is
 - Follow the agile software development process
