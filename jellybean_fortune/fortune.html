@@ -54,45 +54,166 @@
     </div>
 
     <div class="fortune-beans">
-      <img
-        src="./assets/green_jellybean.png"
-        id="green-jellybean"
-        onclick="toggleText('green')"
-        class="zoom-image"
-        alt="Hover over me"
-      />
-      <img
-        src="./assets/blue_jellybean.png"
-        id="blue-jellybean"
-        onclick="toggleText('blue')"
-        class="zoom-image"
-        alt="Hover over me"
-      />
-      <img
-        src="./assets/red_jellybean.png"
-        id="red-jellybean"
-        onclick="toggleText('red')"
-        class="zoom-image"
-        alt="Hover over me"
-      />
-      <img
-        src="./assets/yellow_jellybean.png"
-        id="yellow-jellybean"
-        onclick="toggleText('yellow')"
-        class="zoom-image"
-        alt="Hover over me"
-      />
-      <img
-        src="./assets/pink_jellybean.png"
-        id="pink-jellybean"
-        onclick="toggleText('pink')"
-        class="zoom-image"
-        alt="Hover over me"
-      />
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/green_jellybean.png"
+          id="green-jellybean"
+          onclick="toggleText('green', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/blue_jellybean.png"
+          id="blue-jellybean"
+          onclick="toggleText('blue', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/red_jellybean.png"
+          id="red-jellybean"
+          onclick="toggleText('red', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/yellow_jellybean.png"
+          id="yellow-jellybean"
+          onclick="toggleText('yellow', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/pink_jellybean.png"
+          id="pink-jellybean"
+          onclick="toggleText('pink', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/orange_jellybean.png"
+          id="orange-jellybean"
+          onclick="toggleText('orange', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/mimosa_jellybean.png"
+          id="mimosa-jellybean"
+          onclick="toggleText('mimosa', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/margarita_jellybean.png"
+          id="margarita-jellybean"
+          onclick="toggleText('margarita', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/mojito_jellybean.png"
+          id="mojito-jellybean"
+          onclick="toggleText('mojito', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/brown_jellybean.png"
+          id="brown-jellybean"
+          onclick="toggleText('brown', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/strawberry_jellybean.png"
+          id="strawberry-jellybean"
+          onclick="toggleText('strawberry', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
+      <div class="jellybean-wrapper">
+        <img
+          src="./assets/silver_jellybean.png"
+          id="silver-jellybean"
+          onclick="toggleText('silver', this)"
+          class="zoom-image"
+          alt="Hover over me"
+        />
+      </div>
     </div>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        var imageIds = [
+          "green-jellybean",
+          "blue-jellybean",
+          "red-jellybean",
+          "yellow-jellybean",
+          "pink-jellybean",
+          "orange-jellybean",
+          "mimosa-jellybean",
+          "margarita-jellybean",
+          "mojito-jellybean",
+          "brown-jellybean",
+          "strawberry-jellybean",
+          "silver-jellybean",
+        ];
+        var selectedIds = [];
+        var count = 3;
+
+        while (selectedIds.length < count) {
+          var randomIndex = Math.floor(Math.random() * imageIds.length);
+          var selectedId = imageIds[randomIndex];
+
+          if (!selectedIds.includes(selectedId)) {
+            selectedIds.push(selectedId);
+          }
+        }
+
+        var beans = document.querySelectorAll(".jellybean-wrapper");
+
+        beans.forEach(function (bean) {
+          var imageId = bean.querySelector("img").getAttribute("id");
+
+          if (!selectedIds.includes(imageId)) {
+            bean.style.display = "none";
+          } else {
+            bean.classList.add("floating");
+          }
+        });
+      });
+    </script>
 
     <div class="fortune">
       <p class="text" state="none">Choose a Bean</p>
+      <img
+        class="loading-bean"
+        src="./assets/silver_jellybean.png"
+        style="display: none"
+        alt="loading fortune"
+      />
     </div>
 
     <div class="bg">
