@@ -1,6 +1,6 @@
 //import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
 
-let intervalId = null;
+let fortuneInterval = null;
 
 function GoBack() {
     (window.location.href = './jellybean.html' ) || window.history.back();
@@ -61,38 +61,84 @@ function animateJellybeans() {
 animateJellybeans();
 
   
-    // Initialize an object to keep track of clicked images
-    var storedQuotes = {};
+// Initialize an object to keep track of clicked images
+var storedQuotes = {};
 
-    function toggleText(color, element) {
-        var imageId = element.id;
-        var quote;
+function toggleText(color, element) {
+    var imageId = element.id;
+    var quote;
 
-        if (storedQuotes[imageId]) {
-            quote = storedQuotes[imageId]; // Retrieve the stored quote
+    clearInterval(fortuneInterval);
+
+    if (storedQuotes[imageId]) {
+        quote = storedQuotes[imageId]; // Retrieve the stored quote
+    } else {
+        quote = getRandomQuote(color);
+        storedQuotes[imageId] = quote; // Store the quote for the image
+    }
+
+    // Perform your desired action here
+    var textElement = document.querySelector('.text');
+    let state = textElement.state;
+
+    // if click on the same bean, close the text
+    if (state == color) {
+        textElement.innerHTML = 'Choose a Bean';
+        textElement.state = 'none';
+        resetBeans();
+        return;
+    }
+
+    resizeBeans(color);
+    //textElement.innerHTML = `You chose the ${color} jellybean <br> <br>`;
+    textElement.innerHTML = `Your daily fortune is: <br> <br>`;
+
+    // for generating fortune letter by letter
+    let i = 0;
+    fortuneInterval = setInterval(() => {
+      textElement.innerHTML += quote.charAt(i);
+      i++;
+      if (i === quote.length) {
+        clearInterval(fortuneInterval);
+        fortuneInterval = null; // Reset interval ID
+      }
+    }, 20); // Change the delay time (in milliseconds) as needed
+    textElement.style.display = 'block';
+    textElement.state = color;
+}
+
+function getRandomQuote(imageId) {
+    const quotes = quotePools[imageId];
+    if (!quotes || quotes.length === 0) {
+        return null;
+    }
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+}
+
+// Returns beans to default opacity and scale
+function resetBeans() {
+    const beans = document.querySelectorAll('img[alt="Hover over me"]');
+    for (let i = 0; i < beans.length; i++) {
+        beans[i].classList.remove('bean-selected');
+        beans[i].classList.remove('bean-unselected');
+    }
+}
+
+// Scales down and redueces opacity for all the excluding the one that wasn't clicked on
+function resizeBeans(color) {
+    const beans = document.querySelectorAll('img[alt="Hover over me"]');
+    // console.log(beans);
+    for (let i = 0; i < beans.length; i++) {
+        if (beans[i].id == `${color}-jellybean`) {
+            beans[i].classList.add('bean-selected');
+            beans[i].classList.remove('bean-unselected');
         } else {
-            quote = getRandomQuote(color);
-            storedQuotes[imageId] = quote; // Store the quote for the image
+            beans[i].classList.remove('bean-selected');
+            beans[i].classList.add('bean-unselected');
         }
-
-        // Perform your desired action here
-        var textElement = document.querySelector('.text');
-        let state = textElement.state;
-        //textElement.innerHTML = `You chose the ${color} jellybean <br> <br>`;
-        textElement.innerHTML = `Your daily fortune is: <br> <br>`;
-        textElement.innerHTML += quote;
-        textElement.style.display = 'block';
     }
-
-    function getRandomQuote(imageId) {
-        const quotes = quotePools[imageId];
-        if (!quotes || quotes.length === 0) {
-            return null;
-        }
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        return quotes[randomIndex];
-    }
-
+}
 
 // function toggleText(color) {
 //     var textElement = document.querySelector('.text');

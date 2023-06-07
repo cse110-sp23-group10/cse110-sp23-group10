@@ -20,20 +20,38 @@
   }
   
   .fortune-beans {
-      display: flex;
-      justify-content: center;
+    display: flex;
+    justify-content: center;
       
   }
-  
-  .fortune-beans>img {
-      width: 15%;
+
+  .fortune-beans > .jellybean-wrapper {
+      display: block;
       margin: 2.4%;
       cursor: pointer;
-      animation-name: floatAnimation;
-      animation-duration: 2s;
-      animation-timing-function: ease-in-out;
-      animation-iteration-count: infinite;
-      animation: floatAnimation 15s infinite ease-in-out;
+      text-align: center;
+  }
+  .jellybean-wrapper > img {
+    width: 80%;
+    transition: all 0.5s ease;
+  }
+
+  .bean-selected {
+    opacity: 1;
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 0 50px #FFF);
+    transform: scale(1.1);
+  }
+
+  .bean-unselected {
+    opacity: 0.5;
+    transition: opacity 0.5s ease;
+    filter: drop-shadow(0 0 0px #FFF);
+    transform: scale(0.9);
+  }
+  
+  .floating {
+    animation: floatAnimation 15s infinite ease-in-out;
   }
   
   .fortune {

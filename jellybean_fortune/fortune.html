@@ -37,19 +37,42 @@
     </div>
     
     <div class="fortune-beans">
-        <img src="./assets/green_jellybean.png" id="green-jellybean" onclick="toggleText('green', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/blue_jellybean.png" id="blue-jellybean" onclick="toggleText('blue', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/red_jellybean.png" id="red-jellybean" onclick="toggleText('red', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/yellow_jellybean.png" id="yellow-jellybean" onclick="toggleText('yellow', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/pink_jellybean.png" id="pink-jellybean" onclick="toggleText('pink', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/orange_jellybean.png" id="orange-jellybean" onclick="toggleText('orange', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/mimosa_jellybean.png" id="mimosa-jellybean" onclick="toggleText('mimosa', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/margarita_jellybean.png" id="margarita-jellybean" onclick="toggleText('margarita', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/mojito_jellybean.png" id="mojito-jellybean" onclick="toggleText('mojito', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/brown_jellybean.png" id="brown-jellybean" onclick="toggleText('brown', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/strawberry_jellybean.png" id="strawberry-jellybean" onclick="toggleText('strawberry', this)" class="zoom-image" alt="Hover over me">
-        <img src="./assets/silver_jellybean.png" id="silver-jellybean" onclick="toggleText('silver', this)" class="zoom-image" alt="Hover over me">
-
+        <div class="jellybean-wrapper">
+            <img src="./assets/green_jellybean.png" id="green-jellybean" onclick="toggleText('green', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/blue_jellybean.png" id="blue-jellybean" onclick="toggleText('blue', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/red_jellybean.png" id="red-jellybean" onclick="toggleText('red', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/yellow_jellybean.png" id="yellow-jellybean" onclick="toggleText('yellow', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/pink_jellybean.png" id="pink-jellybean" onclick="toggleText('pink', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/orange_jellybean.png" id="orange-jellybean" onclick="toggleText('orange', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/mimosa_jellybean.png" id="mimosa-jellybean" onclick="toggleText('mimosa', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/margarita_jellybean.png" id="margarita-jellybean" onclick="toggleText('margarita', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/mojito_jellybean.png" id="mojito-jellybean" onclick="toggleText('mojito', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/brown_jellybean.png" id="brown-jellybean" onclick="toggleText('brown', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/strawberry_jellybean.png" id="strawberry-jellybean" onclick="toggleText('strawberry', this)" class="zoom-image" alt="Hover over me">
+        </div>
+        <div class="jellybean-wrapper">
+            <img src="./assets/silver_jellybean.png" id="silver-jellybean" onclick="toggleText('silver', this)" class="zoom-image" alt="Hover over me">
+        </div>
     </div>
     
     <script>
@@ -68,13 +91,15 @@
             }
         }
 
-        var images = document.querySelectorAll('.fortune-beans img');
+        var beans = document.querySelectorAll('.jellybean-wrapper');
 
-        images.forEach(function(image) {
-            var imageId = image.getAttribute('id');
+        beans.forEach(function(bean) {
+            var imageId = bean.querySelector('img').getAttribute('id');
 
             if (!selectedIds.includes(imageId)) {
-                image.style.display = 'none';
+                bean.style.display = 'none';
+            } else {
+                bean.classList.add('floating');
             }
         });
     });
