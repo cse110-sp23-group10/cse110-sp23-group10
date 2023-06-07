@@ -88,6 +88,14 @@ jobs:
 
       - name: JS DOCS generation
         run: cd jellybean_fortune; npm i; npm run docs
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
+
+      - name: Switch branch
+        run: git checkout ${{ steps.extract_branch.outputs.branch }}
       
       - name: Commit JSDocs
         uses: EndBug/add-and-commit@v9
