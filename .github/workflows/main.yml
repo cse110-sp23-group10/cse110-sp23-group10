@@ -21,10 +21,6 @@ jobs:
         with:
           node-version: "16"
 
-      - name: Get changed files
-        id: files
-        uses: jitterbit/get-changed-files@v1
-
       - name: Install dependencies
         run: cd jellybean_fortune; npm install
 
