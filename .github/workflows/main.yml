@@ -104,5 +104,5 @@ jobs:
           author_email: github-actions[bot]@users.noreply.github.com
           message: 'Generated JS docs after linting and prettier'
           fetch: true
-          push: origin HEAD:refs/heads/origin/${{ steps.extract_branch.outputs.branch }}
+          push: origin HEAD:refs/heads/${{ steps.extract_branch.outputs.branch }}
           add: 'jellybean_fortune/docs/*'
