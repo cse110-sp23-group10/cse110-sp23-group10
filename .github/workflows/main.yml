@@ -87,11 +87,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: JS DOCS generation
-        uses: andstor/jsdoc-action@v1
-        with:
-          source_dir: ./jellybean_fortune
-          recurse: true
-          output_dir: ./jellybean_fortune/out
+        run: cd jellybean_fortune; npm run docs
       
       - name: Commit JSDocs
         uses: EndBug/add-and-commit@v9
