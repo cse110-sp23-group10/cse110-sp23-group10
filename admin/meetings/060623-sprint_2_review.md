@@ -25,6 +25,7 @@ Worked on CI/CD pipeline and procedures; made testing format and conventions as 
 
 # Joshua
 Created an animated background for the website with floating emojis. The background when loaded will have multiple candy emojis floating across the page. I also made the navigation bar more appealing by making it transperent and fixed an issue where our website was not mobile-friendly. When the screen is resized to having a smaller width, the navigation bar of the website will resize accordingly while still maintaining functionality.
+
 ![image](./meetingpics/sprint2_pic4.png)
 
 
