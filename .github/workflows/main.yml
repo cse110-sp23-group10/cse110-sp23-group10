@@ -83,16 +83,18 @@ jobs:
     name: Documentation Generation
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: JS DOCS generation
-        run: cd jellybean_fortune; npm i; npm run docs
-
       - name: Extract branch name
         shell: bash
         run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
         id: extract_branch
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ steps.extract_branch.outputs.branch }}
+
+      - name: JS DOCS generation
+        run: cd jellybean_fortune; npm i; npm run docs
 
       # - name: Switch branch
       #   run: git checkout ${{ steps.extract_branch.outputs.branch }}
@@ -104,6 +106,5 @@ jobs:
           author_email: github-actions[bot]@users.noreply.github.com
           message: 'Generated JS docs after linting and prettier'
           fetch: true
-          pull: '--autostash --rebase origin main'
           push: origin HEAD:refs/heads/${{ steps.extract_branch.outputs.branch }}
           add: 'jellybean_fortune/docs/*'
