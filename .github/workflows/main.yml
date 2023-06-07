@@ -61,22 +61,22 @@ jobs:
           same_commit: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
-  # Linter:
-  #   needs: [Test, Prettier]
-  #   runs-on: ubuntu-latest
+  Linter:
+    needs: [Test, Prettier]
+    runs-on: ubuntu-latest
 
-  #   steps:
-  #     - name: Checkout repository
-  #       uses: actions/checkout@v3
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
-  #     - name: Super-Linter
-  #       uses: super-linter/super-linter@v5.0.0
-  #       env:
-  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  #         VALIDATE_ALL_CODEBASE: true
-  #         VALIDATE_CSS: true
-  #         VALIDATE_HTML: true
-  #         VALIDATE_JAVASCRIPT_ES: true
+      - name: Super-Linter
+        uses: super-linter/super-linter@v5.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          VALIDATE_ALL_CODEBASE: true
+          VALIDATE_CSS: true
+          VALIDATE_HTML: true
+          VALIDATE_JAVASCRIPT_ES: true
 
   docs:
     needs: [Test, Prettier]
