@@ -25,11 +25,6 @@ jobs:
         id: files
         uses: jitterbit/get-changed-files@v1
 
-      # - name: Extract branch name
-      #   shell: bash
-      #   run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
-      #   id: extract_branch
-
       - name: Install dependencies
         run: cd jellybean_fortune; npm install
 
@@ -64,9 +59,11 @@ jobs:
         with:
           prettier_options: --write **/*.{js,md,html,css}
           same_commit: true
+          working_directory: jellybean_fortune
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
   Linter:
+    needs: [Test, Prettier]
     runs-on: ubuntu-latest
 
     steps:
@@ -81,5 +78,19 @@ jobs:
           VALIDATE_CSS: true
           VALIDATE_HTML: true
           VALIDATE_JAVASCRIPT_ES: true
+          DEFAULT_WORKSPACE: /jellybean_fortune
 
-  
+  docs:
+    needs: [Test, Prettier, Linter]
+    name: Documentation Generation
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: JS DOCS generation
+        uses: andstor/jsdoc-action@v1
+        with:
+          source_dir: ./jellybean_fortune
+          recurse: true
+          output_dir: ./out
