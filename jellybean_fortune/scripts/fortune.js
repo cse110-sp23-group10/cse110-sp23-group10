@@ -2,7 +2,7 @@
 
 let intervalId = null;
 
-function GoBack() {
+function goBack() {
   window.location.href = "./jellybean.html";
 }
 
