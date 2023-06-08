@@ -1,6 +1,6 @@
 // sw.js - This file needs to be in the root of the directory to work,
 //         so do not move it next to the other scripts
-const CACHE_NAME = 'jellybean_cache';
+const CACHE_NAME = "jellybean_cache";
 const fetch = require("node-fetch");
 const addResourcesToCache = async (resources) => {
   try {
@@ -27,7 +27,7 @@ self.addEventListener("install", (event) => {
       "jellybean_fortune/assets/mute-white.svg",
       "jellybean_fortune/assets/mute.svg",
       "/jellybean_fortune/scripts/audio.js",
-      "/jellybean_fortune/assets/*"
+      "/jellybean_fortune/assets/*",
     ])
   );
 });
@@ -50,22 +50,28 @@ self.addEventListener("fetch", function (event) {
   //       fetch(event.request)
   // https://developer.chrome.com/docs/workbox/caching-strategies-overview/
   /*******************************/
-  try{
-    event.respondWith(caches.open(CACHE_NAME).then((cache) => {
-      // Respond with the image from the cache or from the network
-      return cache.match(event.request).then((cachedResponse) => {
-        return cachedResponse || fetch(event.request.url, { cache: "no-store" }).then((fetchedResponse) => {
-          // Add the network response to the cache for future visits.
-          // Note: we need to make a copy of the response to save it in
-          // the cache and use the original as the request response.
-          cache.put(event.request, fetchedResponse.clone());
-          // Return the network response
-          return fetchedResponse;
+  try {
+    event.respondWith(
+      caches.open(CACHE_NAME).then((cache) => {
+        // Respond with the image from the cache or from the network
+        return cache.match(event.request).then((cachedResponse) => {
+          return (
+            cachedResponse ||
+            fetch(event.request.url, { cache: "no-store" }).then(
+              (fetchedResponse) => {
+                // Add the network response to the cache for future visits.
+                // Note: we need to make a copy of the response to save it in
+                // the cache and use the original as the request response.
+                cache.put(event.request, fetchedResponse.clone());
+                // Return the network response
+                return fetchedResponse;
+              }
+            )
+          );
         });
-      });
-    }));
-  }catch(e){
-    console.error("Error in fetching service worker")
+      })
+    );
+  } catch (e) {
+    console.error("Error in fetching service worker");
   }
-  
 });

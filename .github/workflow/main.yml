@@ -81,8 +81,16 @@ jobs:
       - name: JS DOCS generation
         run: cd jellybean_fortune; npm i; npm run docs
 
-      - name: Commit JSDocs
-        uses: EndBug/add-and-commit@v9
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git config pull.rebase false
+          git pull origin main --allow-unrelated-histories
+          git commit -m "Add URL" -a
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
         with:
           author_name: github-actions[bot]
           author_email: github-actions[bot]@users.noreply.github.com
