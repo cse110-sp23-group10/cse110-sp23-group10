@@ -1,29 +1,8 @@
-//import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
-
 let intervalId = null;
 
 function goBack() {
   window.location.href = "./jellybean.html";
 }
-
-// // Get all the images
-// const images = document.querySelectorAll('.fortune-beans img');
-
-// // Create an array to store the randomly selected indices
-// const randomIndices = [];
-
-// // Generate 5 unique random indices
-// while (randomIndices.length < 3) {
-//     const randomIndex = Math.floor(Math.random() * images.length);
-//     if (!randomIndices.includes(randomIndex)) {
-//         randomIndices.push(randomIndex);
-//     }
-// }
-
-// Load the randomly selected images
-// randomIndices.forEach(index => {
-//     images[index].style.display = 'block';
-// });
 
 // Upon clicking the Jellybeans, the displayed fortune text will switch to the corresponding color
 // All other beans will be greyed out and shrunk
