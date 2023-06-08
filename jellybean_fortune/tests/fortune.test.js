@@ -56,3 +56,33 @@ test("Clicking on a jellybean should make the others smaller and lower their opa
   // Assert that the current page URL is the expected value
   expect(styling).toBe(true);
 });
+
+describe("Fortune in local storage", () => {
+  beforeEach(() => {
+    // Clear local storage before each test
+    localStorage.clear();
+  });
+
+  it("should be populated when a fortune is saved", () => {
+    // clickig on the beans
+    const beans = document.querySelectorAll('img[alt="Hover over me"]');
+    for (let i = 0; i < beans.length; i++) {
+      beans[i].click();
+      delay(500);
+    }
+
+    // Retrieve the fortune from local storage
+    const fortune = getFortuneFromLocalStorage();
+
+    // Assert that the fortune is populated correctly
+    expect(fortune).toEqual(sampleFortune);
+  });
+
+  it("should be empty when no fortune is saved", () => {
+    // Retrieve the fortune from local storage
+    const fortune = getFortuneFromLocalStorage();
+
+    // Assert that the fortune is empty (null or undefined)
+    expect(fortune).toBeFalsy();
+  });
+});

@@ -6,6 +6,12 @@ function GoBack() {
   window.location.href = "./jellybean.html";
 }
 
+// get fortunes from local storage
+function getFortuneFromLocalStorage() {
+  const fortune = localStorage.getItem("fortune");
+  return fortune;
+}
+
 // // Get all the images
 // const images = document.querySelectorAll('.fortune-beans img');
 
