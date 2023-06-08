@@ -26,7 +26,7 @@ function GoBack() {
 // });
 
 // Upon clicking the Jellybeans, the displayed fortune text will switch to the corresponding color
-// All other beans will be greyed out and shrunk
+// All other beans will have their opacity reduced and scale decreased
 function toggleText(color) {
   var textElement = document.querySelector(".text");
   let state = textElement.state;
@@ -60,7 +60,7 @@ function toggleText(color) {
   textElement.state = color;
 }
 
-// Returns beans to default opacity and scale
+// Resets all the beans to their original size and opacity when the user clicks on the same bean
 function resetBeans() {
   const beans = document.querySelectorAll('img[alt="Hover over me"]');
   for (let i = 0; i < beans.length; i++) {
@@ -83,6 +83,7 @@ function resizeBeans(color) {
   }
 }
 
+// Returns a random quote from the corresponding color
 function getRandomQuote(imageId) {
   const quotes = quotePools[imageId];
   if (!quotes || quotes.length === 0) {
@@ -93,7 +94,7 @@ function getRandomQuote(imageId) {
 }
 
 const quotePools = {
-  //wealth and prosperity quotes
+  //wealth and prosperity fortunes
   green: [
     "Your financial acumen and hard work will pave the way for abundant wealth and prosperity in your future.",
     "Opportunities for financial success will flow into your life effortlessly, bringing you great prosperity.",
@@ -106,7 +107,7 @@ const quotePools = {
     "Unexpected windfalls and lucrative opportunities will come your way, leading to a future of opulence and financial freedom.",
     "Your unwavering focus on your goals, coupled with your unwavering work ethic, will pave the way to a future overflowing with wealth and prosperity.",
   ],
-  //peace and calmness quotes
+  //peace and calmness fortunes
   blue: [
     "A peaceful and serene life awaits you, filled with gentle breezes and tranquil moments.",
     "In the coming days, you will find solace in the stillness of nature, allowing your mind and body to find ultimate relaxation.",
@@ -119,6 +120,7 @@ const quotePools = {
     "In the stillness of the night, you will find peace and contentment, as your future holds a realm of serenity and relaxation.",
     "Quiet moments will become your sanctuary, offering respite from the noise of the world and inviting profound tranquility into your life.",
   ],
+  //negative fortunes
   red: [
     "Beware of financial losses in the near future.",
     "Your relationships may face challenges and hardships.",
@@ -131,6 +133,7 @@ const quotePools = {
     "You may face legal troubles; seek professional advice.",
     "Prepare for technological failures that can disrupt your daily life.",
   ],
+  //exciting fortunes
   yellow: [
     "A thrilling adventure awaits you in the near future, bringing you joy, growth, and new horizons.",
     "Prepare for a serendipitous encounter that will change the course of your life, leading you towards boundless possibilities.",
@@ -143,6 +146,7 @@ const quotePools = {
     "A profound love will enter your life, bringing deep connection, happiness, and a lifelong partnership that will enrich your days.",
     "Your relentless pursuit of knowledge and personal growth will lead you to become a beacon of inspiration, guiding others towards a brighter future.",
   ],
+  //love life fortunes
   pink: [
     "Love will find you when you least expect it, bringing joy and fulfillment to your heart.",
     "A new romantic chapter is about to begin in your life, filled with passion and excitement.",
