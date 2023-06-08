@@ -6,6 +6,10 @@ function GoBack() {
   window.location.href = "./jellybean.html";
 }
 
+function GoAccount() {
+  window.location.href = "./account.html";
+}
+
 // get fortunes from local storage
 function getFortuneFromLocalStorage() {
   const fortune = localStorage.getItem("fortune");
@@ -72,6 +76,20 @@ function toggleText(color) {
   fortunes.push([color, randomQuote]);
   // Store the updated list back in local storage
   localStorage.setItem("fortunes", JSON.stringify(fortunes));
+  incrementNumClicked();
+}
+
+// Increments number of jellybeans clicked
+function incrementNumClicked() {
+  // Retrieve the current value of num_clicked from local storage
+  var numClicked = localStorage.getItem("num_clicked");
+
+  // Convert the value to a number and increment by 1
+  numClicked = parseInt(numClicked) || 0;
+  numClicked++;
+
+  // Store the updated value back to local storage
+  localStorage.setItem("num_clicked", numClicked);
 }
 
 // Returns beans to default opacity and scale
