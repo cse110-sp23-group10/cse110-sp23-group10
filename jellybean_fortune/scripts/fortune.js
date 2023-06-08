@@ -4,6 +4,12 @@ function goBack() {
   window.location.href = "./jellybean.html";
 }
 
+// get fortunes from local storage
+function getFortuneFromLocalStorage() {
+  const fortune = localStorage.getItem("fortune");
+  return fortune;
+}
+
 // Upon clicking the Jellybeans, the displayed fortune text will switch to the corresponding color
 // All other beans will be greyed out and shrunk
 function toggleText(color) {
