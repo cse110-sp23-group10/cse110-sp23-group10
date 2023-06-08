@@ -81,16 +81,12 @@ jobs:
       - name: JS DOCS generation
         run: cd jellybean_fortune; npm i; npm run docs
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git config pull.rebase false
-          git pull origin main --allow-unrelated-histories
-          git commit -m "Add URL" -a
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
+      - name: Commit JSDocs
+        uses: EndBug/add-and-commit@v9
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ steps.extract_branch.outputs.branch }}
+          author_name: github-actions[bot]
+          author_email: github-actions[bot]@users.noreply.github.com
+          message: 'Generated JS docs after linting and prettier'
+          fetch: true
+          push: origin HEAD:refs/heads/${{ steps.extract_branch.outputs.branch }}
+          add: 'jellybean_fortune/docs/*'
