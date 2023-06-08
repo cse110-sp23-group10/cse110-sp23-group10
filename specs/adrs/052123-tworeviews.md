@@ -10,10 +10,10 @@ Which bus factor is considered here?
 
 ## Considered Options
 
-* 0 reviews
-* 1 review
-* 2 reviews
-* 3+ reviews
+- 0 reviews
+- 1 review
+- 2 reviews
+- 3+ reviews
 
 ## Decision Outcome
 

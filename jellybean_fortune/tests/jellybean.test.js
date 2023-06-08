@@ -1,3 +1,7 @@
+/**
+ * @jest-environment jest-environment-jsdom
+ */
+
 // const fs = require("fs");
 // const { JSDOM } = require("jsdom");
 
@@ -24,7 +28,7 @@ test("Logo click should redirect to the correct page", () => {
 
   // // Assert that the current page URL is the expected value
   // expect(window.location.href).toBe("expected-url");
-  return undefined
+  return undefined;
 });
 
 test("Shake Jar button should shake the jar", () => {
@@ -34,5 +38,5 @@ test("Shake Jar button should shake the jar", () => {
   // // Assert that the jar element has the 'shake' class
   // const jarElement = document.getElementById("jar-beans");
   // expect(jarElement.classList.contains("shake")).toBe(true);
-  return undefined
+  return undefined;
 });
