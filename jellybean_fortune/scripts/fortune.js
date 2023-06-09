@@ -1,5 +1,3 @@
-import openai_test from "./chatgpt-function.js";
-
 let open_ai_response;
 let fortuneInterval = null;
 
@@ -29,11 +27,13 @@ function setRandomPosition(jellybean) {
   jellybean.style.top = randomY + "px";
 }
 
+/*
 jellybeans.forEach((jellybean) => {
   jellybean.addEventListener("click", () => {
     alert(`Jellybean clicked! Color: ${jellybean.id}`);
   });
 });
+*/
 
 jellybeans.forEach(setRandomPosition);
 
@@ -136,8 +136,6 @@ async function getRandomQuote(imageId) {
   if (!quotes || quotes.length === 0) {
     return null;
   }
-
-  console.log(quotes);
 
   var gptQuestion = "Give me a one sentence fotune based on ";
   console.log(imageId);
