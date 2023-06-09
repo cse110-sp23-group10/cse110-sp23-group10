@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "test": "PUPPETEER_SKIP_DOWNLOAD=true npm install --save-dev jest babel-jest @babel/core @babel/preset-env puppeteer jest-puppeteer; jest",
     "lint": "(eslint --fix --cache --report-unused-disable-directives . || true) && prettier --write .",
