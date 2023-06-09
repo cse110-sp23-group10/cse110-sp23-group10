@@ -33,8 +33,8 @@ If you have any questions, suggestions, or feedback, please don't hesitate to co
 -   Kian Chou
 -   Hamza Dehaini
 - **James Han**
--   Austin Li
 -   Dennis Lang
+-   Austin Li
 - **Yunze Xie**
 -   Mohak Vaswani
 -   Matthew Zheng
