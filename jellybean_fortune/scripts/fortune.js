@@ -1,7 +1,7 @@
 //import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
 
 function GoBack() {
-    window.location.href = './jellybean.html';
+  window.location.href = "./jellybean.html";
 }
 
 /**
@@ -43,7 +43,6 @@ const registerServiceWorker = async () => {
 // randomIndices.forEach(index => {
 //     images[index].style.display = 'block';
 // });
-
 
 // Upon clicking the Jellybeans, the displayed fortune text will switch to the corresponding color
 // All other beans will be greyed out and shrunk
