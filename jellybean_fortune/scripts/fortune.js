@@ -1,6 +1,8 @@
+module.exports = { getFortuneFromLocalStorage };
+
 let intervalId = null;
 
-function goBack() {
+function GoBack() {
   window.location.href = "./jellybean.html";
 }
 
