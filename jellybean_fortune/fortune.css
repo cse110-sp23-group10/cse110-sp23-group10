@@ -1,24 +1,3 @@
-  button {
-      padding: 20px;
-      font-size: 35px;
-      border-radius: 14px;
-      border-width: 5px;
-      border-color: lightblue;
-      cursor: pointer;
-      margin: 5px;
-      color: blueviolet;
-      background-color: yellow;
-      font-family: "Comic Sans MS", cursive;
-      font-weight: bold;
-      position: relative;
-      /*top: 50%; */
-      left: 50%;
-      -ms-transform: translate(-50%, -50%);
-      transform: translate(-50%, -50%);
-      padding-top: 5px;
-      padding-bottom: 5px;
-  }
-  
   .fortune-beans {
     display: flex;
     justify-content: center;

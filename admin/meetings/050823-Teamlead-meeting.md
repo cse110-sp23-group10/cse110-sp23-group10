@@ -1,5 +1,7 @@
 # Group 10 - Jelly Beans - Meeting Minutes #7
+
 ## General Info
+
 **Date/Time:** 05/08/2023 @ 11:30am <br>
 **Purpose:** Weekly Update <br>
 **Location:** Zoom<br>
@@ -12,14 +14,18 @@
 - Gagan
 
 ## Agenda
-Item | Description
----- | ----
-Agenda |• Weekly meeting/Update
+
+| Item   | Description             |
+| ------ | ----------------------- |
+| Agenda | • Weekly meeting/Update |
+
 ## Business
+
 | Done? | Task | Who? | Due Date | Submittable?
-| Yes | Update  | Group Leader | May 8 | No |
+| Yes | Update | Group Leader | May 8 | No |
 
 ## Notes
+
 - Updated with Gagan
 - Presented the pitch
 - Gagan said we might have too many features, we should get the core feature done first

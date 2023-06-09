@@ -1,41 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fortune Page</title>
+    <link rel="icon" href="./assets/jarandjelly.png" type="image/x-icon">
+    <link rel="stylesheet" href="./fortune.css" />
+    <link rel="stylesheet" href="./navbar.css" />
+  </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <body>
     <script src="./scripts/fortune.js"></script>
     <script src="./scripts/audio.js"></script>
-    <link rel="stylesheet" href="./fortune.css">
-    <link rel="stylesheet" href="./navbar.css">
-</head>
-
-<body>
     <div class="navbar">
-        <div class="navbar-left">
-            <img class="logo-img" src="../admin/branding/text-logo.png">
-            <!-- mute when clicked,  -->
-            <img id="sound-icon" src="./assets/sound-white.svg" draggable="false">
+      <div class="navbar-left">
+        <img class="logo-img" src="../admin/branding/text-logo.png" alt="Jellybean logo" />
+        <!-- mute when clicked,  -->
+        <img id="sound-icon" src="./assets/sound-white.svg" draggable="false" alt="Sound icon" />
+      </div>
+      <!-- Home Button, right (landing page?)-->
+      <div class="navbar-right">
+        <div class="nav-img">
+          <img
+            src="./assets/blue_jellybean.png"
+            style="float: right"
+            class="zoom-image"
+            alt="Home"
+          />
+          <span style="float: right"> Home: </span>
         </div>
-        <!-- Home Button, right (landing page?)-->
-        <div class="navbar-right">
-            <div class="nav-img">
-                <img src="./assets/blue_jellybean.png" style="float:right" class="zoom-image" alt="Home">
-                <span style="float:right"> Home: </span>
-            </div>
-            <div class="nav-img">
-                <img src="./assets/orange_jellybean.png" style="float:right" onclick="GoBack()" class="zoom-image" alt="Back">
-                <span style="float:right"> Back: </span>
-            </div>
-            <div class="nav-img">
-                <img src="./assets/red_jellybean.png" style="float:right" class="zoom-image" alt="Account">
-                <span style="float:right"> Account: </span>
-            </div>
+        <div class="nav-img">
+          <img
+            src="./assets/orange_jellybean.png"
+            style="float: right"
+            onclick="GoBack()"
+            class="zoom-image"
+            alt="Back"
+          />
+          <span style="float: right"> Back: </span>
         </div>
-
+        <div class="nav-img">
+          <img
+            src="./assets/red_jellybean.png"
+            style="float: right"
+            class="zoom-image"
+            alt="Account"
+          />
+          <span style="float: right"> Account: </span>
+        </div>
+      </div>
     </div>
-    
+
     <div class="fortune-beans">
         <div class="jellybean-wrapper">
             <img src="./assets/green_jellybean.png" id="green-jellybean" onclick="toggleText('green', this)" class="zoom-image" alt="Hover over me">
@@ -106,24 +122,23 @@
 </script>
 
     <div class="fortune">
-        <p class="text" state="none">Choose a Bean</p>
+      <p class="text" state="none">Choose a Bean</p>
     </div>
 
     <div class="bg">
-        <ul class="bg-emojis">
-            <li>🍭</li>
-            <li>🍬</li>
-            <li>🧁</li>
-            <li>🍦</li>
-            <li>🎂</li>
-            <li>🍡</li>
-            <li>🍢</li>
-            <li>🍬</li>
-            <li>🍭</li>
-            <li>🍭</li>
-            <li>🍬</li>
-        </ul>
+      <ul class="bg-emojis">
+        <li>🍭</li>
+        <li>🍬</li>
+        <li>🧁</li>
+        <li>🍦</li>
+        <li>🎂</li>
+        <li>🍡</li>
+        <li>🍢</li>
+        <li>🍬</li>
+        <li>🍭</li>
+        <li>🍭</li>
+        <li>🍬</li>
+      </ul>
     </div>
-</body>
-
+  </body>
 </html>

@@ -3,8 +3,13 @@
 let fortuneInterval = null;
 
 function GoBack() {
-    (window.location.href = './jellybean.html' ) || window.history.back();
-    //'./jellybean.html'
+  window.location.href = "./jellybean.html";
+}
+
+// get fortunes from local storage
+function getFortuneFromLocalStorage() {
+  const fortune = localStorage.getItem("fortune");
+  return fortune;
 }
 
 // // Get all the images
@@ -108,12 +113,12 @@ function toggleText(color, element) {
 }
 
 function getRandomQuote(imageId) {
-    const quotes = quotePools[imageId];
-    if (!quotes || quotes.length === 0) {
-        return null;
-    }
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    return quotes[randomIndex];
+  const quotes = quotePools[imageId];
+  if (!quotes || quotes.length === 0) {
+    return null;
+  }
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
 }
 
 // Returns beans to default opacity and scale

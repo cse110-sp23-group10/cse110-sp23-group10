@@ -1,70 +1,78 @@
 <!DOCTYPE html>
 <!-- Landing Page-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JellyBean Program</title>
-    <link rel="stylesheet" href = "./jellybean.css">
-    <link rel="stylesheet" href="./navbar.css">
+    <link rel="icon" href="./assets/jarandjelly.png" type="image/x-icon">
+    <link rel="stylesheet" href="./jellybean.css" />
+    <link rel="stylesheet" href="./navbar.css" />
+  </head>
+  <body>
     <script src="./scripts/jellybean.js"></script>
     <script src="./scripts/audio.js"></script>
-</head>
-<body>
     <!-- Top bar has the logo, sounds button, and home button? -->
-    <div class="navbar" >
-        <div class="navbar-left">
-            <img class="logo-img" src="../admin/branding/text-logo.png">
-            <!-- mute when clicked,  -->
-            <img id="sound-icon" src="./assets/sound-white.svg" draggable="false">
+    <div class="navbar">
+      <div class="navbar-left">
+        <img class="logo-img" src="../admin/branding/text-logo.png" alt="Jellybean logo" />
+        <!-- mute when clicked,  -->
+        <img id="sound-icon" src="./assets/sound-white.svg" draggable="false" alt="Sound icon" />
+      </div>
+      <!-- Home Button, right (landing page?)-->
+      <div class="navbar-right">
+        <div class="nav-img">
+          <img
+            src="./assets/blue_jellybean.png"
+            style="float: right"
+            class="zoom-image"
+            alt="Hover over me"
+          />
+          <span style="float: right"> Home </span>
         </div>
-        <!-- Home Button, right (landing page?)-->
-        <div class="navbar-right">
-            <div class="nav-img">
-                <img src="./assets/blue_jellybean.png" style="float:right" class="zoom-image" alt="Hover over me"> 
-                <span style="float:right"> Home </span>
-            </div>
-            <div class="nav-img">
-                <img src="./assets/orange_jellybean.png"  style="float:right" class="zoom-image" alt="Hover over me">
-                <span style="float:right"> Back </span>
-            </div>
-            <div class="nav-img">
-                <img src="./assets/red_jellybean.png" style="float:right" class="zoom-image" alt="Hover over me"> 
-                <span style="float:right"> Account </span>
-            </div>      
+        <div class="nav-img">
+          <img
+            src="./assets/red_jellybean.png"
+            style="float: right"
+            class="zoom-image"
+            alt="Hover over me"
+          />
+          <span style="float: right"> Account </span>
         </div>
+      </div>
     </div>
-    
+
     <div>
-        <section class="jar-beans" id="jar-beans">
-            <img src="./assets/jarandjelly.png" alt="Jar with Jellybeans" class="jar" id="jar">  <!-- the jar --> 
-        </section>
+      <section class="jar-beans" id="jar-beans">
+        <img src="./assets/jarandjelly.png" alt="Jar with Jellybeans" class="jar" id="jar" />
+        <!-- the jar -->
+      </section>
     </div>
 
     <!-- Button placed in div for centering -->
     <div>
-        <section class="submit-button">
-            <button onclick="shakeJar()">Shake Jar?</button>  <!-- button should shake the jar-->
-        </section>
+      <section class="submit-button">
+        <button onclick="shakeJar()">Shake Jar?</button>
+        <!-- button should shake the jar-->
+      </section>
     </div>
 
     <!-- Background Animation With Emojis -->
     <div class="bg">
-        <ul class="bg-emojis">
-            <li>🍭</li>
-            <li>🍬</li>
-            <li>🧁</li>
-            <li>🍦</li>
-            <li>🎂</li>
-            <li>🍡</li>
-            <li>🍢</li>
-            <li>🍬</li>
-            <li>🍭</li>
-            <li>🍭</li>
-            <li>🍬</li>
-        </ul>
+      <ul class="bg-emojis">
+        <li>🍭</li>
+        <li>🍬</li>
+        <li>🧁</li>
+        <li>🍦</li>
+        <li>🎂</li>
+        <li>🍡</li>
+        <li>🍢</li>
+        <li>🍬</li>
+        <li>🍭</li>
+        <li>🍭</li>
+        <li>🍬</li>
+      </ul>
     </div>
-</body>
-
+  </body>
 </html>
