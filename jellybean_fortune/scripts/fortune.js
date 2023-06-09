@@ -110,6 +110,14 @@ function toggleText(color, element) {
     }, 20); // Change the delay time (in milliseconds) as needed
     textElement.style.display = 'block';
     textElement.state = color;
+
+    // adding to local storage
+    var existingFortunes = localStorage.getItem("fortunes");
+    var fortunes = existingFortunes ? JSON.parse(existingFortunes) : [];
+    // Add the new fortune to the list
+    fortunes.push([color, randomQuote]);
+    // Store the updated list back in local storage
+    localStorage.setItem("fortunes", JSON.stringify(fortunes));
 }
 
 function getRandomQuote(imageId) {
