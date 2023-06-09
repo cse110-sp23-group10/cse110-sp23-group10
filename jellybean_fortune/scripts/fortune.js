@@ -1,33 +1,32 @@
 let open_ai_response;
+let fortuneInterval = null;
 
 async function openai_test(prompt) {
-    const response = await fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer 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",
-      },
-      body: JSON.stringify({
-        prompt: prompt,
-        temperature: 0.7,
-        max_tokens: 128,
-        top_p: 1.0,
-        frequency_penalty: 0.0,
-        presence_penalty: 0.0,
-      }),
-    });
-  
-    const data = await response.json();
-    if (data.error != null) {
-      console.log(data);
-      throw new Error(data.error);
-    }
-    const completion = data.choices[0].text.trim();
-  
-    return completion;
+  const response = await fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer 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",
+    },
+    body: JSON.stringify({
+      prompt: prompt,
+      temperature: 0.7,
+      max_tokens: 128,
+      top_p: 1.0,
+      frequency_penalty: 0.0,
+      presence_penalty: 0.0,
+    }),
+  });
+
+  const data = await response.json();
+  if (data.error != null) {
+    console.log(data);
+    throw new Error(data.error);
   }
-  
-let fortuneInterval = null;
+  const completion = data.choices[0].text.trim();
+
+  return completion;
+}
 
 function GoBack() {
   window.location.href = "./jellybean.html";
@@ -99,7 +98,7 @@ async function toggleText(color, element) {
   resizeBeans(color);
 
   if (storedQuotes[imageId] === "") {
-    // this means a fortune of this type is already generating, 
+    // this means a fortune of this type is already generating,
     // so we can just put the default text back and return
     loadingBean.style.display = "block";
     textElement.innerHTML = "Generating a Fortune...";
@@ -156,84 +155,83 @@ async function toggleText(color, element) {
   textElement.style.display = "block";
 }
 
-
 async function getRandomQuote(imageId) {
-    const quotes = quotePools[imageId];
+  const quotes = quotePools[imageId];
 
-    if (!quotes || quotes.length === 0) {
-        return null;
-    }
+  if (!quotes || quotes.length === 0) {
+    return null;
+  }
 
-    console.log(quotes);
+  console.log(quotes);
 
-    var gptQuestion = "Give me a one sentence fotune based on ";
-    console.log(imageId);
-    switch (imageId) {
-        case "green":
-            gptQuestion += "Prosperity and abundance."
-            break;
+  var gptQuestion = "Give me a one sentence fotune based on ";
+  console.log(imageId);
+  switch (imageId) {
+    case "green":
+      gptQuestion += "Prosperity and abundance.";
+      break;
 
-        case "blue":
-            gptQuestion += "Serenity and calmness."
-            break;
+    case "blue":
+      gptQuestion += "Serenity and calmness.";
+      break;
 
-        case "red":
-            gptQuestion += "Passion and excitement."
-            break;
+    case "red":
+      gptQuestion += "Passion and excitement.";
+      break;
 
-        case "yellow":
-            gptQuestion += "Joy and happiness."
-            break;
+    case "yellow":
+      gptQuestion += "Joy and happiness.";
+      break;
 
-        case "pink":
-            gptQuestion += "Love and romance."
-            break;
+    case "pink":
+      gptQuestion += "Love and romance.";
+      break;
 
-        case "orange":
-            gptQuestion += "Energy and enthusiasm."
-            break;
+    case "orange":
+      gptQuestion += "Energy and enthusiasm.";
+      break;
 
-        case "mimosa":
-            gptQuestion += "New opportunities and beginnings."
-            break;
+    case "mimosa":
+      gptQuestion += "New opportunities and beginnings.";
+      break;
 
-        case "margarita":
-            gptQuestion += "Relaxation and fun-filled adventures."
-            break;
+    case "margarita":
+      gptQuestion += "Relaxation and fun-filled adventures.";
+      break;
 
-        case "mojito":
-            gptQuestion += "Refreshing changes and growth."
-            break;
+    case "mojito":
+      gptQuestion += "Refreshing changes and growth.";
+      break;
 
-        case "brown":
-            gptQuestion += "Stability and grounding."
-            break;
+    case "brown":
+      gptQuestion += "Stability and grounding.";
+      break;
 
-        case "strawberry":
-            gptQuestion += "Sweetness and indulgence."
-            break;
+    case "strawberry":
+      gptQuestion += "Sweetness and indulgence.";
+      break;
 
-        case "silver":
-            gptQuestion += "Intuition and Wisdom."
-            break;
+    case "silver":
+      gptQuestion += "Intuition and Wisdom.";
+      break;
 
-        default:
-            console.log('default');
-            break;
-    }
+    default:
+      console.log("default");
+      break;
+  }
 
-    console.log(gptQuestion);
-    try {
-        setTimeout(() => {
-            console.log('timeout');
-        }, 500);
-      let response = await openai_test(gptQuestion);
-      console.log(response);
-      return response;
-    } catch (err) {
-        const randomIndex = Math.floor(Math.random() * quotes.length);
-        return quotes[randomIndex];
-    }
+  console.log(gptQuestion);
+  try {
+    setTimeout(() => {
+      console.log("timeout");
+    }, 500);
+    let response = await openai_test(gptQuestion);
+    console.log(response);
+    return response;
+  } catch (err) {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    return quotes[randomIndex];
+  }
 }
 
 // Returns beans to default opacity and scale
