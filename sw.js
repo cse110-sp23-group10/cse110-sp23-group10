@@ -1,7 +1,7 @@
 // sw.js - This file needs to be in the root of the directory to work,
 //         so do not move it next to the other scripts
 const CACHE_NAME = "jellybean_cache";
-const fetch = require("node-fetch");
+
 const addResourcesToCache = async (resources) => {
   try {
     const cache = await caches.open(CACHE_NAME);
