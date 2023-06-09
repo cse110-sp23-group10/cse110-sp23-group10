@@ -47,4 +47,5 @@ We hope you enjoy using the Jelly Beans Jellybean Fortune Teller!
 
 ## License
 
-This project is licensed under the [UCSD License](https://opensource.org/licenses/UCSD). 
+This project is licensed under the [UCSD License](https://opensource.org/licenses/UCSD).
+Last update: 06/09/2023
