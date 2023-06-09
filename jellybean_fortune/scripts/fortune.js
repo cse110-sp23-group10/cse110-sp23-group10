@@ -97,7 +97,7 @@ async function toggleText(color, element) {
 
   resizeBeans(color);
 
-  if (storedQuotes[imageId] === "") {
+  if (storedQuotes[imageId] == "") {
     // this means a fortune of this type is already generating,
     // so we can just put the default text back and return
     loadingBean.style.display = "block";
