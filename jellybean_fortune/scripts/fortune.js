@@ -1,32 +1,7 @@
+import openai_test from "./chatgpt-function.js";
+
 let open_ai_response;
 let fortuneInterval = null;
-
-async function openai_test(prompt) {
-  const response = await fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: "Bearer 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",
-    },
-    body: JSON.stringify({
-      prompt: prompt,
-      temperature: 0.7,
-      max_tokens: 128,
-      top_p: 1.0,
-      frequency_penalty: 0.0,
-      presence_penalty: 0.0,
-    }),
-  });
-
-  const data = await response.json();
-  if (data.error != null) {
-    console.log(data);
-    throw new Error(data.error);
-  }
-  const completion = data.choices[0].text.trim();
-
-  return completion;
-}
 
 function GoBack() {
   window.location.href = "./jellybean.html";
