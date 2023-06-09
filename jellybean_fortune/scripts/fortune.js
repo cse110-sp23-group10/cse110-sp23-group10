@@ -197,13 +197,28 @@ async function getRandomQuote(imageId) {
 
   console.log(gptQuestion);
   try {
-    setTimeout(() => {
-      console.log("timeout");
-    }, 500);
-    let response = await openai_test(gptQuestion);
+    let response = await fetch("openai-request", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ prompt: gptQuestion }),
+    });
+
+    const data = await response.json();
+
+    if (response.status !== 200) {
+      console.log(response);
+      console.log(data);
+      throw data.error || new Error(`Request failed with status ${response.status}`);
+    }
+
     console.log(response);
-    return response;
+    console.log(data);
+
+    return data.result;
   } catch (err) {
+    console.log(err);
     const randomIndex = Math.floor(Math.random() * quotes.length);
     return quotes[randomIndex];
   }
