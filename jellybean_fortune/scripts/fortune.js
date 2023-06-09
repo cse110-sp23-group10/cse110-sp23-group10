@@ -217,7 +217,6 @@ async function getRandomQuote(imageId) {
     console.log(data);
 
     return data.result;
-
   } catch (err) {
     console.log(err);
     const randomIndex = Math.floor(Math.random() * quotes.length);
