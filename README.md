@@ -19,8 +19,15 @@ After viewing the home page, users are prompted to make an account or shake the 
 
 To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our live demo [here](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html).
 
+## Contributing
+
+If you have any questions, suggestions, or feedback, please don't hesitate to contact us. You can reach our team, Jelly Beans, at:
+
+-   Email: [jellybeans@eng.ucsd.edu](mailto:csepeeradviser@eng.ucsd.edu)
+-   Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html)
 
 ## [Team Members](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
+
 -   Neil Bajaj
 -   Joshua Chen
 -   Kian Chou
@@ -35,13 +42,6 @@ To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our
 ## Acknowledgments
 
 We would like to thank Professor Thomas A. Powell and Gagan Gopalaiah for their guidance and support throughout this project. This program is built using CSS, HTML, and JavaScript.
-
-## Contributing
-
-If you have any questions, suggestions, or feedback, please don't hesitate to contact us. You can reach our team, Jelly Beans, at:
-
--   Email: [jellybeans@eng.ucsd.edu](mailto:csepeeradviser@eng.ucsd.edu)
--   Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html)
 
 We hope you enjoy using the Jelly Beans Jellybean Fortune Teller!
 
