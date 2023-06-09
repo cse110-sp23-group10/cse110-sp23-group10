@@ -1,5 +1,32 @@
-//import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
+let open_ai_response;
 
+async function openai_test(prompt) {
+    const response = await fetch("https://api.openai.com/v1/engines/text-davinci-003/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer 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",
+      },
+      body: JSON.stringify({
+        prompt: prompt,
+        temperature: 0.7,
+        max_tokens: 128,
+        top_p: 1.0,
+        frequency_penalty: 0.0,
+        presence_penalty: 0.0,
+      }),
+    });
+  
+    const data = await response.json();
+    if (data.error != null) {
+      console.log(data);
+      throw new Error(data.error);
+    }
+    const completion = data.choices[0].text.trim();
+  
+    return completion;
+  }
+  
 let fortuneInterval = null;
 
 function GoBack() {
@@ -12,24 +39,6 @@ function getFortuneFromLocalStorage() {
   return fortune;
 }
 
-// // Get all the images
-// const images = document.querySelectorAll('.fortune-beans img');
-
-// // Create an array to store the randomly selected indices
-// const randomIndices = [];
-
-// // Generate 5 unique random indices
-// while (randomIndices.length < 3) {
-//     const randomIndex = Math.floor(Math.random() * images.length);
-//     if (!randomIndices.includes(randomIndex)) {
-//         randomIndices.push(randomIndex);
-//     }
-// }
-
-// Load the randomly selected images
-// randomIndices.forEach(index => {
-//     images[index].style.display = 'block';
-// });
 const jellybeans = document.querySelectorAll(".fortune-beans img");
 
 function getRandomNumber(min, max) {
@@ -67,16 +76,52 @@ animateJellybeans();
 // Initialize an object to keep track of clicked images
 var storedQuotes = {};
 
-function toggleText(color, element) {
+async function toggleText(color, element) {
   var imageId = element.id;
   var quote;
+  let textElement = document.querySelector(".text");
+  let loadingBean = document.querySelector(".loading-bean");
+  loadingBean.src = `./assets/${color}_jellybean.png`;
+  let state = textElement.state;
+  textElement.state = color;
 
   clearInterval(fortuneInterval);
+
+  // if click on the same bean, close the text
+  if (state == color) {
+    textElement.innerHTML = "Choose a Bean";
+    textElement.state = "none";
+    loadingBean.style.display = "none";
+    resetBeans();
+    return;
+  }
+
+  resizeBeans(color);
+
+  if (storedQuotes[imageId] === "") {
+    // this means a fortune of this type is already generating, 
+    // so we can just put the default text back and return
+    loadingBean.style.display = "block";
+    textElement.innerHTML = "Generating a Fortune...";
+    return;
+  }
 
   if (storedQuotes[imageId]) {
     quote = storedQuotes[imageId]; // Retrieve the stored quote
   } else {
-    quote = getRandomQuote(color);
+    // generates either from openai or gets preset fortune
+    textElement.innerHTML = "Generating a Fortune...";
+
+    // put a placeholder into stored quotes while a quote is generating, preventing from generating the same one twice
+    storedQuotes[imageId] = "";
+
+    loadingBean.style.display = "block";
+    quote = await getRandomQuote(color);
+
+    if (quote.charAt(0) == '"' && quote.charAt(quote.length - 1) == '"') {
+      quote = quote.substring(1, quote.length - 1);
+    }
+
     storedQuotes[imageId] = quote; // Store the quote for the image
 
     // adding to local storage when generating new fortune
@@ -89,19 +134,12 @@ function toggleText(color, element) {
     localStorage.setItem("fortunes", JSON.stringify(fortunes));
   }
 
-  // Perform your desired action here
-  let textElement = document.querySelector(".text");
-  let state = textElement.state;
+  loadingBean.style.display = "none";
 
-  // if click on the same bean, close the text
-  if (state == color) {
-    textElement.innerHTML = "Choose a Bean";
-    textElement.state = "none";
-    resetBeans();
+  if (textElement.state != color) {
     return;
   }
 
-  resizeBeans(color);
   //textElement.innerHTML = `You chose the ${color} jellybean <br> <br>`;
   textElement.innerHTML = `Your daily fortune is: <br> <br>`;
 
@@ -116,16 +154,86 @@ function toggleText(color, element) {
     }
   }, 20); // Change the delay time (in milliseconds) as needed
   textElement.style.display = "block";
-  textElement.state = color;
 }
 
-function getRandomQuote(imageId) {
-  const quotes = quotePools[imageId];
-  if (!quotes || quotes.length === 0) {
-    return null;
-  }
-  const randomIndex = Math.floor(Math.random() * quotes.length);
-  return quotes[randomIndex];
+
+async function getRandomQuote(imageId) {
+    const quotes = quotePools[imageId];
+
+    if (!quotes || quotes.length === 0) {
+        return null;
+    }
+
+    console.log(quotes);
+
+    var gptQuestion = "Give me a one sentence fotune based on ";
+    console.log(imageId);
+    switch (imageId) {
+        case "green":
+            gptQuestion += "Prosperity and abundance."
+            break;
+
+        case "blue":
+            gptQuestion += "Serenity and calmness."
+            break;
+
+        case "red":
+            gptQuestion += "Passion and excitement."
+            break;
+
+        case "yellow":
+            gptQuestion += "Joy and happiness."
+            break;
+
+        case "pink":
+            gptQuestion += "Love and romance."
+            break;
+
+        case "orange":
+            gptQuestion += "Energy and enthusiasm."
+            break;
+
+        case "mimosa":
+            gptQuestion += "New opportunities and beginnings."
+            break;
+
+        case "margarita":
+            gptQuestion += "Relaxation and fun-filled adventures."
+            break;
+
+        case "mojito":
+            gptQuestion += "Refreshing changes and growth."
+            break;
+
+        case "brown":
+            gptQuestion += "Stability and grounding."
+            break;
+
+        case "strawberry":
+            gptQuestion += "Sweetness and indulgence."
+            break;
+
+        case "silver":
+            gptQuestion += "Intuition and Wisdom."
+            break;
+
+        default:
+            console.log('default');
+            break;
+    }
+
+    console.log(gptQuestion);
+    try {
+        setTimeout(() => {
+            console.log('timeout');
+        }, 500);
+      let response = await openai_test(gptQuestion);
+      console.log(response);
+      return response;
+    } catch (err) {
+        const randomIndex = Math.floor(Math.random() * quotes.length);
+        return quotes[randomIndex];
+    }
 }
 
 // Returns beans to default opacity and scale
@@ -151,26 +259,6 @@ function resizeBeans(color) {
     }
   }
 }
-
-// function toggleText(color) {
-//     var textElement = document.querySelector('.text');
-//     let state = textElement.state;
-//     textElement.innerHTML = `You chose the ${color} jellybean <br> <br>`;
-//     textElement.innerHTML += `Your fortune is: <br> <br>`;
-//     randomQuote = getRandomQuote(color);
-//     textElement.innerHTML += randomQuote;
-//     textElement.style.display = 'block';
-//     textElement.state = color;
-// }
-
-// function getRandomQuote(imageId) {
-//     const quotes = quotePools[imageId];
-//     if (!quotes || quotes.length === 0) {
-//         return null;
-//     }
-//     const randomIndex = Math.floor(Math.random() * quotes.length);
-//     return quotes[randomIndex];
-// }
 
 const quotePools = {
   //wealth and prosperity quotes
