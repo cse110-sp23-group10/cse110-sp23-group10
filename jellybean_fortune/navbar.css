@@ -7,9 +7,11 @@
   display: flex;
   color: white;
   border-radius: 2px;
+  font-size: 15px;
   justify-content: center;
   border-bottom: 5px solid white;
 }
+
 .navbar-left {
   width: 50%;
   margin-top: 10px;
@@ -17,23 +19,27 @@
   justify-content: left;
   align-items: left;
 }
+
 .navbar-right {
   width: 50%;
   align-items: right;
   display: flex;
   justify-content: right;
 }
+
 .nav-img > img {
   margin-left: 20px;
   margin-right: 20px;
   margin-top: 10px;
   height: 80px;
 }
+
 .navbar-left > img {
   margin-left: 20px;
   margin-right: 20px;
   height: 80px;
 }
+
 .navbar-right > img {
   margin-left: 20px;
   margin-right: 20px;
@@ -52,7 +58,7 @@
   transform: scale(1.1);
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .navbar {
     flex-direction: column;
     height: auto;

@@ -1,32 +1,35 @@
-button {
-  padding: 20px;
-  font-size: 35px;
-  border-radius: 14px;
-  border-width: 5px;
-  border-color: lightblue;
-  cursor: pointer;
-  margin: 5px;
-  color: blueviolet;
-  background-color: yellow;
-  font-family: "Brush Script MT", cursive;
-  font-weight: bold;
-  position: relative;
-  /*top: 50%; */
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
 .fortune-beans {
   display: flex;
   justify-content: center;
 }
 
-.fortune-beans > img {
-  width: 15%;
+.fortune-beans > .jellybean-wrapper {
+  display: block;
   margin: 2.4%;
+  cursor: pointer;
+  text-align: center;
+}
+.jellybean-wrapper > img {
+  width: 80%;
+  transition: all 0.5s ease;
+}
+
+.bean-selected {
+  opacity: 1;
+  transition: all 0.5s ease;
+  filter: drop-shadow(0 0 50px #fff);
+  transform: scale(1.1);
+}
+
+.bean-unselected {
+  opacity: 0.5;
+  transition: opacity 0.5s ease;
+  filter: drop-shadow(0 0 0px #fff);
+  transform: scale(0.9);
+}
+
+.floating {
+  animation: floatAnimation 15s infinite ease-in-out;
 }
 
 .fortune {
@@ -36,7 +39,7 @@ button {
 
 .fortune > p {
   font-size: 50px;
-  font-family: "Brush Script MT", cursive;
+  font-family: "Comic Sans MS", cursive;
   color: white;
 }
 
@@ -124,6 +127,27 @@ button {
   100% {
     transform: translateY(-800px) rotate(360deg);
     opacity: 0;
+  }
+}
+
+@keyframes floatAnimation {
+  0% {
+    transform: translate(0, 0);
+  }
+  20% {
+    transform: translate(45px, 50px);
+  }
+  40% {
+    transform: translate(-40px, 63px);
+  }
+  60% {
+    transform: translate(50px, -10px);
+  }
+  80% {
+    transform: translate(-45px, 40px);
+  }
+  100% {
+    transform: translate(0, 0);
   }
 }
 
