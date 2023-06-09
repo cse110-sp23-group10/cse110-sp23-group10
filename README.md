@@ -7,18 +7,6 @@ Welcome to the Jelly Beans Jellybean Fortune Teller GitHub page! Our team, Jelly
 
 After viewing the home page, users are prompted to make an account or shake the jar. Pressing the button reveals a trio of colorful beans, with 12 distinct flavors. After choosing their favorite jelly bean, the user's daily fortune is displayed from a choice of 10 sweet selections.
 
-## [Team Members](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
--   Neil Bajaj
--   Joshua Chen
--   Kian Chou
--   Hamza Dehaini
-- **James Han**
--   Austin Li
--   Dennis Lang
-- **Yunze Xie**
--   Mohak Vaswani
--   Matthew Zheng
-
 ## Directory Structure
 
 -   `source`: Contains all project files.
@@ -30,6 +18,19 @@ After viewing the home page, users are prompted to make an account or shake the 
 ## How to Run
 
 To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our live demo [here](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html).
+
+
+## [Team Members](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
+-   Neil Bajaj
+-   Joshua Chen
+-   Kian Chou
+-   Hamza Dehaini
+- **James Han**
+-   Austin Li
+-   Dennis Lang
+- **Yunze Xie**
+-   Mohak Vaswani
+-   Matthew Zheng
 
 ## Acknowledgments
 
