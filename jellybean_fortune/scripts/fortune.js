@@ -1,4 +1,4 @@
-if (typeof module === 'object') {
+if (typeof module === "object") {
   module.exports = { getFortuneFromLocalStorage };
 }
 
