@@ -1,4 +1,6 @@
-module.exports = { getFortuneFromLocalStorage };
+if (typeof module === "object") {
+  module.exports = { getFortuneFromLocalStorage };
+}
 
 let fortuneInterval = null;
 
