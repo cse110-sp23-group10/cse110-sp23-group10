@@ -1,4 +1,4 @@
-//import { blue } from '../assets/dailyFortuneDB/blueQuote.js';
+module.exports = { getFortuneFromLocalStorage };
 
 let fortuneInterval = null;
 
@@ -12,24 +12,6 @@ function getFortuneFromLocalStorage() {
   return fortune;
 }
 
-// // Get all the images
-// const images = document.querySelectorAll('.fortune-beans img');
-
-// // Create an array to store the randomly selected indices
-// const randomIndices = [];
-
-// // Generate 5 unique random indices
-// while (randomIndices.length < 3) {
-//     const randomIndex = Math.floor(Math.random() * images.length);
-//     if (!randomIndices.includes(randomIndex)) {
-//         randomIndices.push(randomIndex);
-//     }
-// }
-
-// Load the randomly selected images
-// randomIndices.forEach(index => {
-//     images[index].style.display = 'block';
-// });
 const jellybeans = document.querySelectorAll(".fortune-beans img");
 
 function getRandomNumber(min, max) {
