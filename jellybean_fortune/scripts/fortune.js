@@ -195,6 +195,7 @@ async function getRandomQuote(imageId) {
 
   console.log(gptQuestion);
 
+  // moved the openai request to a private endpoint, server handles the request
   try {
     let response = await fetch("http://129.146.77.204:3000", {
       method: "POST",
