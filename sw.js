@@ -22,10 +22,10 @@ self.addEventListener("install", (event) => {
       "/jellybean_fortune/scripts/jellybean.js",
       "/jellybean_fortune/fortune.html",
       "/jellybean_fortune/jellybean.html",
-      "/jellybean_fortune/assets",
+      "/jellybean_fortune/assets/*",
       "/jellybean_fortune/assets/goofy.mp3",
-      "jellybean_fortune/assets/mute-white.svg",
-      "jellybean_fortune/assets/mute.svg",
+      "/jellybean_fortune/assets/mute-white.svg",
+      "/jellybean_fortune/assets/mute.svg",
       "/jellybean_fortune/scripts/audio.js",
       "/jellybean_fortune/assets/*",
     ])
