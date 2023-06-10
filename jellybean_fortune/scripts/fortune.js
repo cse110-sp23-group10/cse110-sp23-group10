@@ -1,4 +1,5 @@
-let open_ai_response;
+module.exports = { getFortuneFromLocalStorage };
+
 let fortuneInterval = null;
 
 function GoBack() {
