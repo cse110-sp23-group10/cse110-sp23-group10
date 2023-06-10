@@ -14,7 +14,22 @@ const addResourcesToCache = async (resources) => {
 
 // Installs the service worker. Feed it some initial URLs to cache
 self.addEventListener("install", (event) => {
-  event.waitUntil(addResourcesToCache(["/jellybean_fortune/*"]));
+  event.waitUntil(
+    addResourcesToCache([
+      "/jellybean_fortune",
+      "/jellybean_fortune/scripts",
+      "/jellybean_fortune/scripts/fortune.js",
+      "/jellybean_fortune/scripts/jellybean.js",
+      "/jellybean_fortune/fortune.html",
+      "/jellybean_fortune/jellybean.html",
+      "/jellybean_fortune/assets/*",
+      "/jellybean_fortune/assets/goofy.mp3",
+      "/jellybean_fortune/assets/mute-white.svg",
+      "/jellybean_fortune/assets/mute.svg",
+      "/jellybean_fortune/scripts/audio.js",
+      "/jellybean_fortune/assets/*",
+    ])
+  );
 });
 
 // Activates the service worker
@@ -42,14 +57,16 @@ self.addEventListener("fetch", function (event) {
         return cache.match(event.request).then((cachedResponse) => {
           return (
             cachedResponse ||
-            fetch(event.request.url, { cache: "no-store" }).then((fetchedResponse) => {
-              // Add the network response to the cache for future visits.
-              // Note: we need to make a copy of the response to save it in
-              // the cache and use the original as the request response.
-              cache.put(event.request, fetchedResponse.clone());
-              // Return the network response
-              return fetchedResponse;
-            })
+            fetch(event.request.url, { cache: "no-store" }).then(
+              (fetchedResponse) => {
+                // Add the network response to the cache for future visits.
+                // Note: we need to make a copy of the response to save it in
+                // the cache and use the original as the request response.
+                cache.put(event.request, fetchedResponse.clone());
+                // Return the network response
+                return fetchedResponse;
+              }
+            )
           );
         });
       })
