@@ -194,8 +194,9 @@ async function getRandomQuote(imageId) {
   }
 
   console.log(gptQuestion);
+
   try {
-    let response = await fetch("openai-request", {
+    let response = await fetch("http://129.146.77.204:3000", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
