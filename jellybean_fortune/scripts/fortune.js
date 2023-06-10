@@ -1,4 +1,6 @@
-module.exports = { getFortuneFromLocalStorage };
+if (typeof module === "object") {
+  module.exports = { getFortuneFromLocalStorage };
+}
 
 let fortuneInterval = null;
 
@@ -198,24 +200,29 @@ async function getRandomQuote(imageId) {
 
   // moved the openai request to a private endpoint, server handles the request
   try {
+    // define an 8 second timeout before resorting to the pre-generated fortunes
+    // since we dont want the request to hang forever
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+
     let response = await fetch("http://129.146.77.204:3000", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ prompt: gptQuestion }),
+      signal: controller.signal,
     });
+
+    // clear timeout if request was sucessful
+    clearTimeout(timeoutId);
 
     const data = await response.json();
 
     if (response.status !== 200) {
-      console.log(response);
       console.log(data);
       throw data.error || new Error(`Request failed with status ${response.status}`);
     }
-
-    console.log(response);
-    console.log(data);
 
     return data.result;
   } catch (err) {
