@@ -231,7 +231,7 @@ async function fetchQuote(imageId) {
     // since we dont want the request to hang forever
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 8000);
-    const endpointURL = ''; // put endpoint url here
+    const endpointURL = ""; // put endpoint url here
 
     // to setup the endpoint, have it handle post requests and take the body.prompt and request a fortune
     // from chatgpt using that prompt
@@ -262,7 +262,6 @@ async function fetchQuote(imageId) {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     return quotes[randomIndex];
   }
-  
 }
 
 // Returns beans to default opacity and scale
