@@ -28,6 +28,13 @@ function GoHome() {
 }
 
 /**
+ * function to expand past fortunes
+ */
+function toggleExpand(element) {
+  element.classList.toggle("expanded");
+}
+
+/**
  * Function that is executed when DOM content is loaded
  */
 function init() {
@@ -55,5 +62,20 @@ function init() {
     jellybean.innerHTML = element[0];
     fortune.innerHTML = element[1];
   }
+
+  const local_storage_fortunes = JSON.parse(localStorage.getItem("fortunes")) || [];
+  const local_storage_jarShakes = localStorage.getItem("jar_shakes") || 0;
+  const local_storage_jellybeansPicked = localStorage.getItem("num_clicked") || 0;
+
+  // Update the HTML with the retrieved data
+  document.getElementById("account-jarShakes").textContent = local_storage_jarShakes;
+  document.getElementById("account-jellybeansPicked").textContent = local_storage_jellybeansPicked;
+
+  const pastFortunesList = document.getElementById("account-pastFortunes");
+  local_storage_fortunes.forEach((fortune) => {
+    const listItem = document.createElement("li");
+    listItem.textContent = fortune[1]; // Display fortune text, assuming it's at index 1 of the tuple
+    pastFortunesList.appendChild(listItem);
+  });
   initializeServiceWorker();
 }
