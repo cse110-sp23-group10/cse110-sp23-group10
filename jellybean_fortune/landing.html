@@ -5,8 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
-    <link rel="stylesheet" href="./home.css" />
-    <script src="./scripts/home.js"></script>
+    <link rel="stylesheet" href="./landing.css" />
+    <script src="./scripts/landing.js"></script>
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
 </head>
 <body>
     <div class="bg">
@@ -25,11 +26,13 @@
         </ul>
     </div>
 
+    <div id="welcome"></div>
+
     <div class="input_field">
         <form>
             <label for="name">What is your name?</label>
             <br>
-            <input name="name" id="name">
+            <input name="name" id="name" min="1" max="20">
         </form>
     </div>
     <div id="options">

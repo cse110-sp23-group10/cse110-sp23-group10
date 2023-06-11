@@ -1,0 +1,143 @@
+body{
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
+.bg {
+    margin: 0;
+    background: linear-gradient(45deg, #ff43a4, #fafd0f);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+  
+  .bg-emojis li {
+    position: absolute;
+    display: block;
+    list-style: none;
+    bottom: -150px;
+    left: 5%;
+    font-size: 5rem;
+    animation: spin 20s linear infinite;
+  }
+  
+  .bg-emojis li:nth-child(2) {
+    left: 15%;
+    animation-delay: 2s;
+    animation-duration: 15s;
+  }
+  
+  .bg-emojis li:nth-child(3) {
+    left: 20%;
+    animation-delay: 4s;
+  }
+  
+  .bg-emojis li:nth-child(4) {
+    left: 35%;
+    animation-delay: 6s;
+    animation-duration: 18s;
+  }
+  
+  .bg-emojis li:nth-child(5) {
+    left: 70%;
+    animation-delay: 3s;
+  }
+  
+  .bg-emojis li:nth-child(6) {
+    left: 65%;
+    animation-delay: 6s;
+    animation-duration: 12s;
+  }
+  
+  .bg-emojis li:nth-child(7) {
+    left: 90%;
+    animation-delay: 8s;
+  }
+  
+  .bg-emojis li:nth-child(8) {
+    left: 85%;
+    animation-delay: 14s;
+    animation-duration: 7s;
+  }
+  
+  .bg-emojis li:nth-child(9) {
+    left: 15%;
+    animation-delay: 7s;
+  }
+  
+  .bg-emojis li:nth-child(10) {
+    left: 30%;
+    animation-delay: 18s;
+    animation-duration: 15s;
+  }
+  
+  .bg-emojis li:nth-child(11) {
+    left: 100%;
+    animation-delay: 20s;
+  }
+  
+  @keyframes loading {
+    100% {
+      transform: rotate(360deg);
+      box-shadow: none;
+    }
+  }
+  
+  @keyframes spin {
+    100% {
+      transform: translateY(-800px) rotate(360deg);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes float-animation {
+    0% {
+      transform: translate(0, 0);
+    }
+  
+    20% {
+      transform: translate(45px, 50px);
+    }
+  
+    40% {
+      transform: translate(-40px, 63px);
+    }
+  
+    60% {
+      transform: translate(50px, -10px);
+    }
+  
+    80% {
+      transform: translate(-45px, 40px);
+    }
+  
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+#fortunes{
+    display: none;
+    border: 1px solid;
+    border-radius: 3px;
+    margin-top: 20px
+}
+
+#fortunes th{
+    text-align: center;
+    padding: 10px;
+    width: 30vw;
+}
+
+#fortunes td{
+    text-align: center;
+    padding: 10px;
+    width: 50px;
+}
+
+#username{
+    font-size: 20px;
+    margin-top: 10px;
+}

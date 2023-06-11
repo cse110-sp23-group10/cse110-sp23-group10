@@ -6,12 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fortune Page</title>
     <link rel="icon" href="./assets/jarandjelly.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./fortune.css" />
+    <link rel="stylesheet" href="./account.css" />
     <link rel="stylesheet" href="./navbar.css" />
   </head>
 
   <body>
-    <script src="./scripts/fortune.js"></script>
+    <script src="./scripts/account.js"></script>
     <script src="./scripts/audio.js"></script>
     <div class="navbar">
       <div class="navbar-left">
@@ -26,19 +26,10 @@
             src="./assets/blue_jellybean.png"
             style="float: right"
             class="zoom-image"
+            onclick="GoHome()"
             alt="Home"
           />
           <span style="float: right"> Home: </span>
-        </div>
-        <div class="nav-img">
-          <img
-            src="./assets/orange_jellybean.png"
-            style="float: right"
-            onclick="GoBack()"
-            class="zoom-image"
-            alt="Back"
-          />
-          <span style="float: right"> Back: </span>
         </div>
         <div class="nav-img">
           <img
@@ -68,5 +59,17 @@
         <li>🍬</li>
       </ul>
     </div>
+
+    <div id="username"></div>
+
+    <table id="fortunes">
+      <tr>
+        <th>Index</th>
+        <th>Jellybean</th>
+        <th>Fortune</th>
+      </tr>
+    </table>
+
+    <div id="no_fortune"></div>
   </body>
 </html>

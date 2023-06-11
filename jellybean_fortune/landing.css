@@ -135,3 +135,11 @@ form{
 #credits:hover, #next:hover{
     background-color: white;
 }
+
+#welcome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  margin-bottom: -10vh;
+}
