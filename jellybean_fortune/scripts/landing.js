@@ -9,6 +9,7 @@ function init() {
     autoStart: true,
     loop: true,
   });
+  const credits_button = document.getElementById("credits");
   const next_button = document.getElementById("next");
   const name_input = document.getElementById("name");
   next_button.addEventListener("click", () => {
@@ -18,5 +19,8 @@ function init() {
     }
     localStorage.setItem("username", name_input.value);
     location.replace("./jellybean.html");
+  });
+  credits_button.addEventListener("click", () => {
+    location.replace("./credits.html");
   });
 }
