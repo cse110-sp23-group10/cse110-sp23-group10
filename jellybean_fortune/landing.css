@@ -1,142 +1,144 @@
-body{
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 40px;
+body {
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 40px;
 }
 
-input{
-    width: 100%;
-    font-family: "Comic Sans MS", "Comic Sans", cursive;
-    font-size: 20px;
+input {
+  width: 100%;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 20px;
 }
 
 .bg {
-    margin: 0;
-    background: linear-gradient(45deg, #ff43a4, #fafd0f);
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+  margin: 0;
+  background: linear-gradient(45deg, #ff43a4, #fafd0f);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
-  
+
 .bg-emojis li {
-    position: absolute;
-    display: block;
-    list-style: none;
-    bottom: -150px;
-    left: 5%;
-    font-size: 5rem;
-    animation: spin 20s linear infinite;
+  position: absolute;
+  display: block;
+  list-style: none;
+  bottom: -150px;
+  left: 5%;
+  font-size: 5rem;
+  animation: spin 20s linear infinite;
 }
-  
+
 .bg-emojis li:nth-child(2) {
-    left: 15%;
-    animation-delay: 2s;
-    animation-duration: 15s;
+  left: 15%;
+  animation-delay: 2s;
+  animation-duration: 15s;
 }
-  
+
 .bg-emojis li:nth-child(3) {
-    left: 20%;
-    animation-delay: 4s;
-}
-  
-  .bg-emojis li:nth-child(4) {
-    left: 35%;
-    animation-delay: 6s;
-    animation-duration: 18s;
-  }
-  
-  .bg-emojis li:nth-child(5) {
-    left: 70%;
-    animation-delay: 3s;
-  }
-  
-  .bg-emojis li:nth-child(6) {
-    left: 65%;
-    animation-delay: 6s;
-    animation-duration: 12s;
-  }
-  
-  .bg-emojis li:nth-child(7) {
-    left: 90%;
-    animation-delay: 8s;
-  }
-  
-  .bg-emojis li:nth-child(8) {
-    left: 85%;
-    animation-delay: 14s;
-    animation-duration: 7s;
-  }
-  
-  .bg-emojis li:nth-child(9) {
-    left: 15%;
-    animation-delay: 7s;
-  }
-  
-  .bg-emojis li:nth-child(10) {
-    left: 30%;
-    animation-delay: 18s;
-    animation-duration: 15s;
-  }
-  
-  .bg-emojis li:nth-child(11) {
-    left: 100%;
-    animation-delay: 20s;
-  }
-
-  @keyframes spin {
-    100% {
-      transform: translateY(-800px) rotate(360deg);
-      opacity: 0;
-    }
-  }
-
-#name{
-    border: none;
-    border-bottom: 1px solid black;
-    padding: 5px;
-    text-align: center;
-    outline: none;
-    background: none;
+  left: 20%;
+  animation-delay: 4s;
 }
 
-form{
-    align-self: center;
-    justify-self: center;
+.bg-emojis li:nth-child(4) {
+  left: 35%;
+  animation-delay: 6s;
+  animation-duration: 18s;
 }
 
-.input_field{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 90vh;
+.bg-emojis li:nth-child(5) {
+  left: 70%;
+  animation-delay: 3s;
 }
 
-#options{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: -30vh;
+.bg-emojis li:nth-child(6) {
+  left: 65%;
+  animation-delay: 6s;
+  animation-duration: 12s;
 }
 
-#credits, #next{
-    border: 1px solid;
-    background: none;
-    border-radius: 10px;
-    height: 5vh;
-    width: 10vw;
+.bg-emojis li:nth-child(7) {
+  left: 90%;
+  animation-delay: 8s;
 }
 
-#credits{
-    margin-right: 10px;
+.bg-emojis li:nth-child(8) {
+  left: 85%;
+  animation-delay: 14s;
+  animation-duration: 7s;
 }
 
-#credits:hover, #next:hover{
-    background-color: white;
+.bg-emojis li:nth-child(9) {
+  left: 15%;
+  animation-delay: 7s;
 }
 
-#welcome{
+.bg-emojis li:nth-child(10) {
+  left: 30%;
+  animation-delay: 18s;
+  animation-duration: 15s;
+}
+
+.bg-emojis li:nth-child(11) {
+  left: 100%;
+  animation-delay: 20s;
+}
+
+@keyframes spin {
+  100% {
+    transform: translateY(-800px) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+#name {
+  border: none;
+  border-bottom: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  outline: none;
+  background: none;
+}
+
+form {
+  align-self: center;
+  justify-self: center;
+}
+
+.input_field {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}
+
+#options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30vh;
+}
+
+#credits,
+#next {
+  border: 1px solid;
+  background: none;
+  border-radius: 10px;
+  height: 5vh;
+  width: 10vw;
+}
+
+#credits {
+  margin-right: 10px;
+}
+
+#credits:hover,
+#next:hover {
+  background-color: white;
+}
+
+#welcome {
   display: flex;
   justify-content: center;
   align-items: center;

@@ -28,7 +28,7 @@ function GoHome() {
   window.location.href = "./jellybean.html";
 }
 
-function GoAccount(){
+function GoAccount() {
   window.location.href = "./account.html";
 }
 
