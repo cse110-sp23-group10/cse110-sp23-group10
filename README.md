@@ -1,4 +1,4 @@
-# Jelly Bean Fortune Teller Documentation
+# Jelly Bean Fortune Teller README
 
 Welcome to the Jelly Beans Jellybean Fortune Teller GitHub page! Our team, Jelly Beans, has developed an interactive program that allows you to see daily fortunes by selecting delicious jellybeans.
 
@@ -47,4 +47,4 @@ We hope you enjoy using the Jelly Beans Jellybean Fortune Teller!
 ## License
 
 This project is licensed under the [UCSD License](https://opensource.org/licenses/UCSD).
-Last update: 06/09/2023
+Last update: 06/10/2023

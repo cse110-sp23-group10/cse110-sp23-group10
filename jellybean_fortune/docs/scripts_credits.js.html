@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: scripts/credits.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -15,9 +15,26 @@
 
   <body>
     <div id="main">
-      <h1 class="page-title">Home</h1>
+      <h1 class="page-title">Source: scripts/credits.js</h1>
 
-      <h3></h3>
+      <section>
+        <article>
+          <pre
+            class="prettyprint source linenums"
+          ><code>document.addEventListener("DOMContentLoaded", init);
+
+/**
+ * Function that is executed when DOM content is loaded
+ */
+function init() {
+  const back_button = document.getElementById("back");
+  back_button.addEventListener("click", () => {
+    location.replace("./landing.html");
+  });
+}
+</code></pre>
+        </article>
+      </section>
     </div>
 
     <nav>

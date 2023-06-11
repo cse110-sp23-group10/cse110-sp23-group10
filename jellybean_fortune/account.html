@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<!-- Landing Page-->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JellyBean Program</title>
+    <title>Fortune Page</title>
     <link rel="icon" href="./assets/jarandjelly.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./jellybean.css" />
+    <link rel="stylesheet" href="./account.css" />
     <link rel="stylesheet" href="./navbar.css" />
   </head>
+
   <body>
-    <script src="./scripts/jellybean.js"></script>
+    <script src="./scripts/account.js"></script>
     <script src="./scripts/audio.js"></script>
-    <!-- Top bar has the logo, sounds button, and home button? -->
     <div class="navbar">
       <div class="navbar-left">
         <img class="logo-img" src="../admin/branding/text-logo.png" alt="Jellybean logo" />
@@ -27,39 +26,24 @@
             src="./assets/blue_jellybean.png"
             style="float: right"
             class="zoom-image"
-            alt="Hover over me"
+            onclick="GoHome()"
+            alt="Home"
           />
-          <span style="float: right"> Home </span>
+          <span style="float: right"> Home: </span>
         </div>
         <div class="nav-img">
           <img
             src="./assets/red_jellybean.png"
             style="float: right"
             class="zoom-image"
-            alt="Hover over me"
             onclick="GoAccount()"
+            alt="Account"
           />
-          <span style="float: right"> Account </span>
+          <span style="float: right"> Account: </span>
         </div>
       </div>
     </div>
 
-    <div>
-      <section class="jar-beans" id="jar-beans">
-        <img src="./assets/jarandjelly.png" alt="Jar with Jellybeans" class="jar" id="jar" />
-        <!-- the jar -->
-      </section>
-    </div>
-
-    <!-- Button placed in div for centering -->
-    <div>
-      <section class="submit-button">
-        <button onclick="shakeJar()">Shake Jar?</button>
-        <!-- button should shake the jar-->
-      </section>
-    </div>
-
-    <!-- Background Animation With Emojis -->
     <div class="bg">
       <ul class="bg-emojis">
         <li>🍭</li>
@@ -75,5 +59,40 @@
         <li>🍬</li>
       </ul>
     </div>
+
+    <div id="username"></div>
+
+    <div class="account-container">
+      <div class="account-row">
+        <div class="account-counter">
+          You shook the jar <span id="account-jar-shakes" style="color: white">0</span> times!
+        </div>
+      </div>
+      <div class="account-row">
+        <div class="account-counter">
+          You have picked
+          <span id="account-jellybeans-picked" style="color: white">0</span> jellybeans!
+        </div>
+      </div>
+      <div class="account-row">
+        <div class="account-fortunes">
+          <div class="expandable-div" onclick="toggleExpand(this)">
+            <div class="account-fortune-content">
+              <ul id="account-past-fortunes"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <table id="fortunes">
+      <tr>
+        <th>Index</th>
+        <th>Jellybean</th>
+        <th>Fortune</th>
+      </tr>
+    </table>
+
+    <div id="no-fortune"></div>
   </body>
 </html>
