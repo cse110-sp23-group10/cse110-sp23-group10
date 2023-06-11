@@ -156,10 +156,18 @@ async function toggleText(color, element) {
 async function getRandomQuote(imageId) {
   const quotes = quotePools[imageId];
 
-  if (!quotes || quotes.length === 0) {
-    return null;
-  }
+  // removed chatgpt api due to difficulty to implement
+  // can be done through the fetchQuote() function
+  // possible implementation: fetch for a chatgpt fortune, and fall
+  // back to the local one below if that fails
 
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
+}
+
+// fetches a quote from an external api (namely chatgpt)
+async function fetchQuote(imageId) {
+  // first generates a prompt for the api based on the color of the jellybean
   var gptQuestion = "Give me a one sentence fotune based on ";
   console.log(imageId);
   switch (imageId) {
@@ -216,16 +224,18 @@ async function getRandomQuote(imageId) {
       break;
   }
 
-  console.log(gptQuestion);
-
-  // moved the openai request to a private endpoint, server handles the request
+  // try to make a fetch request to the specified endpoint which handles the https request
+  // and uses openai API key to request for a fortune from chatgpt
   try {
     // define an 8 second timeout before resorting to the pre-generated fortunes
     // since we dont want the request to hang forever
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 8000);
+    const endpointURL = ''; // put endpoint url here
 
-    let response = await fetch("http://129.146.77.204:3000", {
+    // to setup the endpoint, have it handle post requests and take the body.prompt and request a fortune
+    // from chatgpt using that prompt
+    let response = await fetch(endpointURL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -239,6 +249,7 @@ async function getRandomQuote(imageId) {
 
     const data = await response.json();
 
+    // check to see if the request was unsuccessful
     if (response.status !== 200) {
       console.log(data);
       throw data.error || new Error(`Request failed with status ${response.status}`);
@@ -246,10 +257,12 @@ async function getRandomQuote(imageId) {
 
     return data.result;
   } catch (err) {
+    // fall back to the local fortunes if this fails
     console.log(err);
     const randomIndex = Math.floor(Math.random() * quotes.length);
     return quotes[randomIndex];
   }
+  
 }
 
 // Returns beans to default opacity and scale
