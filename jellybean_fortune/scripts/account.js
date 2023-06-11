@@ -46,7 +46,7 @@ function init() {
   nameEl.innerHTML = `Hi ${name}, Welcome to your account page! Here you will find all your past fortunes`;
   const fortunes = JSON.parse(localStorage.getItem("fortunes"));
   if (fortunes == null) {
-    const no_fortune = document.getElementById("no_fortune");
+    const no_fortune = document.getElementById("no-fortune");
     no_fortune.innerHTML = `There are no fortunes to display, go back to the home page to see your fortune`;
     return;
   }
