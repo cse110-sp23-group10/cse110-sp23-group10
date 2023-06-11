@@ -68,10 +68,10 @@ function init() {
   const local_storage_jellybeansPicked = localStorage.getItem("num_clicked") || 0;
 
   // Update the HTML with the retrieved data
-  document.getElementById("account-jarShakes").textContent = local_storage_jarShakes;
-  document.getElementById("account-jellybeansPicked").textContent = local_storage_jellybeansPicked;
+  document.getElementById("account-jar-shakes").textContent = local_storage_jarShakes;
+  document.getElementById("account-jellybeans-picked").textContent = local_storage_jellybeansPicked;
 
-  const pastFortunesList = document.getElementById("account-pastFortunes");
+  const pastFortunesList = document.getElementById("account-past-fortunes");
   local_storage_fortunes.forEach((fortune) => {
     const listItem = document.createElement("li");
     listItem.textContent = fortune[1]; // Display fortune text, assuming it's at index 1 of the tuple

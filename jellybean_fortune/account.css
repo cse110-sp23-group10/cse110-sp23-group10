@@ -2,6 +2,10 @@ body {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
 
+.account-fortunes li {
+  margin-bottom: 5px;
+}
+
 .bg {
   margin: 0;
   background: linear-gradient(45deg, #ff43a4, #fafd0f);
@@ -173,10 +177,6 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
-}
-
-.account-fortunes li {
-  margin-bottom: 5px;
 }
 
 .expandable-div {
