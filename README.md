@@ -1,10 +1,12 @@
-# Jelly Bean Fortune Teller Documentation
+# Jelly Bean Fortune Teller README
 
 Welcome to the Jelly Beans Jellybean Fortune Teller GitHub page! Our team, Jelly Beans, has developed an interactive program that allows you to see daily fortunes by selecting delicious jellybeans.
 
 ![Fortune Teller](https://github.com/cse110-sp23-group10/cse110-sp23-group10/raw/main/jellybean_fortune/assets/060923-project-screenshot.png)
 
 After viewing the home page, users are prompted to make an account or shake the jar. Pressing the button reveals a trio of colorful beans, with 12 distinct flavors. After choosing their favorite jelly bean, the user's daily fortune is displayed from a choice of 10 sweet selections.
+
+![Fortune](https://github.com/cse110-sp23-group10/cse110-sp23-group10/raw/main/jellybean_fortune/assets/060923-project-screenshot2.png)
 
 ## Directory Structure
 
@@ -47,4 +49,4 @@ We hope you enjoy using the Jelly Beans Jellybean Fortune Teller!
 ## License
 
 This project is licensed under the [UCSD License](https://opensource.org/licenses/UCSD).
-Last update: 06/09/2023
+Last update: 06/10/2023
