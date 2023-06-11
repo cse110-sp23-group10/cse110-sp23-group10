@@ -23,14 +23,15 @@
 ## Agenda
 
 | Item   | Description     |
-| ------ | --------------  |
+| ------ | --------------- |
 | Agenda | • Final Wrap up |
 
 ## Business
 
-| Done? | Task             | Who?  | Due Date | Submittable? |
-| ----- | ---------------- | ----- | -------- | ------------ |
-| No    | Final Video      | Group | 6/14     | Yes          |
+| Done? | Task        | Who?  | Due Date | Submittable? |
+| ----- | ----------- | ----- | -------- | ------------ |
+| No    | Final Video | Group | 6/14     | Yes          |
+
 ## Notes
 
 - To consider this week:
