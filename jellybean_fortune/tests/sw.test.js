@@ -17,7 +17,7 @@ describe("serviceWorker", () => {
    * are working fine or not
    */
   it("should add listeners", async () => {
-    require("../../sw");
+    require("../sw");
     await self.trigger("install");
     expect(self.listeners.get("install")).toBeDefined();
     expect(self.listeners.get("activate")).toBeDefined();
@@ -28,7 +28,7 @@ describe("serviceWorker", () => {
    * activation of new service worker
    */
   it("should delete old caches on activate", async () => {
-    require("../../sw");
+    require("../sw");
     // Create old cache
     await self.caches.open("OLD_CACHE");
     expect(self.snapshot().caches.OLD_CACHE).toBeDefined();
@@ -40,7 +40,7 @@ describe("serviceWorker", () => {
    * This test checks whether a cached response is returned or not
    */
   it("should return a cached response", async () => {
-    require("../../sw");
+    require("../sw");
     const cachedResponse = { clone: () => {}, data: { key: "value" } };
     const cachedRequest = new Request("../scripts/");
     const cache = await self.caches.open("jellybean_cache");

@@ -24,8 +24,24 @@ function initializeServiceWorker() {
   }
 }
 
-function GoBack() {
+function GoHome() {
   window.location.href = "./jellybean.html";
+}
+
+function GoAccount() {
+  window.location.href = "./account.html";
+}
+
+function incrementJellybBeanClicked() {
+  // Retrieve the current value of num_clicked from local storage
+  var numClicked = localStorage.getItem("num_clicked");
+
+  // Convert the value to a number and increment by 1
+  numClicked = parseInt(numClicked) || 0;
+  numClicked++;
+
+  // Store the updated value back to local storage
+  localStorage.setItem("num_clicked", numClicked);
 }
 
 // get fortunes from local storage
@@ -74,6 +90,7 @@ animateJellybeans();
 var storedQuotes = {};
 
 async function toggleText(color, element) {
+  incrementJellybBeanClicked();
   var imageId = element.id;
   var quote;
   let textElement = document.querySelector(".text");
