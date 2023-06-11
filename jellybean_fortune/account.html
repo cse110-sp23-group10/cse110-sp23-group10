@@ -62,6 +62,29 @@
 
     <div id="username"></div>
 
+    <div class="account-container">
+      <div class="account-row">
+        <div class="account-counter">
+          You shook the jar <span id="account-jarShakes" style="color: white">0</span> times!
+        </div>
+      </div>
+      <div class="account-row">
+        <div class="account-counter">
+          You have picked
+          <span id="account-jellybeansPicked" style="color: white">0</span> jellybeans!
+        </div>
+      </div>
+      <div class="account-row">
+        <div class="account-fortunes">
+          <div class="expandable-div" onclick="toggleExpand(this)">
+            <div class="account-fortune-content">
+              <ul id="account-pastFortunes"></ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <table id="fortunes">
       <tr>
         <th>Index</th>
