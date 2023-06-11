@@ -1,3 +1,5 @@
+// JS for the Fotune page
+
 if (typeof module === "object") {
   module.exports = { getFortuneFromLocalStorage };
 }
@@ -23,11 +25,12 @@ function initializeServiceWorker() {
     console.log("The browser does not support Service Workers");
   }
 }
-
+//Go to Home page
 function GoHome() {
   window.location.href = "./jellybean.html";
 }
 
+// GO to account page
 function GoAccount() {
   window.location.href = "./account.html";
 }
@@ -52,10 +55,13 @@ function getFortuneFromLocalStorage() {
 
 const jellybeans = document.querySelectorAll(".fortune-beans img");
 
+//Function to get a random number between a range
+// This function is used to get random positions for Jellybeans
 function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+//Function to set random position for jellybeans
 function setRandomPosition(jellybean) {
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
@@ -76,6 +82,8 @@ jellybeans.forEach((jellybean) => {
 
 jellybeans.forEach(setRandomPosition);
 
+// Function to animate jellybeans
+// sets random postion for each jellybean every 5 seconds
 function animateJellybeans() {
   setInterval(() => {
     jellybeans.forEach((jellybean) => {
@@ -84,11 +92,13 @@ function animateJellybeans() {
   }, 5000);
 }
 
+// calls animateJellybeans function
 animateJellybeans();
 
 // Initialize an object to keep track of clicked images
 var storedQuotes = {};
 
+// Function to toggle text when jellybean is clicked
 async function toggleText(color, element) {
   incrementJellybBeanClicked();
   var imageId = element.id;
@@ -110,6 +120,8 @@ async function toggleText(color, element) {
     return;
   }
 
+  // if click on a different bean, close the text and open the new one
+  // resize old beans to default opacity and scale
   resizeBeans(color);
 
   if (storedQuotes[imageId] == "") {
@@ -170,6 +182,7 @@ async function toggleText(color, element) {
   textElement.style.display = "block";
 }
 
+// Function to get a random quote from the openai api (CHATGPT)
 async function getRandomQuote(imageId) {
   const quotes = quotePools[imageId];
 
@@ -177,6 +190,7 @@ async function getRandomQuote(imageId) {
     return null;
   }
 
+  // set the prompt based on the color of the jellybean
   var gptQuestion = "Give me a one sentence fotune based on ";
   console.log(imageId);
   switch (imageId) {
@@ -293,6 +307,7 @@ function resizeBeans(color) {
   }
 }
 
+// quotes for each color when offline or openai is down
 const quotePools = {
   //wealth and prosperity quotes
   green: [
@@ -452,4 +467,5 @@ const quotePools = {
   ],
 };
 
+// call the serviceworker function
 initializeServiceWorker();

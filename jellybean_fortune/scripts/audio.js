@@ -1,3 +1,5 @@
+// Desc: audio functionality for jellybean fortune website
+
 window.addEventListener("DOMContentLoaded", init);
 
 // initialize audio element, sound icon, and add mute functionality when DOM loads

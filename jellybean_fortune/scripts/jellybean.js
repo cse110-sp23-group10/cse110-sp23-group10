@@ -1,3 +1,5 @@
+// JS for the jellybean Home page
+
 /**
  * Method to initialize and activate the service workers
  */
@@ -20,7 +22,9 @@ function initializeServiceWorker() {
 
 initializeServiceWorker();
 
+// shake jar function which is linked to the shake button and shake jar animation
 function shakeJar() {
+  // call the function to increment the number of times the jar has been clicked
   incrementJarShake();
   var jar = document.getElementById("jar");
   console.log("shake");
@@ -34,6 +38,7 @@ function shakeJar() {
   }, 1000);
 }
 
+// function to go to the account page
 function GoAccount() {
   window.location.href = "./account.html";
 }

@@ -1,3 +1,4 @@
+/* This file has all the css aniamtions for the home Jellybean page*/
 .bg {
   margin: 0;
   background: linear-gradient(45deg, #ff43a4, #fafd0f);
@@ -101,6 +102,7 @@ button {
   padding-bottom: 5px;
 }
 
+/* Jar positioning */
 .jar {
   position: relative;
   height: 600px;
@@ -114,6 +116,7 @@ button {
   animation: shake 0.5s linear;
 }
 
+/* Shake animation for jar */
 @keyframes shake {
   0% {
     transform: translate(0, 0) rotate(0deg);

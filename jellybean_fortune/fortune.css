@@ -1,3 +1,5 @@
+/*  CSS for fortune page */
+
 .fortune-beans {
   display: flex;
   justify-content: center;
@@ -68,6 +70,7 @@
   z-index: -1;
 }
 
+/* background emojis */
 .bg-emojis li {
   position: absolute;
   display: block;
@@ -133,6 +136,7 @@
   animation-delay: 20s;
 }
 
+/* Loading Anmiation for Jellybean */
 @keyframes loading {
   100% {
     transform: rotate(360deg);
@@ -140,6 +144,7 @@
   }
 }
 
+/* Spin Animation for Jellybean and background */
 @keyframes spin {
   100% {
     transform: translateY(-800px) rotate(360deg);
@@ -147,6 +152,7 @@
   }
 }
 
+/* Jellybean Flaot animation */
 @keyframes float-animation {
   0% {
     transform: translate(0, 0);
@@ -177,6 +183,7 @@
   transition: transform 0.3s ease;
 }
 
+/* Jellyeban hover animation */
 .zoom-image:hover {
   transform: scale(1.1);
 }

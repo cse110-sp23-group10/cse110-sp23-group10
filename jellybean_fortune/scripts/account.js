@@ -1,3 +1,5 @@
+// JS for the jellybean Account page
+
 document.addEventListener("DOMContentLoaded", init);
 
 /**
