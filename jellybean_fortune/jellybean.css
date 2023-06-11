@@ -1,6 +1,6 @@
 .bg {
   margin: 0;
-  background: linear-gradient(45deg, #ff43a4, #fafd0f);
+  background: linear-gradient(45deg, #ff43a4,#fafd0f);
   position: fixed;
   left: 0;
   top: 0;
@@ -81,6 +81,15 @@
   }
 }
 
+@keyframes spinlogo {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 /* CSS centers and styles "Shake Jar" button bottom of screen */
 button {
   padding: 20px;
@@ -145,4 +154,77 @@ button {
     width: 80%;
     height: 80%;
   }
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background: linear-gradient(360deg, #fafd0f, #ff43a4);
+  margin: 20% auto;
+  padding: 2%;
+  width: 80%;
+  border-radius: 5px;
+  font-family: "Comic Sans MS", cursive;
+  font-weight: bold;
+  color: black;
+  max-width: 50%;
+}
+
+.modal-content h2 {
+  text-align: center;
+  padding: 2% auto;
+}
+.modal-content p {
+  text-align: center;
+  padding: 2% auto;
+}
+
+.modal-content ul {
+  text-align: center;
+  padding: 2% auto;
+}
+
+.modal-content div.listofBeans {
+  text-align: center;
+  padding: 2% auto;
+}
+
+#logo-jellybean {
+  width: 10%;
+  height: 10%;
+  display: block;
+  margin: 2% auto;
+  padding: 2% auto;
+  justify-content: center;
+  animation: spinlogo 5s linear infinite;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.blur-overlay {
+  position: fixed;
+  z-index: 9998;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(5px);
+  pointer-events: none;
+  display: none;
 }
