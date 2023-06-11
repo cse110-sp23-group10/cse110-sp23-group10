@@ -10,9 +10,9 @@
 - Mohak
 - Joshua
 - Neil
-- Bill
+- Yunze (Bill)
 
-# Bill, Neil, Hamza
+# Yunze (Bill), Neil, Hamza
 
 Worked on the fortune page, where we added more jellybeans with, a total of 15, that gets randomly chosen. The jellybeans are now chosen 3 at a time, rather than 5 at a time. We also added an animation to each of the jellybeans. Neil programmed the main function of the animation - where the jellybeans bounce around the screen and edited the back button jellybean on the navigation bar. Hamza worked on the fine tuning the animation with adjusting animation function by finding the pixel offset to match the website in a user friendly way. Bill added more jellybeas that can be chosen randomly, by making a function that chooses 3 jellybeans out of the 15 jellybeans. He also added fortunes to each jellybean by giving each jellybean an assigned catagory. For example, the Green Jellybean for prosperity and abundance, the Blue Jellybean is for serenity and calmness, etc.
 ![image](./meetingpics/sprint2_pic3.png)
