@@ -32,3 +32,23 @@ function shakeJar() {
     window.location.href = "./fortune.html";
   }, 1000);
 }
+
+// Blurs the background when the modal is open
+function showInstructions() {
+  var modal = document.getElementById("instructions-modal");
+  var blurOverlay = document.getElementById("blur-overlay");
+  modal.style.display = "block";
+  blurOverlay.style.display = "block";
+}
+
+function closeInstructions() {
+  var modal = document.getElementById("instructions-modal");
+  var blurOverlay = document.getElementById("blur-overlay");
+  modal.style.display = "none";
+  blurOverlay.style.display = "none";
+}
+
+window.onload = function() {
+  var blurOverlay = document.getElementById("blur-overlay");
+  blurOverlay.style.display = "none";
+}

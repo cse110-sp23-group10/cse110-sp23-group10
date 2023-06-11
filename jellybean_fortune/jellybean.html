@@ -74,5 +74,33 @@
         <li>🍬</li>
       </ul>
     </div>
+    <button id="instructions-btn" onclick="showInstructions()">Show Instructions</button>
+
+    <!-- Popup Instructions -->
+    <div id="instructions-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeInstructions()">&times;</span>
+        <h2>Fortune Instructions</h2>
+        <p>Find out your Jellybean Fortune! <br> Shake the magical jar to reveal your three Jellybeans that will predict your future. Click the "Shake Jar" button to shake the jar and reveal your Jellybeans. Which Jellybean will you get?</p>
+        <div class="listofBeans">
+        Blue: Serenity and calmness<br>
+        Brown: Stability and grounding<br>
+        Green: Prosperity and abundance<br>
+        Margarita: New opportunities and beginnings<br>
+        Mimosa: Relaxation and fun-filled adventures<br>
+        Mojito: Refreshing changes and growth<br>
+        Orange: Energy and enthusiasm<br>
+        Pink: Love and romance<br>
+        Red: Passion and excitement<br>
+        Silver: Intuition and Wisdom<br>
+        Strawberry: Sweetness and indulgence<br>
+        Yellow: Joy and happiness<br>
+        </div>
+        <img
+        src="../admin/branding/text-logo.png"
+        id="logo-jellybean">
+      </div>
+    </div>
+    <div id="blur-overlay" class="blur-overlay"></div>
   </body>
 </html>
