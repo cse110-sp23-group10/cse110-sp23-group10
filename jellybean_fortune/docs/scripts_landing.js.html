@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: scripts/landing.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,44 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: scripts/landing.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>document.addEventListener("DOMContentLoaded", init);
 
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+/**
+ * Function that is executed when DOM content is loaded
+ */
+function init() {
+  new Typewriter("#welcome", {
+    strings: ["Welcome to Group-10 Team Jellybean", "We hope you have a good time"],
+    autoStart: true,
+    loop: true,
+  });
+  const credits_button = document.getElementById("credits");
+  const next_button = document.getElementById("next");
+  const name_input = document.getElementById("name");
+  next_button.addEventListener("click", () => {
+    if (name_input.value == "") {
+      alert("Please enter a valid name");
+      return;
+    }
+    localStorage.setItem("username", name_input.value);
+    location.replace("./jellybean.html");
+  });
+  credits_button.addEventListener("click", () => {
+    location.replace("./credits.html");
+  });
+}
+</code></pre>
+        </article>
+    </section>
 
 
 
