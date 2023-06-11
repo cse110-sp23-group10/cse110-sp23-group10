@@ -117,6 +117,7 @@ button {
   animation: shake 0.5s linear;
 }
 
+/* Jar shake animation */
 @keyframes shake {
   0% {
     transform: translate(0, 0) rotate(0deg);

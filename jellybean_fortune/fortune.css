@@ -120,6 +120,7 @@ button {
   animation-delay: 20s;
 }
 
+/* soin animation for jellybeans and background */
 @keyframes spin {
   100% {
     transform: translateY(-800px) rotate(360deg);
@@ -131,6 +132,7 @@ button {
   transition: transform 0.3s ease;
 }
 
+/* Hover animation for Jellybeans */ 
 .zoom-image:hover {
   transform: scale(1.1);
 }
