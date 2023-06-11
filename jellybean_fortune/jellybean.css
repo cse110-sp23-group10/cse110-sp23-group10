@@ -169,14 +169,22 @@ button {
 }
 
 .modal-content {
+<<<<<<< HEAD
   background:linear-gradient(360deg, #fafd0f, #ff43a4);
+=======
+  background: linear-gradient(360deg, #fafd0f, #ff43a4);
+>>>>>>> 2b7d53aa8a2300fb20777d1434011cdd9a4b054a
   margin: 20% auto;
   padding: 2%;
   width: 80%;
   border-radius: 5px;
   font-family: "Comic Sans MS", cursive;
   font-weight: bold;
+<<<<<<< HEAD
   color:black;
+=======
+  color: black;
+>>>>>>> 2b7d53aa8a2300fb20777d1434011cdd9a4b054a
   max-width: 50%;
 }
 

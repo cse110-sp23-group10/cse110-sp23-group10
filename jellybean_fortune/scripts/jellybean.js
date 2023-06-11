@@ -48,7 +48,14 @@ function closeInstructions() {
   blurOverlay.style.display = "none";
 }
 
+<<<<<<< HEAD
 window.onload = function() {
   var blurOverlay = document.getElementById("blur-overlay");
   blurOverlay.style.display = "none";
 }
+=======
+window.onload = function () {
+  var blurOverlay = document.getElementById("blur-overlay");
+  blurOverlay.style.display = "none";
+};
+>>>>>>> 2b7d53aa8a2300fb20777d1434011cdd9a4b054a
