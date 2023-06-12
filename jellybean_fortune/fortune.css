@@ -59,7 +59,7 @@
 
 .bg {
   margin: 0;
-  background: linear-gradient(45deg, #ff43a4, #fafd0f);
+  background: linear-gradient(45deg, #fafd0f, #ff43a4);
   position: fixed;
   left: 0;
   top: 0;
