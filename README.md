@@ -1,7 +1,6 @@
 # Jelly Bean Fortune Teller README
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/e39f6c031b62118a5176/maintainability)](https://codeclimate.com/github/cse110-sp23-group10/cse110-sp23-group10/maintainability)![CI/CD pipeline](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/e39f6c031b62118a5176/maintainability)](https://codeclimate.com/github/cse110-sp23-group10/cse110-sp23-group10/maintainability)
 
 Welcome to the Jelly Beans Jellybean Fortune Teller GitHub page! Our team, Jelly Beans, has developed an interactive program that allows you to see daily fortunes by selecting delicious jellybeans.
 
