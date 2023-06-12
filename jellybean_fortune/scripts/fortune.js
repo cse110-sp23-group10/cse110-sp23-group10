@@ -184,12 +184,21 @@ async function toggleText(color, element) {
 
 // Function to get a random quote from the openai api (CHATGPT)
 async function getRandomQuote(imageId) {
+  //const quotes = quotePools[imageId];
   const quotes = quotePools[imageId];
 
-  if (!quotes || quotes.length === 0) {
-    return null;
-  }
+  // removed chatgpt api due to difficulty to implement
+  // can be done through the fetchQuote() function
+  // possible implementation: fetch for a chatgpt fortune, and fall
+  // back to the local one below if that fails
 
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  return quotes[randomIndex];
+  //if (!quotes || quotes.length === 0) {
+   // return null;
+  //}
+}
+  async function fetchQuote(imageId) {
   // set the prompt based on the color of the jellybean
   var gptQuestion = "Give me a one sentence fotune based on ";
   console.log(imageId);
