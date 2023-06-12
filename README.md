@@ -16,7 +16,7 @@ After viewing the home page, users are prompted to make an account or shake the 
 
 ## How to Run
 
-To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our live demo [here](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html).
+To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our live demo [here](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/landing.html).
 
 ## Contributing
 
