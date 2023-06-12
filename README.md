@@ -1,5 +1,7 @@
 # Jelly Bean Fortune Teller README
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/e39f6c031b62118a5176/maintainability)](https://codeclimate.com/github/cse110-sp23-group10/cse110-sp23-group10/maintainability)
+
 Welcome to the Jelly Beans Jellybean Fortune Teller GitHub page! Our team, Jelly Beans, has developed an interactive program that allows you to see daily fortunes by selecting delicious jellybeans.
 
 ![Fortune Teller](https://github.com/cse110-sp23-group10/cse110-sp23-group10/raw/main/jellybean_fortune/assets/060923-project-screenshot.png)
@@ -16,14 +18,14 @@ After viewing the home page, users are prompted to make an account or shake the 
 
 ## How to Run
 
-To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our live demo [here](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html).
+To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our live demo [here](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/landing.html).
 
 ## Contributing
 
 If you have any questions, suggestions, or feedback, please don't hesitate to contact us. You can reach our team, Jelly Beans, at:
 
 - Email: [jellybeans@eng.ucsd.edu](mailto:csepeeradviser@eng.ucsd.edu)
-- Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html)
+- Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/landing.html)
 
 ## [Team Members](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
 
