@@ -23,7 +23,7 @@ To see the Jelly Beans Jellybean Fortune Teller in action, you can check out our
 If you have any questions, suggestions, or feedback, please don't hesitate to contact us. You can reach our team, Jelly Beans, at:
 
 - Email: [jellybeans@eng.ucsd.edu](mailto:csepeeradviser@eng.ucsd.edu)
-- Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/jellybean.html)
+- Website: [jellybeans.com](https://cse110-sp23-group10.github.io/cse110-sp23-group10/jellybean_fortune/landing.html)
 
 ## [Team Members](https://github.com/cse110-sp23-group10/cse110-sp23-group10/blob/main/admin/team.md)
 
