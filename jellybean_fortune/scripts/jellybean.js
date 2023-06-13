@@ -41,23 +41,19 @@ function incrementJarShake() {
 }
 
 /**
- * Function to show the instructions modal and blur the background
+ * Function to toggle show/hide the instructions modal and blur the background
  */
-function showInstructions() {
+function toggleInstructions() {
   var modal = document.getElementById("instructions-modal");
   var blurOverlay = document.getElementById("blur-overlay");
-  modal.style.display = "block";
-  blurOverlay.style.display = "block";
-}
 
-/**
- * Function to close the instructions modal and remove the blur
- */
-function closeInstructions() {
-  var modal = document.getElementById("instructions-modal");
-  var blurOverlay = document.getElementById("blur-overlay");
-  modal.style.display = "none";
-  blurOverlay.style.display = "none";
+  if (modal.style.display === "block") {
+    modal.style.display = "none";
+    blurOverlay.style.display = "none";
+  } else {
+    modal.style.display = "block";
+    blurOverlay.style.display = "block";
+  }
 }
 
 /**
