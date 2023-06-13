@@ -29,15 +29,15 @@ function GoAccount() {
  * Function to increment the number of times the jar has been shaken and store it in local storage
  */
 function incrementJarShake() {
-  // Retrieve the current value of num_clicked from local storage
-  var numClicked = localStorage.getItem("jar_shakes");
+  // Retrieve the current value of jar_shakes from local storage
+  var jarShakes = localStorage.getItem("jar_shakes");
 
   // Convert the value to a number and increment by 1
-  numClicked = parseInt(numClicked) || 0;
-  numClicked++;
+  jarShakes = parseInt(jarShakes) || 0;
+  jarShakes++;
 
   // Store the updated value back to local storage
-  localStorage.setItem("jar_shakes", numClicked);
+  localStorage.setItem("jar_shakes", jarShakes);
 }
 
 /**
