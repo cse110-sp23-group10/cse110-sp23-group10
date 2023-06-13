@@ -173,111 +173,12 @@ async function getRandomQuote(imageId) {
   const quotes = quotePools[imageId];
 
   // removed chatgpt api due to difficulty to implement
-  // can be done through the fetchQuote() function
+  // can be done through the fetchQuote() function from fetchAPI.js
   // possible implementation: fetch for a chatgpt fortune, and fall
   // back to the local one below if that fails
 
   const randomIndex = Math.floor(Math.random() * quotes.length);
   return quotes[randomIndex];
-}
-
-// fetches a quote from an external api (namely chatgpt)
-async function fetchQuote(imageId) {
-  // first generates a prompt for the api based on the color of the jellybean
-  var gptQuestion = "Give me a one sentence fotune based on ";
-  console.log(imageId);
-  switch (imageId) {
-    case "green":
-      gptQuestion += "Prosperity and abundance.";
-      break;
-
-    case "blue":
-      gptQuestion += "Serenity and calmness.";
-      break;
-
-    case "red":
-      gptQuestion += "Passion and excitement.";
-      break;
-
-    case "yellow":
-      gptQuestion += "Joy and happiness.";
-      break;
-
-    case "pink":
-      gptQuestion += "Love and romance.";
-      break;
-
-    case "orange":
-      gptQuestion += "Energy and enthusiasm.";
-      break;
-
-    case "mimosa":
-      gptQuestion += "New opportunities and beginnings.";
-      break;
-
-    case "margarita":
-      gptQuestion += "Relaxation and fun-filled adventures.";
-      break;
-
-    case "mojito":
-      gptQuestion += "Refreshing changes and growth.";
-      break;
-
-    case "brown":
-      gptQuestion += "Stability and grounding.";
-      break;
-
-    case "strawberry":
-      gptQuestion += "Sweetness and indulgence.";
-      break;
-
-    case "silver":
-      gptQuestion += "Intuition and Wisdom.";
-      break;
-
-    default:
-      console.log("default");
-      break;
-  }
-
-  // try to make a fetch request to the specified endpoint which handles the https request
-  // and uses openai API key to request for a fortune from chatgpt
-  try {
-    // define an 8 second timeout before resorting to the pre-generated fortunes
-    // since we dont want the request to hang forever
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000);
-    const endpointURL = ""; // put endpoint url here
-
-    // to setup the endpoint, have it handle post requests and take the body.prompt and request a fortune
-    // from chatgpt using that prompt
-    let response = await fetch(endpointURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ prompt: gptQuestion }),
-      signal: controller.signal,
-    });
-
-    // clear timeout if request was sucessful
-    clearTimeout(timeoutId);
-
-    const data = await response.json();
-
-    // check to see if the request was unsuccessful
-    if (response.status !== 200) {
-      console.log(data);
-      throw data.error || new Error(`Request failed with status ${response.status}`);
-    }
-
-    return data.result;
-  } catch (err) {
-    // fall back to the local fortunes if this fails
-    console.log(err);
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    return quotes[randomIndex];
-  }
 }
 
 /**
