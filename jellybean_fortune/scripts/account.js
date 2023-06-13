@@ -3,26 +3,6 @@
 document.addEventListener("DOMContentLoaded", init);
 
 /**
- * Initialize and activate the service workers
- */
-function initializeServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
-      navigator.serviceWorker
-        .register("./sw.js")
-        .then((res) => {
-          console.log(`Service worker loaded`);
-        })
-        .catch((e) => {
-          console.log(`Service Worker failed with error ${e}`);
-        });
-    });
-  } else {
-    console.log("The browser does not support Service Workers");
-  }
-}
-
-/**
  * Return to home
  */
 function GoHome() {
@@ -80,5 +60,4 @@ function init() {
     listItem.textContent = fortune[1]; // Display fortune text, assuming it's at index 1 of the tuple
     pastFortunesList.appendChild(listItem);
   });
-  initializeServiceWorker();
 }
