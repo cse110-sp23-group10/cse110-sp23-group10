@@ -14,14 +14,14 @@ describe("jellybean", () => {
     expect(await getStyleDisplay("#blur-overlay")).toBe("none");
   });
   it("show instructions", async () => {
-    const button = await page.$('*[onclick="showInstructions()"]');
+    const button = await page.$('button[onclick="toggleInstructions()"]');
     await button.click();
     // #instructions-modal and #blur-overlay should be displayed
     expect(await getStyleDisplay("#instructions-modal")).toBe("block");
     expect(await getStyleDisplay("#blur-overlay")).toBe("block");
   });
   it("close instructions", async () => {
-    const button = await page.$('*[onclick="closeInstructions()"]');
+    const button = await page.$('span[onclick="toggleInstructions()"]');
     await button.click();
     // #instructions-modal and #blur-overlay should be hidden
     expect(await getStyleDisplay("#instructions-modal")).toBe("none");
