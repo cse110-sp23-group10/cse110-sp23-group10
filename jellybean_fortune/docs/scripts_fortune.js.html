@@ -1,51 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="utf-8">
     <title>JSDoc: Source: scripts/fortune.js</title>
 
-    <script src="scripts/prettify/prettify.js"></script>
-    <script src="scripts/prettify/lang-css.js"></script>
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
     <!--[if lt IE 9]>
       <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
-    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css" />
-    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css" />
-  </head>
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
 
-  <body>
-    <div id="main">
-      <h1 class="page-title">Source: scripts/fortune.js</h1>
+<body>
 
-      <section>
+<div id="main">
+
+    <h1 class="page-title">Source: scripts/fortune.js</h1>
+
+    
+
+
+
+    
+    <section>
         <article>
-          <pre class="prettyprint source linenums"><code>/** JS for the Fotune page */
+            <pre class="prettyprint source linenums"><code>/** JS for the Fotune page */
 
 if (typeof module === "object") {
   module.exports = { getFortuneFromLocalStorage };
 }
 
-let fortuneInterval = null;
-
-/**
- * Initialize and activate the service workers
- */
-function initializeServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
-      navigator.serviceWorker
-        .register("./sw.js")
-        .then((res) => {
-          console.log(`Service worker loaded`);
-        })
-        .catch((e) => {
-          console.log(`Service Worker failed with error ${e}`);
-        });
-    });
-  } else {
-    console.log("The browser does not support Service Workers");
-  }
-}
+var fortuneInterval = null;
 
 /**
  * Function to return to home
@@ -126,13 +113,11 @@ var storedQuotes = {};
 /**
  * Function to toggle the text when a jellybean is clicked
  */
-async function toggleText(color, element) {
+function toggleText(color, element) {
   incrementJellybBeanClicked();
-  var imageId = element.id;
-  var quote;
+  let imageId = element.id;
+  let quote;
   let textElement = document.querySelector(".text");
-  let loadingBean = document.querySelector(".loading-bean");
-  loadingBean.src = `./assets/${color}_jellybean.png`;
   let state = textElement.state;
   textElement.state = color;
 
@@ -140,61 +125,37 @@ async function toggleText(color, element) {
 
   // if click on the same bean, close the text
   if (state == color) {
-    textElement.innerHTML = "Choose a Bean";
-    textElement.state = "none";
-    loadingBean.style.display = "none";
     resetBeans();
     return;
   }
   // resize the bean when another bean is clicked
   resizeBeans(color);
 
-  if (storedQuotes[imageId] == "") {
-    // this means a fortune of this type is already generating,
-    // so we can just put the default text back and return
-    loadingBean.style.display = "block";
-    textElement.innerHTML = "Generating a Fortune...";
-    return;
-  }
-
-  if (storedQuotes[imageId]) {
-    quote = storedQuotes[imageId]; // Retrieve the stored quote
+  if (storedQuotes[color]) {
+    // Retrieve the stored quote for selected jellybean
+    quote = storedQuotes[color];
   } else {
-    // generates either from openai or gets preset fortune
-    textElement.innerHTML = "Generating a Fortune...";
+    quote = getRandomQuote(color);
 
-    // put a placeholder into stored quotes while a quote is generating, preventing from generating the same one twice
-    storedQuotes[imageId] = "";
+    // Store the quote for the selected jellybean
+    storedQuotes[color] = quote;
 
-    loadingBean.style.display = "block";
-    quote = await getRandomQuote(color);
-
-    if (quote.charAt(0) == '"' &amp;&amp; quote.charAt(quote.length - 1) == '"') {
-      quote = quote.substring(1, quote.length - 1);
-    }
-
-    storedQuotes[imageId] = quote; // Store the quote for the image
-
-    // adding to local storage when generating new fortune
-    let randomQuote = quote;
-    var existingFortunes = localStorage.getItem("fortunes");
-    var fortunes = existingFortunes ? JSON.parse(existingFortunes) : [];
-    // Add the new fortune to the list
-    fortunes.push([color, randomQuote]);
-    // Store the updated list back in local storage
-    localStorage.setItem("fortunes", JSON.stringify(fortunes));
-  }
-
-  loadingBean.style.display = "none";
-
-  if (textElement.state != color) {
-    return;
+    addToLocalStorage(color, quote);
   }
 
   //textElement.innerHTML = `You chose the ${color} jellybean &lt;br> &lt;br>`;
   textElement.innerHTML = `Your daily fortune is: &lt;br> &lt;br>`;
 
-  // for generating fortune letter by letter
+  writeFortune(quote);
+  textElement.style.display = "block";
+}
+
+/**
+ * Function to type out fortune letter by letter when generating
+ */
+function writeFortune(quote) {
+  let textElement = document.querySelector(".text");
+
   let i = 0;
   fortuneInterval = setInterval(() => {
     textElement.innerHTML += quote.charAt(i);
@@ -204,17 +165,30 @@ async function toggleText(color, element) {
       fortuneInterval = null; // Reset interval ID
     }
   }, 20); // Change the delay time (in milliseconds) as needed
-  textElement.style.display = "block";
+}
+
+/**
+ * Function to add a quote to the localStorage under a specified color
+ */
+function addToLocalStorage(color, quote) {
+  // adding to local storage when generating new fortune
+  let randomQuote = quote;
+  let existingFortunes = localStorage.getItem("fortunes");
+  let fortunes = existingFortunes ? JSON.parse(existingFortunes) : [];
+  // Add the new fortune to the list
+  fortunes.push([color, randomQuote]);
+  // Store the updated list back in local storage
+  localStorage.setItem("fortunes", JSON.stringify(fortunes));
 }
 
 /**
  * Function to get a random quote from the quote pool
  */
-async function getRandomQuote(imageId) {
-  const quotes = quotePools[imageId];
+function getRandomQuote(color) {
+  const quotes = quotePools[color];
 
   // removed chatgpt api due to difficulty to implement
-  // can be done through the fetchQuote() function
+  // can be done through the fetchQuote() function from fetchAPI.js
   // possible implementation: fetch for a chatgpt fortune, and fall
   // back to the local one below if that fails
 
@@ -222,110 +196,15 @@ async function getRandomQuote(imageId) {
   return quotes[randomIndex];
 }
 
-// fetches a quote from an external api (namely chatgpt)
-async function fetchQuote(imageId) {
-  // first generates a prompt for the api based on the color of the jellybean
-  var gptQuestion = "Give me a one sentence fotune based on ";
-  console.log(imageId);
-  switch (imageId) {
-    case "green":
-      gptQuestion += "Prosperity and abundance.";
-      break;
-
-    case "blue":
-      gptQuestion += "Serenity and calmness.";
-      break;
-
-    case "red":
-      gptQuestion += "Passion and excitement.";
-      break;
-
-    case "yellow":
-      gptQuestion += "Joy and happiness.";
-      break;
-
-    case "pink":
-      gptQuestion += "Love and romance.";
-      break;
-
-    case "orange":
-      gptQuestion += "Energy and enthusiasm.";
-      break;
-
-    case "mimosa":
-      gptQuestion += "New opportunities and beginnings.";
-      break;
-
-    case "margarita":
-      gptQuestion += "Relaxation and fun-filled adventures.";
-      break;
-
-    case "mojito":
-      gptQuestion += "Refreshing changes and growth.";
-      break;
-
-    case "brown":
-      gptQuestion += "Stability and grounding.";
-      break;
-
-    case "strawberry":
-      gptQuestion += "Sweetness and indulgence.";
-      break;
-
-    case "silver":
-      gptQuestion += "Intuition and Wisdom.";
-      break;
-
-    default:
-      console.log("default");
-      break;
-  }
-
-  // try to make a fetch request to the specified endpoint which handles the https request
-  // and uses openai API key to request for a fortune from chatgpt
-  try {
-    // define an 8 second timeout before resorting to the pre-generated fortunes
-    // since we dont want the request to hang forever
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000);
-    const endpointURL = ""; // put endpoint url here
-
-    // to setup the endpoint, have it handle post requests and take the body.prompt and request a fortune
-    // from chatgpt using that prompt
-    let response = await fetch(endpointURL, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ prompt: gptQuestion }),
-      signal: controller.signal,
-    });
-
-    // clear timeout if request was sucessful
-    clearTimeout(timeoutId);
-
-    const data = await response.json();
-
-    // check to see if the request was unsuccessful
-    if (response.status !== 200) {
-      console.log(data);
-      throw data.error || new Error(`Request failed with status ${response.status}`);
-    }
-
-    return data.result;
-  } catch (err) {
-    // fall back to the local fortunes if this fails
-    console.log(err);
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    return quotes[randomIndex];
-  }
-}
-
 /**
  * Function to reset the jellybeans to their original state
  */
 function resetBeans() {
   const beans = document.querySelectorAll('img[alt="Hover over me"]');
+  const textElement = document.querySelector(".text");
+  textElement.innerHTML = "Choose a Bean";
+  textElement.state = "none";
+
   for (let i = 0; i &lt; beans.length; i++) {
     beans[i].classList.remove("bean-selected");
     beans[i].classList.remove("bean-unselected");
@@ -507,49 +386,26 @@ const quotePools = {
     "Silver brings good luck! Today, you'll receive guidance and wisdom, attracting positive energies into your life.",
   ],
 };
-
-initializeServiceWorker();
 </code></pre>
         </article>
-      </section>
-    </div>
+    </section>
 
-    <nav>
-      <h2><a href="index.html">Home</a></h2>
-      <h3>Global</h3>
-      <ul>
-        <li><a href="global.html#GoAccount">GoAccount</a></li>
-        <li><a href="global.html#GoHome">GoHome</a></li>
-        <li><a href="global.html#animateJellybeans">animateJellybeans</a></li>
-        <li><a href="global.html#closeInstructions">closeInstructions</a></li>
-        <li><a href="global.html#fortuneTest">fortuneTest</a></li>
-        <li><a href="global.html#getFortuneFromLocalStorage">getFortuneFromLocalStorage</a></li>
-        <li><a href="global.html#getRandomQuote">getRandomQuote</a></li>
-        <li><a href="global.html#incrementJarShake">incrementJarShake</a></li>
-        <li><a href="global.html#incrementJellybBeanClicked">incrementJellybBeanClicked</a></li>
-        <li><a href="global.html#init">init</a></li>
-        <li><a href="global.html#initializeServiceWorker">initializeServiceWorker</a></li>
-        <li><a href="global.html#makeServiceWorkerEnv">makeServiceWorkerEnv</a></li>
-        <li><a href="global.html#resetBeans">resetBeans</a></li>
-        <li><a href="global.html#resizeBeans">resizeBeans</a></li>
-        <li><a href="global.html#setRandomPosition">setRandomPosition</a></li>
-        <li><a href="global.html#shakeJar">shakeJar</a></li>
-        <li><a href="global.html#showInstructions">showInstructions</a></li>
-        <li><a href="global.html#toggleExpand">toggleExpand</a></li>
-        <li><a href="global.html#toggleText">toggleText</a></li>
-      </ul>
-    </nav>
 
-    <br class="clear" />
 
-    <footer>
-      Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Jun
-      13 2023 01:00:50 GMT+0000 (Coordinated Universal Time)
-    </footer>
 
-    <script>
-      prettyPrint();
-    </script>
-    <script src="scripts/linenumber.js"></script>
-  </body>
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#GoAccount">GoAccount</a></li><li><a href="global.html#GoHome">GoHome</a></li><li><a href="global.html#addToLocalStorage">addToLocalStorage</a></li><li><a href="global.html#animateJellybeans">animateJellybeans</a></li><li><a href="global.html#categories">categories</a></li><li><a href="global.html#fortuneTest">fortuneTest</a></li><li><a href="global.html#getFortuneFromLocalStorage">getFortuneFromLocalStorage</a></li><li><a href="global.html#getRandomQuote">getRandomQuote</a></li><li><a href="global.html#incrementJarShake">incrementJarShake</a></li><li><a href="global.html#incrementJellybBeanClicked">incrementJellybBeanClicked</a></li><li><a href="global.html#init">init</a></li><li><a href="global.html#initializeServiceWorker">initializeServiceWorker</a></li><li><a href="global.html#makeServiceWorkerEnv">makeServiceWorkerEnv</a></li><li><a href="global.html#resetBeans">resetBeans</a></li><li><a href="global.html#resizeBeans">resizeBeans</a></li><li><a href="global.html#setRandomPosition">setRandomPosition</a></li><li><a href="global.html#shakeJar">shakeJar</a></li><li><a href="global.html#toggleExpand">toggleExpand</a></li><li><a href="global.html#toggleInstructions">toggleInstructions</a></li><li><a href="global.html#toggleText">toggleText</a></li><li><a href="global.html#writeFortune">writeFortune</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.2</a> on Tue Jun 13 2023 06:43:44 GMT+0000 (Coordinated Universal Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
 </html>
