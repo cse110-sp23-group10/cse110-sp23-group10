@@ -83,7 +83,6 @@ function setRandomPosition(jellybean) {
   jellybean.style.top = randomY + "px";
 }
 
-
 jellybeans.forEach(setRandomPosition);
 
 /**
@@ -97,7 +96,6 @@ function animateJellybeans() {
     });
   }, 5000);
 }
-
 
 animateJellybeans();
 

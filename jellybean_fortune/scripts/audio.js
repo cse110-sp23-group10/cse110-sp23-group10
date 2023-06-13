@@ -1,4 +1,4 @@
-/**  Desc: audio functionality for jellybean fortune website */ 
+/**  Desc: audio functionality for jellybean fortune website */
 
 window.addEventListener("DOMContentLoaded", init);
 
