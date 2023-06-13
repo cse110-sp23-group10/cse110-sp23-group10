@@ -1,4 +1,4 @@
-// JS for the Fotune page
+// JS for the fortune page
 
 if (typeof module === "object") {
   module.exports = { getFortuneFromLocalStorage };
@@ -7,7 +7,7 @@ if (typeof module === "object") {
 let fortuneInterval = null;
 
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {
@@ -26,12 +26,16 @@ function initializeServiceWorker() {
   }
 }
 
-// go to home page
+/**
+ * Return to home
+ */
 function GoHome() {
   window.location.href = "./jellybean.html";
 }
 
-// go to account page
+/**
+ * Go to account page
+ */
 function GoAccount() {
   window.location.href = "./account.html";
 }

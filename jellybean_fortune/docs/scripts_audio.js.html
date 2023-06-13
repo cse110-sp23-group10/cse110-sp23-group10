@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: scripts/audio.js</title>
 
     <script src="scripts/prettify/prettify.js"></script>
     <script src="scripts/prettify/lang-css.js"></script>
@@ -15,9 +15,48 @@
 
   <body>
     <div id="main">
-      <h1 class="page-title">Home</h1>
+      <h1 class="page-title">Source: scripts/audio.js</h1>
 
-      <h3></h3>
+      <section>
+        <article>
+          <pre
+            class="prettyprint source linenums"
+          ><code>// audio functionality for jellybean fortune website
+
+window.addEventListener("DOMContentLoaded", init);
+
+/**
+ * Initialize audio element, sound icon, and add mute functionality when DOM loads
+ */
+function init() {
+  // toggle mute/unmute audio
+  let sound = document.getElementById("sound-icon");
+  let audio = new Audio("./assets/goofy.mp3");
+  let volume = true;
+
+  audio.volume = 0.2;
+  // many browsers disable autoplay
+  let playResult = audio.play();
+  playResult.catch((e) => {
+    console.log("cannot play audio");
+  });
+  audio.loop = true;
+
+  sound.addEventListener("click", function (event) {
+    console.log("mute");
+    if (volume) {
+      audio.volume = 0;
+      this.src = "./assets/mute-white.svg";
+    } else {
+      audio.volume = 0.2;
+      this.src = "./assets/sound-white.svg";
+    }
+    volume = !volume;
+  });
+}
+</code></pre>
+        </article>
+      </section>
     </div>
 
     <nav>

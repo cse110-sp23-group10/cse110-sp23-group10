@@ -1,7 +1,7 @@
-// JS for the jellybean Home page
+// JS for the home page
 
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {
@@ -22,7 +22,9 @@ function initializeServiceWorker() {
 
 initializeServiceWorker();
 
-// shake jar function which is linked to the shake button and shake jar animation
+/**
+ * Function that is linked to the shake button and shake jar animation
+ */
 function shakeJar() {
   // call the function to increment the number of times the jar has been clicked
   incrementJarShake();
@@ -38,12 +40,16 @@ function shakeJar() {
   }, 1000);
 }
 
-// function to go to the account page
+/**
+ * Go to account page
+ */
 function GoAccount() {
   window.location.href = "./account.html";
 }
 
-// Increments number of times jar clicked
+/**
+ * Increments number of times jar clicked
+ */
 function incrementJarShake() {
   // Retrieve the current value of num_clicked from local storage
   var numClicked = localStorage.getItem("jar_shakes");
@@ -56,7 +62,9 @@ function incrementJarShake() {
   localStorage.setItem("jar_shakes", numClicked);
 }
 
-// Blurs the background when the modal is open
+/**
+ * Opens the instructions modal and blurs the background
+ */
 function showInstructions() {
   var modal = document.getElementById("instructions-modal");
   var blurOverlay = document.getElementById("blur-overlay");
@@ -64,6 +72,9 @@ function showInstructions() {
   blurOverlay.style.display = "block";
 }
 
+/**
+ * Closes the instructions modal and unblurs the background
+ */
 function closeInstructions() {
   var modal = document.getElementById("instructions-modal");
   var blurOverlay = document.getElementById("blur-overlay");

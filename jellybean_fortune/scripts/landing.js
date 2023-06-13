@@ -1,4 +1,4 @@
-// Js for landing page
+// JS for the landing page
 
 document.addEventListener("DOMContentLoaded", init);
 

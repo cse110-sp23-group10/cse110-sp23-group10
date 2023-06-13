@@ -1,9 +1,9 @@
-// JS for the jellybean Account page
+// JS for the account page
 
 document.addEventListener("DOMContentLoaded", init);
 
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {
@@ -23,14 +23,14 @@ function initializeServiceWorker() {
 }
 
 /**
- * Function to return to home
+ * Return to home
  */
 function GoHome() {
   window.location.replace("./jellybean.html");
 }
 
 /**
- * function to expand past fortunes
+ * Expand past fortunes
  */
 function toggleExpand(element) {
   element.classList.toggle("expanded");
@@ -38,6 +38,7 @@ function toggleExpand(element) {
 
 /**
  * Function that is executed when DOM content is loaded
+ * Redirects user to landing page if they have no account
  */
 function init() {
   const name = localStorage.getItem("username");
