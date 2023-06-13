@@ -1,4 +1,4 @@
-// JS for the jellybean Account page
+/** JS for the jellybean Account page */ 
 
 document.addEventListener("DOMContentLoaded", init);
 
@@ -69,7 +69,7 @@ function init() {
   const local_storage_jarShakes = localStorage.getItem("jar_shakes") || 0;
   const local_storage_jellybeansPicked = localStorage.getItem("num_clicked") || 0;
 
-  // Update the HTML with the retrieved data
+  //   Update the HTML with the retrieved data  
   document.getElementById("account-jar-shakes").textContent = local_storage_jarShakes;
   document.getElementById("account-jellybeans-picked").textContent = local_storage_jellybeansPicked;
 

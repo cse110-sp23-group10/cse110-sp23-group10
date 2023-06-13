@@ -1,4 +1,4 @@
-// JS for the crdits page
+/**  JS for the crdits page */
 
 document.addEventListener("DOMContentLoaded", init);
 

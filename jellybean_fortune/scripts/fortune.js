@@ -1,4 +1,4 @@
-// JS for the Fotune page
+/** JS for the Fotune page */
 
 if (typeof module === "object") {
   module.exports = { getFortuneFromLocalStorage };
@@ -26,16 +26,23 @@ function initializeServiceWorker() {
   }
 }
 
-// go to home page
+/**
+ * Function to return to home
+ */
 function GoHome() {
   window.location.href = "./jellybean.html";
 }
 
-// go to account page
+/**
+ * Function to go to account page
+ */
 function GoAccount() {
   window.location.href = "./account.html";
 }
 
+/**
+ * Function to increment the number of times a jellybean has been clicked
+ */
 function incrementJellybBeanClicked() {
   // Retrieve the current value of num_clicked from local storage
   var numClicked = localStorage.getItem("num_clicked");
@@ -48,7 +55,9 @@ function incrementJellybBeanClicked() {
   localStorage.setItem("num_clicked", numClicked);
 }
 
-// get fortunes from local storage
+/**
+ * Function to get fortune from local storage
+ */
 function getFortuneFromLocalStorage() {
   const fortune = localStorage.getItem("fortune");
   return fortune;
@@ -61,7 +70,9 @@ function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
 
-// sets random position for jellybeans
+/**
+ * Function to set a random position for a jellybean
+ */
 function setRandomPosition(jellybean) {
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
@@ -72,17 +83,13 @@ function setRandomPosition(jellybean) {
   jellybean.style.top = randomY + "px";
 }
 
-/*
-jellybeans.forEach((jellybean) => {
-  jellybean.addEventListener("click", () => {
-    alert(`Jellybean clicked! Color: ${jellybean.id}`);
-  });
-});
-*/
 
 jellybeans.forEach(setRandomPosition);
 
-// sets new random position for each jellybean every 5 seconds
+/**
+ * Function to set a random position for a jellybean every 5 seconds
+ * (complete the animation)
+ */
 function animateJellybeans() {
   setInterval(() => {
     jellybeans.forEach((jellybean) => {
@@ -91,12 +98,15 @@ function animateJellybeans() {
   }, 5000);
 }
 
-// calls animate jellybeans function
+
 animateJellybeans();
 
 // Initialize an object to keep track of clicked images
 var storedQuotes = {};
 
+/**
+ * Function to toggle the text when a jellybean is clicked
+ */
 async function toggleText(color, element) {
   incrementJellybBeanClicked();
   var imageId = element.id;
@@ -178,6 +188,9 @@ async function toggleText(color, element) {
   textElement.style.display = "block";
 }
 
+/**
+ * Function to get a random quote from the quote pool
+ */
 async function getRandomQuote(imageId) {
   const quotes = quotePools[imageId];
 
@@ -289,7 +302,9 @@ async function fetchQuote(imageId) {
   }
 }
 
-// Returns beans to default opacity and scale
+/**
+ * Function to reset the jellybeans to their original state
+ */
 function resetBeans() {
   const beans = document.querySelectorAll('img[alt="Hover over me"]');
   for (let i = 0; i < beans.length; i++) {
@@ -298,7 +313,9 @@ function resetBeans() {
   }
 }
 
-// Scales down and redueces opacity for all the excluding the one that wasn't clicked on
+/**
+ * Function to resize the jellybean when it is clicked
+ */
 function resizeBeans(color) {
   const beans = document.querySelectorAll('img[alt="Hover over me"]');
   // console.log(beans);
@@ -472,5 +489,4 @@ const quotePools = {
   ],
 };
 
-// call service worker function
 initializeServiceWorker();
