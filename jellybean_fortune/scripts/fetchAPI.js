@@ -13,11 +13,11 @@ const categories = {
   brown: "Stability and grounding",
   strawberry: "Sweetness and indulgence.",
   silver: "Intuition and Wisdom",
-}
+};
 
-async function fetchQuote(imageId) {
+async function fetchQuote(color) {
   // first generates a prompt for the api based on the color of the jellybean
-  var gptQuestion = `Give me a one sentence fotune based on ${categories[imageId]}.`;
+  var gptQuestion = `Give me a one sentence fotune based on ${categories[color]}.`;
 
   // try to make a fetch request to the specified endpoint which handles the https request
   // and uses openai API key to request for a fortune from chatgpt
