@@ -87,11 +87,9 @@ var storedQuotes = {};
  */
 async function toggleText(color, element) {
   incrementJellybBeanClicked();
-  var imageId = element.id;
-  var quote;
+  let imageId = element.id;
+  let quote;
   let textElement = document.querySelector(".text");
-  let loadingBean = document.querySelector(".loading-bean");
-  loadingBean.src = `./assets/${color}_jellybean.png`;
   let state = textElement.state;
   textElement.state = color;
 
@@ -101,7 +99,6 @@ async function toggleText(color, element) {
   if (state == color) {
     textElement.innerHTML = "Choose a Bean";
     textElement.state = "none";
-    loadingBean.style.display = "none";
     resetBeans();
     return;
   }
@@ -111,7 +108,6 @@ async function toggleText(color, element) {
   if (storedQuotes[imageId] == "") {
     // this means a fortune of this type is already generating,
     // so we can just put the default text back and return
-    loadingBean.style.display = "block";
     textElement.innerHTML = "Generating a Fortune...";
     return;
   }
@@ -125,7 +121,6 @@ async function toggleText(color, element) {
     // put a placeholder into stored quotes while a quote is generating, preventing from generating the same one twice
     storedQuotes[imageId] = "";
 
-    loadingBean.style.display = "block";
     quote = await getRandomQuote(color);
 
     if (quote.charAt(0) == '"' && quote.charAt(quote.length - 1) == '"') {
@@ -136,8 +131,8 @@ async function toggleText(color, element) {
 
     // adding to local storage when generating new fortune
     let randomQuote = quote;
-    var existingFortunes = localStorage.getItem("fortunes");
-    var fortunes = existingFortunes ? JSON.parse(existingFortunes) : [];
+    let existingFortunes = localStorage.getItem("fortunes");
+    let fortunes = existingFortunes ? JSON.parse(existingFortunes) : [];
     // Add the new fortune to the list
     fortunes.push([color, randomQuote]);
     // Store the updated list back in local storage
@@ -169,7 +164,7 @@ async function toggleText(color, element) {
 /**
  * Function to get a random quote from the quote pool
  */
-async function getRandomQuote(imageId) {
+function getRandomQuote(imageId) {
   const quotes = quotePools[imageId];
 
   // removed chatgpt api due to difficulty to implement

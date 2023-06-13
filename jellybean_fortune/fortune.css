@@ -50,15 +50,6 @@
   transform: translate(0, 300px);
 }
 
-.loading-bean {
-  height: 80px;
-  margin-top: auto;
-  margin-bottom: auto;
-  margin-left: 10px;
-  display: block;
-  animation: loading 0.5s linear infinite;
-}
-
 .bg {
   margin: 0;
   background: linear-gradient(45deg, #fafd0f, #ff43a4);
@@ -134,14 +125,6 @@
 .bg-emojis li:nth-child(11) {
   left: 100%;
   animation-delay: 20s;
-}
-
-/* Loading Anmiation for Jellybean */
-@keyframes loading {
-  100% {
-    transform: rotate(360deg);
-    box-shadow: none;
-  }
 }
 
 /* Spin Animation for Jellybean and background */
