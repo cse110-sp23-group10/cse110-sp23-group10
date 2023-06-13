@@ -1,5 +1,7 @@
+/**  JS for the jellybean Home page */
+
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {
@@ -20,7 +22,11 @@ function initializeServiceWorker() {
 
 initializeServiceWorker();
 
+/**
+ * Function to shake the jellybean jar
+ */
 function shakeJar() {
+  // call the function to increment the number of times the jar has been clicked
   incrementJarShake();
   var jar = document.getElementById("jar");
   console.log("shake");
@@ -34,11 +40,16 @@ function shakeJar() {
   }, 1000);
 }
 
+/**
+ * Function to go to the account page
+ */
 function GoAccount() {
   window.location.href = "./account.html";
 }
 
-// Increments number of times jar clicked
+/**
+ * Function to increment the number of times the jar has been shaken and store it in local storage
+ */
 function incrementJarShake() {
   // Retrieve the current value of num_clicked from local storage
   var numClicked = localStorage.getItem("jar_shakes");
@@ -51,7 +62,9 @@ function incrementJarShake() {
   localStorage.setItem("jar_shakes", numClicked);
 }
 
-// Blurs the background when the modal is open
+/**
+ * Function to show the instructions modal and blur the background
+ */
 function showInstructions() {
   var modal = document.getElementById("instructions-modal");
   var blurOverlay = document.getElementById("blur-overlay");
@@ -59,6 +72,9 @@ function showInstructions() {
   blurOverlay.style.display = "block";
 }
 
+/**
+ * Function to close the instructions modal and remove the blur
+ */
 function closeInstructions() {
   var modal = document.getElementById("instructions-modal");
   var blurOverlay = document.getElementById("blur-overlay");
@@ -66,6 +82,9 @@ function closeInstructions() {
   blurOverlay.style.display = "none";
 }
 
+/**
+ * Function to show the credits modal and blur the background
+ */
 window.onload = function () {
   var blurOverlay = document.getElementById("blur-overlay");
   blurOverlay.style.display = "none";

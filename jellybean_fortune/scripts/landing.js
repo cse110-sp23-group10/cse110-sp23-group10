@@ -1,3 +1,5 @@
+/**  Js for landing page */
+
 document.addEventListener("DOMContentLoaded", init);
 
 /**

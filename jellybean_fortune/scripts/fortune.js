@@ -1,3 +1,5 @@
+/** JS for the Fotune page */
+
 if (typeof module === "object") {
   module.exports = { getFortuneFromLocalStorage };
 }
@@ -5,7 +7,7 @@ if (typeof module === "object") {
 let fortuneInterval = null;
 
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {
@@ -24,14 +26,23 @@ function initializeServiceWorker() {
   }
 }
 
+/**
+ * Function to return to home
+ */
 function GoHome() {
   window.location.href = "./jellybean.html";
 }
 
+/**
+ * Function to go to account page
+ */
 function GoAccount() {
   window.location.href = "./account.html";
 }
 
+/**
+ * Function to increment the number of times a jellybean has been clicked
+ */
 function incrementJellybBeanClicked() {
   // Retrieve the current value of num_clicked from local storage
   var numClicked = localStorage.getItem("num_clicked");
@@ -44,7 +55,9 @@ function incrementJellybBeanClicked() {
   localStorage.setItem("num_clicked", numClicked);
 }
 
-// get fortunes from local storage
+/**
+ * Function to get fortune from local storage
+ */
 function getFortuneFromLocalStorage() {
   const fortune = localStorage.getItem("fortune");
   return fortune;
@@ -52,10 +65,14 @@ function getFortuneFromLocalStorage() {
 
 const jellybeans = document.querySelectorAll(".fortune-beans img");
 
+// gets a random number which is used to set a random position
 function getRandomNumber(min, max) {
   return Math.random() * (max - min) + min;
 }
 
+/**
+ * Function to set a random position for a jellybean
+ */
 function setRandomPosition(jellybean) {
   const screenWidth = window.innerWidth;
   const screenHeight = window.innerHeight;
@@ -66,16 +83,12 @@ function setRandomPosition(jellybean) {
   jellybean.style.top = randomY + "px";
 }
 
-/*
-jellybeans.forEach((jellybean) => {
-  jellybean.addEventListener("click", () => {
-    alert(`Jellybean clicked! Color: ${jellybean.id}`);
-  });
-});
-*/
-
 jellybeans.forEach(setRandomPosition);
 
+/**
+ * Function to set a random position for a jellybean every 5 seconds
+ * (complete the animation)
+ */
 function animateJellybeans() {
   setInterval(() => {
     jellybeans.forEach((jellybean) => {
@@ -89,6 +102,9 @@ animateJellybeans();
 // Initialize an object to keep track of clicked images
 var storedQuotes = {};
 
+/**
+ * Function to toggle the text when a jellybean is clicked
+ */
 async function toggleText(color, element) {
   incrementJellybBeanClicked();
   var imageId = element.id;
@@ -109,7 +125,7 @@ async function toggleText(color, element) {
     resetBeans();
     return;
   }
-
+  // resize the bean when another bean is clicked
   resizeBeans(color);
 
   if (storedQuotes[imageId] == "") {
@@ -170,6 +186,9 @@ async function toggleText(color, element) {
   textElement.style.display = "block";
 }
 
+/**
+ * Function to get a random quote from the quote pool
+ */
 async function getRandomQuote(imageId) {
   const quotes = quotePools[imageId];
 
@@ -281,7 +300,9 @@ async function fetchQuote(imageId) {
   }
 }
 
-// Returns beans to default opacity and scale
+/**
+ * Function to reset the jellybeans to their original state
+ */
 function resetBeans() {
   const beans = document.querySelectorAll('img[alt="Hover over me"]');
   for (let i = 0; i < beans.length; i++) {
@@ -290,7 +311,9 @@ function resetBeans() {
   }
 }
 
-// Scales down and redueces opacity for all the excluding the one that wasn't clicked on
+/**
+ * Function to resize the jellybean when it is clicked
+ */
 function resizeBeans(color) {
   const beans = document.querySelectorAll('img[alt="Hover over me"]');
   // console.log(beans);
@@ -306,7 +329,7 @@ function resizeBeans(color) {
 }
 
 const quotePools = {
-  //wealth and prosperity quotes
+  //  prosperity and abundance quotes
   green: [
     "Green brings luck! Today, you will discover something wonderful that will make you smile.",
     "Embrace the color green and watch your dreams grow! Today, your efforts will lead to a great achievement.",
@@ -319,7 +342,7 @@ const quotePools = {
     "Green symbolizes freshness. Today, a fresh start awaits you, bringing renewed energy and enthusiasm.",
     "Green brings good fortune! Today, luck will be on your side, bringing you unexpected joy and surprises.",
   ],
-
+  // Serenity and calmness quotes
   blue: [
     "Blue represents calmness and tranquility. Today, find moments of peace amidst the chaos.",
     "Embrace the soothing color blue! Today, take care of yourself and indulge in self-care activities.",
@@ -332,7 +355,7 @@ const quotePools = {
     "Blue brings inspiration. Today, seek inspiration from the world around you and let it fuel your passions.",
     "Blue brings good luck! Today, you'll encounter fortunate circumstances that lead to positive outcomes.",
   ],
-
+  // Passion and excitement quotes
   red: [
     "Red ignites passion and energy. Today, approach your tasks with enthusiasm and determination.",
     "Embrace the fiery color red! Today, let your boldness shine and take calculated risks.",
@@ -345,7 +368,7 @@ const quotePools = {
     "Red brings excitement. Today, engage in activities that bring you joy and make your heart race.",
     "Red brings good luck! Today, opportunities will come your way, bringing you success and fulfillment.",
   ],
-
+  // Joy and happiness quotes
   yellow: [
     "Yellow brings positivity and happiness. Today, radiate positivity and spread joy to those around you.",
     "Embrace the cheerful color yellow! Today, focus on the bright side of every situation.",
@@ -358,7 +381,7 @@ const quotePools = {
     "Yellow brings joy. Today, find joy in the little things and let your smile brighten the world.",
     "Yellow brings good luck! Today, fortunate events will unfold, bringing you happiness and success.",
   ],
-
+  // Love and romance quotes
   pink: [
     "Pink represents love and compassion. Today, show kindness and affection towards others.",
     "Embrace the gentle color pink! Today, nurture your relationships and foster a sense of connection.",
@@ -371,7 +394,7 @@ const quotePools = {
     "Pink brings joy. Today, find joy in simple pleasures and let your heart overflow with happiness.",
     "Pink brings good luck! Today, love and happiness will surround you, bringing you delightful surprises.",
   ],
-
+  // Energy and enthusiasm quotes
   orange: [
     "Orange ignites enthusiasm and creativity. Today, approach your tasks with passion and innovative thinking.",
     "Embrace the vibrant color orange! Today, seize opportunities for growth and personal development.",
@@ -384,7 +407,7 @@ const quotePools = {
     "Orange brings joy. Today, find joy in the simple pleasures of life and let laughter fill your day.",
     "Orange brings good luck! Today, fortunate encounters and opportunities will come your way.",
   ],
-
+  // New opportunities and beginnings quotes
   mimosa: [
     "Mimosa brings a sense of relaxation. Today, take time for self-care and indulge in moments of rest.",
     "Embrace the calming color of mimosa! Today, create a peaceful environment that nurtures your well-being.",
@@ -397,7 +420,7 @@ const quotePools = {
     "Mimosa brings peace. Today, release any stress or worries and find solace in the stillness of the moment.",
     "Mimosa brings good luck! Today, you'll find harmony and balance, attracting positive energies into your life.",
   ],
-
+  // Relaxation and fun-filled adventures quotes
   margarita: [
     "Margarita brings a sense of celebration. Today, find reasons to celebrate and enjoy the moments of joy.",
     "Embrace the festive color of margarita! Today, let your spirit soar and embrace the lively energy around you.",
@@ -410,7 +433,7 @@ const quotePools = {
     "Margarita brings joy. Today, surround yourself with positive people and engage in activities that bring you joy.",
     "Margarita brings good luck! Today, you'll encounter opportunities for fun and enjoyment, creating lasting memories.",
   ],
-
+  // Refreshing changes and growth quotes
   mojito: [
     "Mojito brings a refreshing vibe. Today, rejuvenate your mind, body, and soul with moments of relaxation.",
     "Embrace the cool color of mojito! Today, find moments to refresh and recharge yourself.",
@@ -423,7 +446,7 @@ const quotePools = {
     "Mojito brings tranquility. Today, find moments of calm amidst the chaos and let peace fill your heart.",
     "Mojito brings good luck! Today, you'll find a sense of balance and peace, attracting positive energies into your life.",
   ],
-
+  // Stability and grounding quotes
   brown: [
     "Brown represents stability and grounding. Today, focus on creating a solid foundation for your goals.",
     "Embrace the earthy color brown! Today, find comfort in the familiar and appreciate the simple things in life.",
@@ -436,7 +459,7 @@ const quotePools = {
     "Brown brings comfort. Today, find solace in familiar routines and activities that bring you peace.",
     "Brown brings good luck! Today, you'll find stability and support, attracting positive energies into your life.",
   ],
-
+  // Sweetness and indulgence quotes
   strawberry: [
     "Strawberry brings a touch of sweetness. Today, indulge in the things that bring you joy and happiness.",
     "Embrace the vibrant color of strawberry! Today, let your passion and enthusiasm guide your actions.",
@@ -449,7 +472,7 @@ const quotePools = {
     "Strawberry brings joy. Today, find happiness in the little things and let your heart be filled with joy.",
     "Strawberry brings good luck! Today, love and joy will surround you, attracting positive energies into your life.",
   ],
-
+  // Intuition and Wisdom quotes
   silver: [
     "Silver represents intuition and reflection. Today, listen to your inner voice and trust your instincts.",
     "Embrace the shimmering color silver! Today, take time to reflect on your thoughts and emotions.",

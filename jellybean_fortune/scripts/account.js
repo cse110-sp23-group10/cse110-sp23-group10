@@ -1,7 +1,9 @@
+/** JS for the jellybean Account page */
+
 document.addEventListener("DOMContentLoaded", init);
 
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {
@@ -21,14 +23,14 @@ function initializeServiceWorker() {
 }
 
 /**
- * Function to return to home
+ * Return to home
  */
 function GoHome() {
   window.location.replace("./jellybean.html");
 }
 
 /**
- * function to expand past fortunes
+ * Expand past fortunes
  */
 function toggleExpand(element) {
   element.classList.toggle("expanded");
@@ -36,6 +38,7 @@ function toggleExpand(element) {
 
 /**
  * Function that is executed when DOM content is loaded
+ * Redirects user to landing page if they have no account
  */
 function init() {
   const name = localStorage.getItem("username");
@@ -67,7 +70,7 @@ function init() {
   const local_storage_jarShakes = localStorage.getItem("jar_shakes") || 0;
   const local_storage_jellybeansPicked = localStorage.getItem("num_clicked") || 0;
 
-  // Update the HTML with the retrieved data
+  //   Update the HTML with the retrieved data
   document.getElementById("account-jar-shakes").textContent = local_storage_jarShakes;
   document.getElementById("account-jellybeans-picked").textContent = local_storage_jellybeansPicked;
 

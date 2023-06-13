@@ -1,3 +1,5 @@
+/* This file has css code for the landing page */
+
 body {
   font-family: "Comic Sans MS", "Comic Sans", cursive;
   font-size: 40px;
@@ -85,6 +87,7 @@ input {
   animation-delay: 20s;
 }
 
+/* Spin animation for the background */
 @keyframes spin {
   100% {
     transform: translateY(-800px) rotate(360deg);
@@ -119,6 +122,8 @@ form {
   align-items: center;
   margin-top: -30vh;
 }
+
+/* CSS for credits page */
 
 #credits,
 #next {
