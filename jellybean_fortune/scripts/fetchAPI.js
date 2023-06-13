@@ -13,7 +13,7 @@ const categories = {
   brown: "Stability and grounding",
   strawberry: "Sweetness and indulgence.",
   silver: "Intuition and Wisdom",
-}
+};
 
 async function fetchQuote(color) {
   // first generates a prompt for the api based on the color of the jellybean
