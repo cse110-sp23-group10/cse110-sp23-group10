@@ -84,7 +84,7 @@ body {
   animation-delay: 20s;
 }
 
-/* Loading page animation*/
+/* Loading page animation */
 @keyframes loading {
   100% {
     transform: rotate(360deg);
@@ -92,7 +92,7 @@ body {
   }
 }
 
-/* Spin Animation for background*/
+/* Spin Animation for background */
 @keyframes spin {
   100% {
     transform: translateY(-800px) rotate(360deg);
