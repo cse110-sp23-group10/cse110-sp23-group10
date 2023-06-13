@@ -1,7 +1,7 @@
 /**  JS for the jellybean Home page */
 
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {

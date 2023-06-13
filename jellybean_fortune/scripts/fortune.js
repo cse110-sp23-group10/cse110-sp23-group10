@@ -7,7 +7,7 @@ if (typeof module === "object") {
 let fortuneInterval = null;
 
 /**
- * Method to initialize and activate the service workers
+ * Initialize and activate the service workers
  */
 function initializeServiceWorker() {
   if ("serviceWorker" in navigator) {
