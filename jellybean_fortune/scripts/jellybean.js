@@ -1,28 +1,6 @@
 /**  JS for the jellybean Home page */
 
 /**
- * Initialize and activate the service workers
- */
-function initializeServiceWorker() {
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", async () => {
-      navigator.serviceWorker
-        .register("./sw.js")
-        .then((res) => {
-          console.log(`Service worker loaded`);
-        })
-        .catch((e) => {
-          console.log(`Service Worker failed with error ${e}`);
-        });
-    });
-  } else {
-    console.log("The browser does not support Service Workers");
-  }
-}
-
-initializeServiceWorker();
-
-/**
  * Function to shake the jellybean jar
  */
 function shakeJar() {
@@ -51,35 +29,31 @@ function GoAccount() {
  * Function to increment the number of times the jar has been shaken and store it in local storage
  */
 function incrementJarShake() {
-  // Retrieve the current value of num_clicked from local storage
-  var numClicked = localStorage.getItem("jar_shakes");
+  // Retrieve the current value of jar_shakes from local storage
+  var jarShakes = localStorage.getItem("jar_shakes");
 
   // Convert the value to a number and increment by 1
-  numClicked = parseInt(numClicked) || 0;
-  numClicked++;
+  jarShakes = parseInt(jarShakes) || 0;
+  jarShakes++;
 
   // Store the updated value back to local storage
-  localStorage.setItem("jar_shakes", numClicked);
+  localStorage.setItem("jar_shakes", jarShakes);
 }
 
 /**
- * Function to show the instructions modal and blur the background
+ * Function to toggle show/hide the instructions modal and blur the background
  */
-function showInstructions() {
+function toggleInstructions() {
   var modal = document.getElementById("instructions-modal");
   var blurOverlay = document.getElementById("blur-overlay");
-  modal.style.display = "block";
-  blurOverlay.style.display = "block";
-}
 
-/**
- * Function to close the instructions modal and remove the blur
- */
-function closeInstructions() {
-  var modal = document.getElementById("instructions-modal");
-  var blurOverlay = document.getElementById("blur-overlay");
-  modal.style.display = "none";
-  blurOverlay.style.display = "none";
+  if (modal.style.display === "block") {
+    modal.style.display = "none";
+    blurOverlay.style.display = "none";
+  } else {
+    modal.style.display = "block";
+    blurOverlay.style.display = "block";
+  }
 }
 
 /**
